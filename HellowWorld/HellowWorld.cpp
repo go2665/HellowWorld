@@ -58,7 +58,39 @@ Ctrl+K+U : 블럭 영역 전부 주석해제 처리
 	a--;	// a에다가 1을 빼라.
 */
 
+/*
+이진수(Binary)
+ - 컴퓨터는 0과 1만 알수 있기 때문에 기본적으로 이진수를 사용
 
+ int number = 10;	// 사람이 알아보기 위해 10진수로 값을 대입
+					// 실제 메모리에는 0000 0000 0000 0000 0000 0000 0000 1010
+
+ ex) 13 = 2^3 * 1 + 2^2 * 1 + 2^1 * 0 + 2^0 * 1 = 1101
+*/
+
+/*
+데이터 타입
+int : 정수형. 일반적으로 32bit. 범위는 (대략 -21억~+21억)
+float : 실수형. 32bit. 태생적으로 오차가 있는 타입. 대략 총7자리부터 오차 발생
+double : 실수형. 64bit.
+bool : 불리언. true/false만 저장.
+char : 캐릭터. 글자하나를 저장하는 데이터 타입. 8bit 정수형
+	char alpha = 'a';	// 글자 하나만 저장
+	char alpha2 = 64;
+std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
+	문자열 : 글자 여러개가 연결된것
+	std::string str = "Hello World!";
+	char* str;
+	char str[32];
+*/
+
+/*
+상수(Constant)
+ - 변하지 않는 수
+ - 코드의 안정성과 가독성을 높여준다.
+	(매직넘버 회피에 좋다)
+	(매크로로와는 달리 타입체크가 가능하다)
+*/
 
 #include <iostream>	// 입출력 관련(cout)
 #include <stdio.h>
@@ -107,14 +139,36 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	// 실습실습
 	// 실습실습
 	
-	int number1 = 0;
-	int number2 = 0;
-	printf("숫자 1을 입력하시오 : ");
-	std::cin >> number1;
-	printf("숫자 2를 입력하시오 : ");
-	std::cin >> number2;
-	int number3 = number1 + number2;
-	printf("두 숫자의 합은 %d입니다.", number3);
+	//int number1 = 0;
+	//int number2 = 0;
+	//printf("숫자 1을 입력하시오 : ");
+	//std::cin >> number1;
+	//printf("숫자 2를 입력하시오 : ");
+	//std::cin >> number2;
+	//int number3 = number1 + number2;
+	//printf("두 숫자의 합은 %d입니다.", number3);
+
+	//float number1 = 10.0f;	// 10이라는 float 타입의 값을 float인 numnber1에 넣기
+	//float number2 = 15.0;	// 15라는 double 타입의 값을 float인 number2에 넣기
+
+	//std::cin >> number1 >> number2;
+	//printf("number1 : %f\nnumber2 : %.2f", number1, number2);
+
+	//// 간단실습 : 원의 반지름을 입력 받고 넓이 구하기
+	//const float Pi = 3.141592f;	// 상수를 선언하고 정의
+	//float radius = 0.0f;
+	//printf("원의 반지름을 입력하세요 : ");
+	//std::cin >> radius;
+	//printf("원의 넓이는 [%f]입니다.\n", radius * radius * Pi);
+	
+
+	//int square = 0;
+	//printf("정사각형의 한변의 길이를 입력하세요 : ");
+	//std::cin >> square;
+	//printf("정사각형의 넓이는 [%d]입니다.", square * square);
+	//// 오버플로우 발생할 수 있음
+
+
 
 	return 0;
 }
