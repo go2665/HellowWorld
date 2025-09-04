@@ -171,9 +171,30 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
  do-while	최소 한번은 무조건 실행해야 할 때 사용.(while과 거의 같음)
 */
 
+/*
+* continue
+*	- 반복문 안에서 사용
+*	- continue를 만나면 그 이후의 코드는 스킵하고 다음 반복을 진행
+* break
+*	- 반복문이나 switch문에서 반복문을 벗어나거나 case를 종료시킨다.
+*/
+
+/*
+* 랜덤
+*  - 무작위로 숫자를 선택하는 법
+*  - C 스타일
+*		- rand();			함수 활용
+*		- srand(time(0));	시드값 설정
+*  - C++ 스타일
+*		- #include <random>
+*		- c스타일보다 많은 기능을 제공한다.
+*/
+
 #include <iostream>	// 입출력 관련(cout)
 #include <stdio.h>
+#include <time.h>
 #include <cstdio>	// stdio.h에 네임스페이스 추가한 래퍼
+#include <random>
 #include "header.h"
 
 //using namespace std;
@@ -497,25 +518,25 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//	printf("짝수를 입력했습니다.\n");
 	//}
 
-	//헬로 월드 10번찍기(for)
-	for (int i = 0; i < 10; i++)
-	{
-		printf("Hello World For: %d\n", i);
-	}
+	////헬로 월드 10번찍기(for)
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	printf("Hello World For: %d\n", i);
+	//}
 
-	int Count = 1;
-	while ((Count % 3) != 0)	// while()의 조건이 참이면 코드 블럭 실행
-	{
-		printf("Hello World While: %d\n", Count);
-		Count++;
-	}
+	//int Count = 1;
+	//while ((Count % 3) != 0)	// while()의 조건이 참이면 코드 블럭 실행
+	//{
+	//	printf("Hello World While: %d\n", Count);
+	//	Count++;
+	//}
 
-	Count = 1;
-	do
-	{
-		printf("Hello World While: %d\n", Count);
-		Count++;
-	} while ((Count % 3) != 0);	// 일단 한번 실행하고 while()의 조건이 참이면 코드 블럭 실행
+	//Count = 1;
+	//do
+	//{
+	//	printf("Hello World While: %d\n", Count);
+	//	Count++;
+	//} while ((Count % 3) != 0);	// 일단 한번 실행하고 while()의 조건이 참이면 코드 블럭 실행
 
 	// 간단 실습
 	// 1. 0을 입력받을 때까지 입력을 계속 받고 0이 입력되면 입력받은 숫자의 합을 출력하기
