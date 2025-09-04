@@ -132,6 +132,36 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 !	(Not)	! 뒤의 bool이 true면 false, false면 true.
 */
 
+/*
+비트 연산자
+&	(And)	두 비트가 모두 1이면 1, 아니면 0			
+	특정 비트가 세팅이 되어 있는지 확인하는데 사용(플래그 검사)
+	int a = 10;			// 0b1010
+	int b = 9;			// 0b1001
+	int c = a & b;		// 0b1000
+|	(Or)	두 비트가 하나라도 1이면 1, 둘 다 0이면 0
+	특정 비트에 플래그를 세팅하고 싶을 때 사용(플래그 설정)
+	int a = 10;			// 0b1010
+	int b = 9;			// 0b1001
+	int c = a | b;		// 0b1011
+^	(XOR)	두 비트가 서로 다르면 1, 같으면 0
+	특정 비트를 토글하고 싶을 때 사용
+	int a = 10;			// 0b1010
+	int b = 9;			// 0b1001
+	int c = a ^ b;		// 0b0011
+~	(Not)	비트값을 반전 시킨다(0->1, 1->0)
+	int a = 10;			// 0b1010
+	a = ~a;				// 0b0101
+<<	(Left Shift)	비트들을 왼쪽으로 이동
+	한번 움직일 때마다 수가 두배가 된다.
+	int a = 7;			// 0b0111
+	a = a << 1;			// 0b1110
+>>	(Right Shift)	비트들을 오른쪽으로 이동
+	한번 움직일 때마다 수가 절반이 된다.
+	int a = 7;			// 0b0111
+	a = a >> 1;			// 0b0011
+*/
+
 #include <iostream>	// 입출력 관련(cout)
 #include <stdio.h>
 #include <cstdio>	// stdio.h에 네임스페이스 추가한 래퍼
@@ -249,6 +279,8 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//	printf("a가 b보다 작거나 같다.\n");
 	//}
 
+	// (a != b) : a와 b가 다르다.
+
 	//if (b < 60)
 	//{
 	//	//F
@@ -301,17 +333,149 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//}
 	//c = (a > b) ? (a * 2 + b) : (a + b * 2); // 삼항연산자
 	
-	int a = 10;
-	if (a > 5 && !(10 > a))
+	//int a = 10;
+	//if (a > 5 && !(10 > a))
+	//{
+	//	// 성공
+	//}
+	//else
+	//{
+	//	// 실패
+	//}
+
+	////1. 숫자를 입력받아 양수인지 음수인지 0인지 출력하기
+	//int InputNumber = 0;	
+	//printf("숫자를 입력하세요 : ");
+	//std::cin >> InputNumber;
+	//if (InputNumber > 0)
+	//{
+	//	printf("입력한 숫자는 양수입니다.\n");
+	//}
+	//else if(InputNumber < 0)
+	//{
+	//	printf("입력한 숫자는 음수입니다.\n");
+	//}
+	//else
+	//{
+	//	printf("입력한 숫자는 0입니다.\n");
+	//}
+	//// if는 범위가 큰것이 먼저 체크되게 하기
+	//// 변수는 사용하기 직전에 선언하기
+	//
+	////2. 숫자를 입력받아 홀수인지 짝수인지 출력하기
+	//printf("홀짝을 판별하기 위한 숫자를 입력하세요 : ");
+	//std::cin >> InputNumber;
+	//if (InputNumber % 2 == 0)
+	//{
+	//	printf("짝수를 입력했습니다.\n");
+	//}
+	//else
+	//{
+	//	printf("홀수를 입력했습니다.\n");
+	//}
+	//
+	////3. 두 수를 입력 받아 더 큰 수를 출력하기.같을 경우는 같다고 출력.
+	//int Number1 = 0;
+	//int Number2 = 0;
+	//printf("더 큰수를 확인하기 위해 숫자 두개를 입력하세요 : ");
+	//std::cin >> Number1 >> Number2;
+	//if (Number1 > Number2)
+	//{
+	//	printf("첫번째 숫자가 더 큽니다.\n");
+	//}
+	//else if (Number2 > Number1)
+	//{
+	//	printf("두번째 숫자가 더 큽니다.\n");
+	//}
+	//else
+	//{
+	//	printf("두 수는 같은 수입니다.\n");
+	//}
+
+	////4. 나이와 키를 입력 받아, 6세 이상, 120cm 이상일 때
+	////		롤러코스터 탑승 가능, 그 외에는 불가능으로 출력
+	//const unsigned int LimitAge = 5;
+	//const float LimitHeight = 120.0f;
+	//unsigned int Age = 0;
+	//float Height = 0;	// 암시적 변환(대충 변환해주는거, 보통 표현범위가 큰쪽으로 변경됨)
+	//printf("나이를 입력하세요 : ");
+	//std::cin >> Age;
+	//printf("키를 입력하세요 : ");
+	//std::cin >> Height;
+	//if (Age > LimitAge && Height >= LimitHeight)
+	//{
+	//	printf("롤러코스터 탑승 가능!\n");
+	//}
+	//else
+	//{
+	//	printf("롤러코스터 탑승 불가능!\n");
+	//}
+	//
+	////5. 점수를 입력 받아 90점 이상은 A, 80점 이상은 B, 70점 이상은 C, 
+	////		60점 이상은 D, 그 이하는 F라고 출력하기
+	//
+	////6. 세 과목의 점수를 입력받아, 세 과목 평균이 60점 이상이면 
+	////		"합격", 아니면 "불합격"을 출력
+	////		, 단 한과목이라도 40점 미만이면 불합격 출력하기
+	//int Point1 = 0;
+	//int Point2 = 0;
+	//int Point3 = 0;
+	//printf("시험 점수를 3개 입력해 주세요 : ");
+	//std::cin >> Point1 >> Point2 >> Point3;
+	//const int AverageLimit = 60;
+	//const int FailLimit = 40;
+	//float Avergage = (Point1 + Point2 + Point3) / 3.0f;
+	//if ((Avergage >= AverageLimit) &&
+	//	(Point1 >= FailLimit && Point2 >= FailLimit && Point3 >= FailLimit))
+	//{
+	//	printf("합격\n");
+	//}
+	//else
+	//{
+	//	printf("불합격\n");
+	//}
+
+	int flag = 0b1010;	
+	// 0b0001	= 왼쪽 키가 눌려졌다.
+	// 0b0010	= 오른쪽 키가 눌려졌다.
+	// 0b0100	= 위쪽 키가 눌려졌다.
+	// 0b1000	= 아래쪽 키가 눌려졌다.
+
+	if ((flag & 0b0010) != 0b0000)
 	{
-		// 성공
+		// 오른쪽 키가 눌려져 있다.
 	}
 	else
 	{
-		// 실패
+		// 오른쪽 키가 눌려져 있지 않다.
 	}
 
+	//int flag = 0b1010;	
+	flag = flag | 0b0001;	// 결과는 flag = 0b1011;
 
+	//int flag =        0b1010;
+	int result = flag ^ 0b0001; // 결과 = 0b1011;
+	result = 0b1011 ^ 0b0001;	// 결과 = 0b1010;
+
+	flag = 0b1010;
+	int test = 0b0001;
+	test = ~test;	// 왼쪽 키를 제외한 나머지 모두 세팅
+
+	// enum : 상수들에게 사람이 알아보기 좋은 이름을 붙여 놓은 것
+	enum Key
+	{
+		Up		= 1 << 0,	// 0b0001
+		Down	= 1 << 1,	// 0b0010
+		Left	= 1 << 2,	// 0b0100
+		Right	= 1 << 3	// 0b1000
+	};
+
+	if ((flag & Up) != 0)
+	{
+		// Up버튼이 눌러져있다.
+	}
+
+	
 	return 0;
 }
 
