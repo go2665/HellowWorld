@@ -8,3 +8,6 @@ public:
 	int Test;
 	void TestFunc();
 };
+
+void OldTales();
+void Day0905();
