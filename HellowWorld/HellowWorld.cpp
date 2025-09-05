@@ -240,38 +240,7 @@ int global = 10;
 
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
-	int Number = Sum(1, 7);	// Sum함수를 호출했다. 파라메터로 1과 7을 넘겼다. 그리고 8을 돌려받았다.
-
-	Number = Multiply(2, 3);
-	Number = Multiply(7);
-
-	// 
-	//TestRecurcive(5);
-
-	float Number2 = Add(10.5f, 20.4f);
-
-	Add(1, 3);
-
-	int Number3 = Square(2);
-	int Number4 = Number * Number;
-
-	for (int i = 0; i < 10; i++)
-	{
-
-	}
-
-
-	for (int i = 0; i < 5; i++)
-	{
-
-	}
-
-	global = 1000;
-
-	// TestMath에 사칙연산용 템플릿 함수 4개 만들기 
-
-	getchar();
-	getchar();
+	
 
 	return 0;
 }

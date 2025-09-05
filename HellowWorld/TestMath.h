@@ -19,7 +19,7 @@ float Sum(float Test1, float Test2);
 template <typename T>
 T Add(T Number1, T Number2)
 {
-	return Number1 + Number2.
+	return Number1 + Number2;
 }
 
 
