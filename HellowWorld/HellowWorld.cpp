@@ -226,6 +226,12 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *  - 전역 변수 : 프로그램 전체에서 사용할 수 있는 변수
 */
 
+/*
+* 배열(Array)
+* - 같은 데이터타입을 가진 요소들이 연속적으로 저장되어 있는 데이터 구조
+* - 장점 : 빠르게 각 요소에 접근이 가능하다.
+* - 단점 : 크기가 고정이다. 중간에 데이터 삽입/삭제가 어렵다.
+*/
 
 #include <iostream>	// 입출력 관련(cout)
 #include <stdio.h>
@@ -235,13 +241,14 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "header.h"
 #include "TestMath.h"
 #include "Practice_0905.h"
+#include "Day0908.h"
 
 int global = 10;
 //using namespace std;
 
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
-	Practice0905_02_05();
+	Day0908();
 
 	return 0;
 }
