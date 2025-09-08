@@ -234,13 +234,14 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include <random>
 #include "header.h"
 #include "TestMath.h"
+#include "Practice_0905.h"
 
 int global = 10;
 //using namespace std;
 
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
-	
+	Practice0905_02_05();
 
 	return 0;
 }
