@@ -360,7 +360,12 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//int* p = nullptr;
 	//Day0909();
 	//Day0909_ArrayAndPointer();
-	Day0909_DynamicAllocation();
+	//Day0909_DynamicAllocation();
+	//Day0909_Example();
+	//Day0908_Practice1();
+	//Day0908_Practice2();
+	//Day0908_Practice3();
+	Day0908_MazeEscape();
 
 	//Day0908();
 	//Day0908_Ref();
