@@ -95,31 +95,52 @@ void Day0910_String()
 	
 	// 4. 문자열 두개를 비교하는 함수 만들기
 	//		리턴 값이 두 문자열이 같으면 0, 첫번째가 작으면 음수, 두번째가 작으면 양수
-	//		int MyStringCompare(const char* String1, const char* string2);
+	//		int MyStringCompare(const char* String1, const char* String2);
+	printf("\n\n문자열 비교하기\n");
+	int CompareResult = MyStringCompare("abd", "abd");
+	if ( CompareResult < 0)
+	{
+		printf("첫번째 문장이 더 작습니다.");
+	}
+	else if (CompareResult > 0)
+	{
+		printf("두번째 문장이 더 작습니다.");
+	}
+	else
+	{
+		printf("두 문장은 같은 문장입니다.");
+	}
+
 	// 5. 문자열을 입력 받아 정수를 리턴하는 함수 만들기
 	//		int MyAtoI(const char* Source);
+	int IntegerNumber = MyAtoI("567");
+	IntegerNumber = MyAtoI("-888");
+
 	// 6. 문자열을 입력 받아 실수를 리턴하는 함수 만들기
 	//		float MyAtoF(const char* Source);
+	float FloatNumber = MyAtoF("123.45");
+	FloatNumber = MyAtoF("55");
 
-	const int Size = 32;
-	char InputString[Size];
-	printf("\n\n문장을 입력하세요 : ");
-	std::cin.getline(InputString, Size);
-	printf("입력된 문장은 [%s]입니다.\n", InputString);
+	int i = 0;
+	//const int Size = 32;
+	//char InputString[Size];
+	//printf("\n\n문장을 입력하세요 : ");
+	//std::cin.getline(InputString, Size);
+	//printf("입력된 문장은 [%s]입니다.\n", InputString);
 
-	// 간단 실습
-	// ,뒤에 있는 영어 알파벳은 모두 대문자이어야 한다.
-	// 입력문장 예시 : "Hello,World!"
-	// 출력문장 예시 : "Hello,WORLD!"
-	SimpleParser(InputString, ',');
-	printf("파싱된 문장은 [%s]입니다.\n", InputString);
+	//// 간단 실습
+	//// ,뒤에 있는 영어 알파벳은 모두 대문자이어야 한다.
+	//// 입력문장 예시 : "Hello,World!"
+	//// 출력문장 예시 : "Hello,WORLD!"
+	//SimpleParser(InputString, ',');
+	//printf("파싱된 문장은 [%s]입니다.\n", InputString);
 
-	// #include <direct.h> 추가
-	char Working[256];
-	if (_getcwd(Working, 256) != nullptr)
-	{
-		printf("작업 디렉토리 : %s\n", Working);
-	}
+	//// #include <direct.h> 추가
+	//char Working[256];
+	//if (_getcwd(Working, 256) != nullptr)
+	//{
+	//	printf("작업 디렉토리 : %s\n", Working);
+	//}
 
 	// 파일 읽기
 	ReadFile();
@@ -178,6 +199,79 @@ void MyStringCat(char* Source, const char* Destination)
 		Index++;
 	}
 	Source[SourceLast + Index] = '\0';
+}
+
+int MyStringCompare(const char* String1, const char* String2)
+{
+	int Index = 0;
+	while (String1[Index] != '\0' && String2[Index] != '\0')
+	{
+		if (String1[Index] != String2[Index])
+		{
+			break;
+		}
+		Index++;
+	}
+	// 둘 다 \0가 되었다.			-> 둘의 길이가 같고 안의 글자들도 같았다. -> 0
+	// 하나만 \0가 되었다.		-> 둘의 길이가 다르다 -> 서로 다르다.
+	// 중간에 다른 곳이 있었다.	-> 서로 다르다.
+
+	return String1[Index] - String2[Index];
+}
+
+int MyAtoI(const char* Source)
+{
+	int Index = 0;
+	int Sign = 1;
+	if (Source[0] == '-')
+	{
+		Sign = -1;
+		Index++;
+	}
+	
+	int Result = 0;
+	while (Source[Index] != '\0')
+	{
+		//if (Source[Index] >= '0' && Source[Index] <= '9')
+		//{ // 하면 좋다.
+		//}
+		Result = Result * 10 + Source[Index] - '0';
+
+		Index++;
+	}
+	return Sign * Result;
+}
+
+float MyAtoF(const char* Source)
+{
+	float Result = 0.0f;
+	int PointPosition = FindCharIndex(Source, '.');
+	if (PointPosition >= 0)
+	{
+		// 점을 찾았다.
+		char Integral[32];
+		MyStringCopy(Source, Integral);
+		Integral[PointPosition] = '\0';
+		Result = static_cast<float>(MyAtoI(Integral));
+
+		char Fractional[32];
+		float frac = 0.1f;
+		MyStringCopy(Source+PointPosition+1, Fractional);
+		int Index = 0;
+		while (Fractional[Index] != '\0')
+		{
+			Result += (Fractional[Index] - '0') * frac;
+			Index++;
+			frac *= 0.1f;
+		}
+	}
+	else
+	{
+		// 점을 못찾았다.
+		Result = static_cast<float>(MyAtoI(Source));
+	}
+
+	return Result;
 }
 
 void SimpleParser(char* Source, const char Delimiter)
