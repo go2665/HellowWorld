@@ -343,6 +343,11 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *  - char*에는 아스키 코드가 기록된다.
 */
 
+/*
+* 파싱(Parsing)
+* - 문자열을 분석해서 의미있는 정보로 변환하는 과정
+*/
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
