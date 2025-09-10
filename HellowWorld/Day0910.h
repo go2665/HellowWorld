@@ -13,3 +13,6 @@ int FindCharIndex(const char* TargetString, const char TargetCharacter);
 int MyStringLength(const char* Target);
 void MyStringCopy(const char* Source, char* Destination);
 void MyStringCat(char* Source, const char* Destination);
+void SimpleParser(char* Source, const char Delimiter);
+void ReadFile();
+void TestString();

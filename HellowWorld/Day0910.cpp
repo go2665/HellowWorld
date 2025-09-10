@@ -1,6 +1,9 @@
 #include "Day0910.h"
 #include <iostream>
 #include <stdio.h>
+#include <direct.h>
+#include <fstream>
+#include <string>
 
 void Day0910_String()
 {
@@ -102,12 +105,24 @@ void Day0910_String()
 	char InputString[Size];
 	printf("\n\n문장을 입력하세요 : ");
 	std::cin.getline(InputString, Size);
-	printf("입력된 문장은 [%s]입니다.", InputString);
+	printf("입력된 문장은 [%s]입니다.\n", InputString);
 
 	// 간단 실습
 	// ,뒤에 있는 영어 알파벳은 모두 대문자이어야 한다.
 	// 입력문장 예시 : "Hello,World!"
 	// 출력문장 예시 : "Hello,WORLD!"
+	SimpleParser(InputString, ',');
+	printf("파싱된 문장은 [%s]입니다.\n", InputString);
+
+	// #include <direct.h> 추가
+	char Working[256];
+	if (_getcwd(Working, 256) != nullptr)
+	{
+		printf("작업 디렉토리 : %s\n", Working);
+	}
+
+	// 파일 읽기
+	ReadFile();
 	
 }
 
@@ -163,5 +178,84 @@ void MyStringCat(char* Source, const char* Destination)
 		Index++;
 	}
 	Source[SourceLast + Index] = '\0';
+}
+
+void SimpleParser(char* Source, const char Delimiter)
+{
+	int CommaIndex = FindCharIndex(Source, Delimiter);
+	char* AfterComma = Source + CommaIndex + 1;
+	const int ToUpperGap = 'a' - 'A';
+	while ((*AfterComma) != '\0')
+	{
+		if ((*AfterComma) >= 'a' && (*AfterComma) <= 'z')
+		{
+			(*AfterComma) -= ToUpperGap;
+		}
+		AfterComma++;
+	}
+}
+
+void ReadFile()
+{
+	//#include <fstream>	#include <string> 필요
+	const char* FilePath = ".\\Data\\TestData.txt";
+
+	std::ifstream InputFile(FilePath);
+	if (!InputFile.is_open())	// 파일이 열렸는지 확인하는 함수
+	{
+		printf("파일을 열 수 없습니다.\n");
+		printf("[%s] 경로를 확인하세요.\n", FilePath);
+		return;
+	}
+
+	std::string FileContents(
+		(std::istreambuf_iterator<char>(InputFile)),
+		std::istreambuf_iterator<char>());	//InputFile에 있는 글자들을 모두 읽어서 FileContents에 저장하기
+
+	printf("파일 내용은 다음과 같습니다.\n");
+	printf("%s\n", FileContents.c_str());	// FileContents안에 있는 문자열을 const char*로 돌려주는 함수
+}
+
+void TestString()
+{
+	//#include <string>
+	std::string str1 = "Hello";
+	std::string str2("World");	// str1보다 이쪽이 더 바람직하다
+
+	const char* Temp1 = "Hello";
+	char Temp2[32] = { 0 };
+	//Temp2 = Temp1;
+	//char* Temp3 = Temp1;
+
+	std::string str3 = str1;		// 복사
+	size_t Length = str3.length();	// 길이 확인
+	//int Size = Length;	// 크기가 안맞아서 짤릴 수 있다.
+	Length = str3.size();
+
+	std::string str4 = str1 + " " + str2;	// str4 = "Hello World", + 방식은 성능에 문제가 있을 수 있다.
+	str4 += "!";
+
+	if (str1 == str2)
+	{
+
+	}
+	if (str1 != str2)
+	{
+
+	}
+	if (str1 > str2)	// 사전 순서대로 비교
+	{
+
+	}
+
+	size_t Position = str1.find('e');
+	// 발견을 못했으면 std::string::npos 리턴
+	Position = str1.find('e', Position+1);	// 두번째 e를 찾을 때(첫번째 e가 발견되었다는 전제하에)
+
+	str1[1] = 'E';	// 특정 위치의 글자에 접근하기. 인덱스 범위 확인을 안함. 런타임 에러가 뜰 수 있음
+	//str1[10] = 'E';	// 터짐
+	str1.at(1) = 'E';	// 안전하게 접근
+
+	str1.c_str();	// C스타일 문자열 접근하기
 }
 
