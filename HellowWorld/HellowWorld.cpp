@@ -363,6 +363,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0908.h"
 #include "Day0909.h"
 #include "Day0910.h"
+#include "Day0911.h"
 
 int global = 10;
 //using namespace std;
@@ -371,7 +372,9 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	
-	Day0910_String();
+	Day0911();
+
+	//Day0910_String();
 
 	//int* p = nullptr;
 	//Day0909();
