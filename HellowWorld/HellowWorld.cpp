@@ -381,7 +381,7 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//Day0908_Practice1();
 	//Day0908_Practice2();
 	//Day0908_Practice3();
-	//Day0908_MazeEscape();
+	//MazeEscapeRun();
 
 	//Day0908();
 	//Day0908_Ref();

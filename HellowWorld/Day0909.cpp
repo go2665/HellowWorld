@@ -229,7 +229,11 @@ void Day0908_Practice3()
 	printf("입니다.\n");
 }
 
-void Day0908_MazeEscape()
+int MazeWidth = 20;
+int MazeHeight = 10;
+int** Maze = nullptr;
+
+void MazeEscapeRun()
 {
 	/*
 	*	- 2차원 배열을 활용하여 텍스트 기반 미로 탈출 게임을 구현.

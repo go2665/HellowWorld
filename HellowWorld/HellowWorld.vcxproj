@@ -126,12 +126,14 @@
     <ClCompile Include="Day0908.cpp" />
     <ClCompile Include="Day0909.cpp" />
     <ClCompile Include="Day0910.cpp" />
+    <ClCompile Include="Day0911.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="HellowWorld.cpp" />
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="TestMath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Day0911.h" />
     <ClInclude Include="Day0908.h" />
     <ClInclude Include="Day0909.h" />
     <ClInclude Include="Day0910.h" />
