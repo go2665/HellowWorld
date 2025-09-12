@@ -41,6 +41,23 @@ void Day0912_Struct()
 	Enemy NamedGoblin("뽀스 고블린");
 	PrintEnemy(&NamedGoblin);
 
+	Enemy* pModiGoblin = new Enemy("모디 고블린", 5.0f);
+	PrintEnemy(pModiGoblin);
+	delete pModiGoblin;
+	pModiGoblin = nullptr;
+
+	Enemy CopyGoblin(NamedGoblin);	// 복사 생성자
+	PrintEnemy(&CopyGoblin);
+
+}
+
+void Day0912_OperatorOverloading()
+{
+	Enemy Goblin1("고블린1호");
+	Enemy Goblin2("고블린2호");
+
+	Enemy FusionGoblin = Goblin1 + Goblin2;
+	PrintEnemy(&FusionGoblin);
 }
 
 void PrintEnemy(const Enemy* pEnemy)

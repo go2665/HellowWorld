@@ -401,13 +401,15 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *			int i = 10;		// 인티저 객체 하나가 만들어짐
 *			int array[3];	// 인티저 객체 3개가 만들어짐
 *			Enemy* pEnemy = new Enemy();	// Enemy 객체 하나가 만들어짐
-*		- 맴버 변수 초기화에 사용
+*		- 맴버 변수 초기화에 사용(값을 계산하거나 변경해서 넣을 때 좋음)
 *		- 일반 함수와 다른 특징
 *			1. 이름이 구조체 이름과 같다.
 *			2. 리턴 타입이 없다.
 *			3. 객체가 만들어질 때 자동으로 호출됨
 *			4. 생성자가 여러개 있을 수도 있다.
 *			5. 없으면 기본 생성자가 자동으로 만들어진다(무조건 하나는 있다)
+*	- 구조체의 명령어 오버로딩(덮어쓰기)
+*		- 각종 연산자
 */
 
 #define _CRTDBG_MAP_ALLOC
@@ -436,6 +438,7 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	
 	Day0912_Struct();
+	Day0912_OperatorOverloading();
 
 	//Day0911();
 
