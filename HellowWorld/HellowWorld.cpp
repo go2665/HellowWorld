@@ -229,6 +229,9 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 /*
 * 배열(Array)
 * - 같은 데이터타입을 가진 요소들이 연속적으로 저장되어 있는 데이터 구조
+*   int Array[5];	// int 5개짜리 배열
+*   Array[2] = 10;	// 3번째 요소에 접근해서 10을 대입한다.
+* 
 * - 장점 : 빠르게 각 요소에 접근이 가능하다.
 * - 단점 : 크기가 고정이다. 중간에 데이터 삽입/삭제가 어렵다.
 * 
@@ -242,6 +245,21 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 /*
 * 캐스팅(Casting)
 *  - 하나의 데이터 타입을 다른 데이터 타입으로 변경하는 행위
+*	
+	int a = 10;
+	float b = 15.5f;
+
+	// C 캐스팅
+	a = (int)b;	// b를 int형으로 캐스팅해서 a에 대입한다. (C스타일, 명시적 캐스팅)
+	a = b;		// b를 a에 대입한다. 그런데 a와 b는 타입이 다르니까 b를 a로 암시적으로 캐스팅해서 대입한다.(C스타일, 암시적 캐스팅)
+	b = a;		// 암시적 캐스팅은 대체로 표현이 작은쪽에서 큰쪽으로는 문제없는 경우가 많다.
+
+	// C++ 캐스팅
+	// static_cast : C스타일 캐스팅을 안전하게 만든 것. 컴파일 타임에 결정됨
+	// dynamic_cast : 다음에(클래스 이후에)
+	// const_cast : const 속성을 제거하거나 추가하는데 사용. 사용하지 않는 것이 권장.
+	// reinterpret_cast : C스타일 캐스팅에서 위험한 부분. 원래 타입의 구조를 무시하고 새 타입으로 해석하게 한다.
+	a = static_cast<int>(b);	// b를 int형으로 캐스팅해서 a에 대입한다. (C++스타일, 명시적 캐스팅)
 */
 
 /*
@@ -259,6 +277,9 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 /*
 * 참조(Reference)
 *  - 변수의 별명
+*		int Number = 10;
+*		int& Ref = Number;	// Number의 참조를 Ref라고 결정
+*		Ref = 20;			// Number가 20으로 수정된다.
 *  - 참조를 변경할 경우 원본 변수도 함께 수정된다. -> 함수 파라메터로 사용하면 편리하다.
 *  - 참조는 항상 어떤 변수와 연결되어 있어야 한다.
 *  - 함수 파라메터에 참조를 사용할 때
@@ -272,10 +293,10 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 * - 각 데이터타입에 *만 붙이면 포인터 타입
 *	- ex) int* 인티저 포인터, float* 플로트 포인터, char* 캐릭터 포인터
 * - 포인터 연산자
-*	- 주소 연산자(&) 
+*	- 주소 연산자(&) : 변수의 주소를 가져온다.
 *		int i = 10;
 *		int* p = &i;	// i의 주소를 int* p에 대입해라.
-*	- 간접참조 연산자(*)
+*	- 간접참조 연산자(*) : 포인터 변수가 가리키는 주소에 저장되어 있는 실제 값
 *		int i = 20;
 *		int* p = &i;
 *		(*p) = 30;		// i = 30;과 같다.
@@ -348,6 +369,34 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 * - 문자열을 분석해서 의미있는 정보로 변환하는 과정
 */
 
+/*
+* 구조체(Struct)
+*	- 여러 종류의 데이터타입을 하나로 묶을 때 사용.
+*	- 프로그램 코드의 가독성과 유지 보수성을 향상시켜 준다.
+*	struct Enemy
+*   {
+*		std::string Name;
+*		float Health;
+*		float AttackPower;
+*		int DropGold;
+*   }
+*	Enemy goblin;		// 적 하나에 대한 정보 만들기
+*	Enemy goblins[3];	// 적 3마리에 대한 정보 만들기
+* 
+*	- 구조체 동적 할당하는 법
+*	Enemy* pGoblin = new Enemy();	// 새 적을 동적할당 받음
+*	delete pGoblin;					// 동적할당 받은 것을 해제
+*	pGoblin = nullptr;
+* 
+*	- 구조체 데이터 접근법
+*		- 일반적인 경우 점(.) 연산자 사용
+*			goblin.Name = "고블린";
+*			goblin.Health = 20;
+*		- 포인터 변수인 경우 화살표(->) 연산자 사용
+*			pGoblin->AttackPower = 5.0f;
+*			pGoblin->DropGold = 100;
+*/
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -364,6 +413,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0909.h"
 #include "Day0910.h"
 #include "Day0911.h"
+#include "Day0912.h"
 
 int global = 10;
 //using namespace std;
@@ -372,7 +422,9 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	
-	Day0911();
+	Day0912_Struct();
+
+	//Day0911();
 
 	//Day0910_String();
 

@@ -62,17 +62,14 @@ bool ParseMapData(std::string& DataString)
 		//memset(&Maze[y], 0, sizeof(int) * MazeWidth);
 	}
 
-	// Current가 \0이 될 때까지 반복
-	// LinePtr = GetLine(Current);		// 한줄 잘라내고
-	// ParseLineData(Line, MazeWidth, Maze[Index]); // 파싱해서 데이터 넣고
 	int HeightIndex = 0;
-	while ((*Current) != '\0')
+	while ((*Current) != '\0')	// Current가 \0이 될 때까지 반복
 	{
-		LinePtr = GetLine(&Current);
-		ParseLineData(LinePtr, MazeWidth, Maze[HeightIndex]);		
+		LinePtr = GetLine(&Current);	// 한줄 잘라내고
+		ParseLineData(LinePtr, MazeWidth, Maze[HeightIndex]);	// 파싱해서 데이터 넣고	
 		HeightIndex++;
 
-		if (HeightIndex >= MazeHeight)
+		if (HeightIndex >= MazeHeight)	// 크기을 벗어나지 못하게 체크
 			break;
 	}
 
