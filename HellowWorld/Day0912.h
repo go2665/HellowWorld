@@ -77,6 +77,9 @@ struct Enemy
 	// 2. Enemy *연산자 오버로딩하기
 	//		왼쪽은 float타입이다.
 	//		Enemy operator*(float Multiplier) const { return };
+	//		// 실사용 예시
+	//		Enemy Goblin;
+	//		Enemy Goblin2 = Goblin * 2.0f;
 	// 3. Enemy *= 연산자 오버로딩하기
 	//		Enemy& operator*=(float Multiplier) { return };
 };

@@ -429,6 +429,9 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0910.h"
 #include "Day0911.h"
 #include "Day0912.h"
+#include "Day0915.h"
+
+#include "Position.h"
 
 int global = 10;
 //using namespace std;
@@ -436,9 +439,20 @@ int global = 10;
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	printf("\n\n\n\n\n\n\n\n\n");
+	Day0915_WeekPractice();
+
+
+
+	/*Position* pPos = new Position(2, 3);
+	delete pPos;
+	pPos = nullptr;*/
+
+	//Position pos2;
+	Position pos2 = Position();
 	
-	Day0912_Struct();
-	Day0912_OperatorOverloading();
+	//Day0912_Struct();
+	//Day0912_OperatorOverloading();
 
 	//Day0911();
 
