@@ -26,20 +26,20 @@ bool IsLeap(int Year)
 
 int GetTotalDays(int Year, int Month, int Day)
 {
-	int Days = 0;
+	int TotalDays = 0;
 	for (int Y = 1; Y < Year; Y++)
 	{
-		Days += (IsLeap(Y) ? 366 : 365);	// 윤년이면 366일 추가, 아니면 365일 추가
+		TotalDays += (IsLeap(Y) ? 366 : 365);	// 윤년이면 366일 추가, 아니면 365일 추가
 	}
 	for (int M = 1; M < Month; M++)
 	{
-		Days += DaysInMonth[M - 1];
+		TotalDays += DaysInMonth[M - 1];
 		if (M == 2 && IsLeap(Year))
 		{
-			Days += 1;	// 윤년이면 2월일 때 하루 추가
+			TotalDays += 1;	// 윤년이면 2월일 때 하루 추가
 		}
 	}
-	Day += (Day - 1);
+	TotalDays += (Day - 1);
 
-	return Days;
+	return TotalDays;
 }
