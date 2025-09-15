@@ -433,14 +433,22 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 
 #include "Position.h"
 
+
 int global = 10;
 //using namespace std;
 
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	srand(time(0));
+
 	printf("\n\n\n\n\n\n\n\n\n");
-	Day0915_WeekPractice();
+
+	//Day0915_WeekPracticeBlackjackTest();
+	Day0915_WeekPracticeBlackjack();
+
+	//Day0915_WeekPractice();
+	//Day0915_WeekPracticeTest();
 
 
 

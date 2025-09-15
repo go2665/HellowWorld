@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Day0915.h"
 #include "DayOfWeek.h"
+#include "Blackjack.h"
 
 void Day0915_WeekPractice()
 {
@@ -26,4 +27,18 @@ void Day0915_WeekPracticeTest()
 		printf("(%d/%d/%d)는 [%s]입니다.\n", Year, Month, Day, GetDayOfWeek(Year, Month, Day));
 	}
 
+}
+
+void Day0915_WeekPracticeBlackjack()
+{
+	PlayBlackjack();
+}
+
+void Day0915_WeekPracticeBlackjackTest()
+{
+	//'♠', '♡', '◇', '♣'
+	Card Dealer[5] = { {10, 'S'}, {11, 'S'}, {1,'S'}, {5,'S'}, {3,'S'} };
+	PrintDealerHand(Dealer, 5, true);
+	printf("\n");
+	PrintDealerHand(Dealer, 5, false);
 }
