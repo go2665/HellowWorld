@@ -1,6 +1,7 @@
 #include "Day0916.h"
 #include "Car.h"
 #include "Animal.h"
+#include "Tiger.h"
 
 //Day0916::Day0916()
 //{
@@ -40,4 +41,19 @@ void Day0916::TestAnimal()
 	animal.ShowInfo();
 	animal.Sleep();
 	animal.ShowInfo();	
+
+	int Age = animal.GetAge();
+	const std::string& Name = animal.GetName();
 }
+
+void Day0916::TestTiger()
+{
+	Tiger tiger = Tiger("호식이");
+	tiger.Move();
+	tiger.Hunt();
+	tiger.ShowInfo();
+}
+
+// 간단 실습
+// 다른 동물 만들어보기(3종류)
+// 다른 동물 전용 함수 구현하기

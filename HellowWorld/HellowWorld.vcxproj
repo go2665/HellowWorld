@@ -139,6 +139,7 @@
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="TestMath.cpp" />
     <ClCompile Include="Day0915.cpp" />
+    <ClCompile Include="Tiger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="TestMath.h" />
+    <ClInclude Include="Tiger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

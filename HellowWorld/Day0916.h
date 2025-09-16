@@ -7,6 +7,7 @@ public:
 
 	void ClassInstance();
 	void TestAnimal();
+	void TestTiger();
 
 private:
 

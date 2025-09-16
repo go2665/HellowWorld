@@ -457,6 +457,15 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *	- 클래스의 접근제한자 : 설정안하면 기본적으로 private
 */
 
+/*
+* 상속
+*  - 부모 클래스의 맴버를 물려 받는 행위
+*  - 특징
+*	- 코드 재사용성이 증가한다.
+*	- 계층구조로 객체들의 관계를 명확히 할 수 있다.
+*	- 부모 클래스의 포인터나 참조를 통해 자식 클래스를 다룰 수 있다.
+*/
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -492,7 +501,8 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	Day0916 day0916;
 	//day0916.ClassInstance();
-	day0916.TestAnimal();
+	//day0916.TestAnimal();
+	day0916.TestTiger();
 
 	//Day0915_WeekPracticeBlackjackTest();
 	//Day0915_WeekPracticeBlackjack();

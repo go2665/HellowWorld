@@ -12,6 +12,9 @@ public:
 	void ShowInfo();
 
 	// Getter/Setter
+	inline const std::string& GetName() const { return Name; }
+	inline const int GetAge() const { return Age; }
+
 	// Energy는 외부에서는 읽기 전용이다.
 	inline const float GetEnergy() const { return Energy; }	
 		
@@ -22,7 +25,7 @@ public:
 	{
 	}	// 짧은 경우는 함수의 구현이 해더에 있어도 된다(자동 inline처리)
 
-private:
+protected:
 	inline void SetEnergy(float InEnergy) 
 	{ 
 		// Energy의 범위는 0.0f ~ 1.0f이다.
