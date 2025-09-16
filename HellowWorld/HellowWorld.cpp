@@ -465,6 +465,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0911.h"
 #include "Day0912.h"
 #include "Day0915.h"
+#include "Day0916.h"
 
 #include "Position.h"
 
@@ -479,8 +480,12 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	printf("\n\n\n\n\n\n\n\n\n");
 
+	Day0916 day0916;
+	//day0916.ClassInstance();
+	day0916.TestAnimal();
+
 	//Day0915_WeekPracticeBlackjackTest();
-	Day0915_WeekPracticeBlackjack();
+	//Day0915_WeekPracticeBlackjack();
 
 	//Day0915_WeekPractice();
 	//Day0915_WeekPracticeTest();

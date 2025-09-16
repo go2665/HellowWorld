@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include "Car.h"
 
-Car::Car()
+Car::Car(const char* InName)
+	: Name(InName)
 {
-	printf("자동차가 생성되었습니다.");
+	printf("[%s] 자동차가 생성되었습니다.\n", Name.c_str());
 }
 
 Car::~Car()
 {
-	printf("자동차가 삭제되었습니다.");
+	printf("[%s] 자동차가 삭제되었습니다.\n", Name.c_str());
 }
 
 void Car::Accel()	// Car클래스의 Accel 함수

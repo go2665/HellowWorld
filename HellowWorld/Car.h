@@ -1,10 +1,14 @@
 #pragma once
+#include <string>
+
 class Car
 {
+public:
+	std::string Name;
 	float Speed = 0.0f;	// 속도
 	float fuel = 1.0f;	// 연료량
 
-	Car();
+	Car(const char* InName);
 	~Car();
 
 	void Accel();		// 가속 기능
