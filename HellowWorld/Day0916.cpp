@@ -39,6 +39,5 @@ void Day0916::TestAnimal()
 	animal.Move();
 	animal.ShowInfo();
 	animal.Sleep();
-	animal.ShowInfo();
-
+	animal.ShowInfo();	
 }

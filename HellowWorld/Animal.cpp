@@ -9,7 +9,7 @@ void Animal::Move()
 	else
 	{
 		printf("[%s] : 움직입니다.\n", Name.c_str());
-		Energy -= 0.1f;
+		SetEnergy(Energy - 0.1f);
 		printf("[%s] : 에너지가 10% 감소합니다.\n", Name.c_str());
 	}
 }
@@ -23,18 +23,14 @@ void Animal::Eat()
 {
 	printf("[%s] : 먹습니다.\n", Name.c_str());
 	printf("[%s] : 에너지를 30% 회복합니다.\n", Name.c_str());
-	Energy += 0.3f;
-	if (Energy > 1.0f)
-	{
-		Energy = 1.0f;
-	}
+	SetEnergy(Energy + 0.3f);
 }
 
 void Animal::Sleep()
 {
 	printf("[%s] : 잠을 잡니다.\n", Name.c_str());
 	printf("[%s] : 에너지를 100% 회복합니다.\n", Name.c_str());
-	Energy = 1.0f;
+	SetEnergy(1.0f);
 	Age++;
 	printf("[%s] : 나이가 한살 증가합니다. %d살 입니다.\n", Name.c_str(), Age);
 }

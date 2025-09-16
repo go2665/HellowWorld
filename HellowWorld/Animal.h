@@ -4,21 +4,45 @@
 class Animal
 {
 public:
-	std::string Name = "동물";
-	float Energy = 1.0f;	// 0.0f ~ 1.0f : 1.0f일 때 100%;
-	int Age = 0;
-
-	Animal() = default;
-	Animal(std::string InName)
-		: Name(InName)
-	{ }	// 짧은 경우는 함수의 구현이 해더에 있어도 된다(자동 inline처리)
-
 	void Move();
 	void MakeSound();
 	void Eat();
 	void Sleep();
 
 	void ShowInfo();
+
+	// Getter/Setter
+	// Energy는 외부에서는 읽기 전용이다.
+	inline const float GetEnergy() const { return Energy; }	
+		
+public:
+	Animal() = default;
+	Animal(std::string InName)
+		: Name(InName)
+	{
+	}	// 짧은 경우는 함수의 구현이 해더에 있어도 된다(자동 inline처리)
+
+private:
+	inline void SetEnergy(float InEnergy) 
+	{ 
+		// Energy의 범위는 0.0f ~ 1.0f이다.
+		if (InEnergy < 0)
+		{
+			Energy = 0.0f;
+		}
+		else if (InEnergy > 1.0f)
+		{
+			Energy = 1.0f;
+		}
+		else
+		{
+			Energy = InEnergy;
+		}
+	}
+
+	std::string Name = "동물";
+	int Age = 0;
+	float Energy = 1.0f;	// 0.0f ~ 1.0f : 1.0f일 때 100%;
 };
 
 
