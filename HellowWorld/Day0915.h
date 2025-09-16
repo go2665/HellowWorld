@@ -1,4 +1,5 @@
 #pragma once
+#include "Position.h"
 
 void Day0915_WeekPractice();
 void Day0915_WeekPracticeTest();
