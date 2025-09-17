@@ -4,7 +4,7 @@
 class Animal
 {
 public:
-	virtual void Move();	// Move는 가상함수다
+	virtual void Move() = 0;	// Move는 순수가상함수다
 	virtual void MakeSound();	// MakeSound는 가상함수다
 	void Eat();
 	void Sleep();

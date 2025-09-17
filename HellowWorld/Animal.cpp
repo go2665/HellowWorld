@@ -1,18 +1,18 @@
 #include "Animal.h"
 
-void Animal::Move()
-{
-	if (Energy < 0.1f)
-	{
-		printf("[%s] : 힘이 없어서 움직일 수 없습니다.\n", Name.c_str());
-	}
-	else
-	{
-		printf("[%s] : 움직입니다.\n", Name.c_str());
-		SetEnergy(Energy - 0.1f);
-		printf("[%s] : 에너지가 10% 감소합니다.\n", Name.c_str());
-	}
-}
+//void Animal::Move()
+//{
+//	if (Energy < 0.1f)
+//	{
+//		printf("[%s] : 힘이 없어서 움직일 수 없습니다.\n", Name.c_str());
+//	}
+//	else
+//	{
+//		printf("[%s] : 움직입니다.\n", Name.c_str());
+//		SetEnergy(Energy - 0.1f);
+//		printf("[%s] : 에너지가 10% 감소합니다.\n", Name.c_str());
+//	}
+//}
 
 void Animal::MakeSound()
 {

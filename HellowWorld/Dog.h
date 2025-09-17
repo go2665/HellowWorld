@@ -3,6 +3,7 @@
 class Dog : public Animal
 {
 public:
+	virtual void Move() override;
 	virtual void MakeSound() override;
 
 	Dog() = default;

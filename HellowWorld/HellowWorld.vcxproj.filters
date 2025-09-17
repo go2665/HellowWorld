@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="헬로월드">
-      <UniqueIdentifier>{0ab5168e-6f8f-46ff-bb06-920d905879ce}</UniqueIdentifier>
-    </Filter>
     <Filter Include="동물시리즈">
       <UniqueIdentifier>{2cf06aae-e343-48b6-8a13-093ca5385b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="모양">
+      <UniqueIdentifier>{0ab5168e-6f8f-46ff-bb06-920d905879ce}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +81,9 @@
     <ClCompile Include="Dog.cpp">
       <Filter>동물시리즈</Filter>
     </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>모양</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -141,6 +144,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Dog.h">
+      <Filter>동물시리즈</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>모양</Filter>
+    </ClInclude>
+    <ClInclude Include="IFlyable.h">
+      <Filter>동물시리즈</Filter>
+    </ClInclude>
+    <ClInclude Include="ICanBattle.h">
       <Filter>동물시리즈</Filter>
     </ClInclude>
   </ItemGroup>

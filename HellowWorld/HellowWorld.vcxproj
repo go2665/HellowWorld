@@ -140,6 +140,7 @@
     <ClCompile Include="HellowWorld.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Practice_0905.cpp" />
+    <ClCompile Include="Shape.cpp" />
     <ClCompile Include="TestMath.cpp" />
     <ClCompile Include="Day0915.cpp" />
     <ClCompile Include="Tiger.cpp" />
@@ -160,8 +161,11 @@
     <ClInclude Include="Dog.h" />
     <ClInclude Include="Hawk.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="ICanBattle.h" />
+    <ClInclude Include="IFlyable.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="TestMath.h" />
     <ClInclude Include="TestSample.h" />
     <ClInclude Include="Tiger.h" />

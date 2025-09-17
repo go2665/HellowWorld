@@ -484,6 +484,46 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 	- 속도가 늦기 때문에 가능한 적게 쓰는게 좋다.
 */
 
+/*
+* 순수 가상 함수
+*	- 가상 함수인데 구현을 "= 0"으로 표시해 놓은 것 
+*	- 선언만 있고 구현이 없다 
+*	- 순수 가상함수를 가진 클래스를 상속 받은 클래스는 반드시 순수 가상함수를 override해서 구현해야한다.
+*/
+
+/*
+* 추상 클래스
+*	- 하나 이상의 순수 가상 함수를 포함하는 클래스
+*	- 다른 클래스가 상속받을 기본 틀을 제공하기 위해 사용
+*	- 인스턴스화 할 수 없다. -> 상속 받은 클래스에서 순수 가상함수를 override한 후에 인스턴스화 가능
+*/
+
+/*
+* 인터페이스
+*	- 이 클래스는 "이런일을 할 수 있다"라고 알려주는 것 -> "이런일"을 수행하는 함수가 존재해야만 한다.
+*	- (클래스가 반드시 구현해야 할 맴버 함수들의 명세를 정의하기 위해 사용)
+*	- 주의 사항
+*		- 이름은 무조건 대문자 I로 시작하는 것이 관례(필수적인 관례)
+*		- 맴버는 순수 가상 함수만 있다.(소멸자 제외)
+*/
+
+/*
+* enum class
+*	- enum : 상수의 집합
+*	- enum class : 더 안전해진 enum.(안전해진만큼 불편해진 부분도 있음)
+*		- 코드의 명확성과 안정성을 향상시킨다.
+*		- enum의 데이터 크기 설정도 가능하다.
+* 
+*	enum AnimalType
+*	{
+*		Dog, Cat, Tiger
+*	}
+* 
+*	enum class AnimalType : uint8_t
+*	{
+*		Dog, Cat, Tiger
+*	}
+*/
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -521,7 +561,8 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	Day0917 day0917;
 	//day0917.TestPolymorphism();
 	//day0917.TestVirtualFunction();
-	day0917.TestPractice1();
+	//day0917.TestPractice1();
+	day0917.TestAbstractClass();
 
 	//Day0916 day0916;
 	//day0916.ClassInstance();

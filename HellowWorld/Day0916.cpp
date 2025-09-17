@@ -26,24 +26,24 @@ void Day0916::ClassInstance()
 
 void Day0916::TestAnimal()
 {
-	Animal animal;
-	animal.ShowInfo();
-	animal.MakeSound();
-	animal.Move();
-	animal.Move();
-	animal.Move();
-	animal.ShowInfo();
-	animal.Eat();
-	animal.ShowInfo();
-	animal.Move();
-	animal.Move();
-	animal.Move();
-	animal.ShowInfo();
-	animal.Sleep();
-	animal.ShowInfo();	
+	//Animal animal;
+	//animal.ShowInfo();
+	//animal.MakeSound();
+	//animal.Move();
+	//animal.Move();
+	//animal.Move();
+	//animal.ShowInfo();
+	//animal.Eat();
+	//animal.ShowInfo();
+	//animal.Move();
+	//animal.Move();
+	//animal.Move();
+	//animal.ShowInfo();
+	//animal.Sleep();
+	//animal.ShowInfo();	
 
-	int Age = animal.GetAge();
-	const std::string& Name = animal.GetName();
+	//int Age = animal.GetAge();
+	//const std::string& Name = animal.GetName();
 }
 
 void Day0916::TestTiger()

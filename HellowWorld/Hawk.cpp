@@ -20,3 +20,8 @@ void Hawk::MakeSound()
 	Animal::MakeSound();
 	printf("빼액!\n");
 }
+
+void Hawk::Fly()
+{
+	printf("[%s]가 난다요.", Name.c_str());
+}
