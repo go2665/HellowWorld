@@ -6,3 +6,15 @@ void Tiger::Hunt()
 	SetEnergy(Energy - 0.5f);
 	printf("[%s] : 에너지가 50% 감소합니다.\n", Name.c_str());
 }
+
+void Tiger::Move()
+{
+	printf("[%s]가 포효합니다.\n", Name.c_str());
+	Animal::Move();
+}
+
+void Tiger::MakeSound()
+{
+	Animal::MakeSound();
+	printf("어흥!\n");
+}

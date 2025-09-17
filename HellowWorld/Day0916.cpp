@@ -52,6 +52,10 @@ void Day0916::TestTiger()
 	tiger.Move();
 	tiger.Hunt();
 	tiger.ShowInfo();
+
+	Animal* pAnimal = new Tiger("호돌이");
+	delete pAnimal;
+	pAnimal = nullptr;
 }
 
 // 간단 실습

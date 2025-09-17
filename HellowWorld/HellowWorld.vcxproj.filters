@@ -72,6 +72,15 @@
     <ClCompile Include="Tiger.cpp">
       <Filter>동물시리즈</Filter>
     </ClCompile>
+    <ClCompile Include="Day0917.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Hawk.cpp">
+      <Filter>동물시리즈</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>동물시리즈</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -120,6 +129,18 @@
       <Filter>동물시리즈</Filter>
     </ClInclude>
     <ClInclude Include="Tiger.h">
+      <Filter>동물시리즈</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0917.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Hawk.h">
+      <Filter>동물시리즈</Filter>
+    </ClInclude>
+    <ClInclude Include="TestSample.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
       <Filter>동물시리즈</Filter>
     </ClInclude>
   </ItemGroup>

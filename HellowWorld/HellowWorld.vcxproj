@@ -132,7 +132,10 @@
     <ClCompile Include="Day0911.cpp" />
     <ClCompile Include="Day0912.cpp" />
     <ClCompile Include="Day0916.cpp" />
+    <ClCompile Include="Day0917.cpp" />
     <ClCompile Include="DayOfWeek.cpp" />
+    <ClCompile Include="Dog.cpp" />
+    <ClCompile Include="Hawk.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="HellowWorld.cpp" />
     <ClCompile Include="Position.cpp" />
@@ -152,11 +155,15 @@
     <ClInclude Include="Day0912.h" />
     <ClInclude Include="Day0915.h" />
     <ClInclude Include="Day0916.h" />
+    <ClInclude Include="Day0917.h" />
     <ClInclude Include="DayOfWeek.h" />
+    <ClInclude Include="Dog.h" />
+    <ClInclude Include="Hawk.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="TestMath.h" />
+    <ClInclude Include="TestSample.h" />
     <ClInclude Include="Tiger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
