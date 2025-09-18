@@ -47,7 +47,7 @@ inline PlayerState operator&(PlayerState Left, PlayerState Right)
 
 inline PlayerState operator~(PlayerState Value)
 {
-	return static_cast<PlayerState>(static_cast<StateType>(Value));
+	return static_cast<PlayerState>(~static_cast<StateType>(Value));
 }
 
 inline PlayerState& operator|=(PlayerState& Left, PlayerState Right)

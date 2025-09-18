@@ -524,6 +524,64 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *		Dog, Cat, Tiger
 *	}
 */
+
+/*
+* 자료구조(Data Structure)
+*	- 데이터를 효율적으로 관리하는 방법(특정한 구조와 규칙이 있음)
+*	- 목적
+*		- 더 빠르게 데이터를 처리한다.(CPU자원 아끼기)
+*		- 더 효율적이게 데이터를 관리(메뫼 자원 아끼기)
+*		- 문제 해결을 위한 구조 제공
+*	- 종류
+*		- 배열
+*		- 리스트
+*		- 스택
+*		- 큐
+*		- 트리
+*		- 그래프
+*/
+
+/*
+* 배열
+*	- 동일한 타임의 데이터를 연속된 메모리 공간에 저장
+*	- 인덱스를 통해 데이터에 직접 접근
+*	- 장점
+*		- 접근 속도가 매우 빠름. ( O(1) <- 시간복잡도. 빅오 표기법 )
+*		- 구조가 단순하여 사용하기 쉬움
+*		- 별도의 오버해드가 없다.
+*	- 단점
+*		- 데이터 추가/삭제가 매우 느림(O(n))
+*		- 생성시 크기가 고정되어 유연성이 떨어짐
+*/
+
+/*
+* 빅오 표기법
+*	- 알고리즘의 시간복잡도를 나타내는 방법
+*	- O(1) : 알고리즘을 돌릴 때 데이터의 개수와 상관 없이 항상 일정한 속도를 유지한다.
+*	- O(n) : 알고리즘을 돌릴 때 데이터의 개수에 비례해서 속도가 느려진다.
+*	- O(logN) : 알고리즘을 돌릴 때 속도가 로그 그래프에 비례한다.(데이터 수가 많아질 수록 유리하다)
+*/
+
+/*
+* 리스트(Linked List)
+*	- 링크드 리스트라고도 함
+*	- 데이터가 포인터로 연결된 형태
+*		- 논리적으로 하나의 줄을 만든다.(선형 자료구조)
+*	- 노드
+*		- 자료구조에서 데이터 하나를 가리키는 구조체
+*		- 리스트의 노드는 데이터와 다음 노드를 가리키는 주소로 이루어져 있음.
+*	- 주요 구성 요소
+*		- Head : 리스트의 첫번째 노드
+*		- Tail : 리스트의 마지막 노드
+*	- 장점
+*		- 데이터의 추가/삭제가 쉽다
+*		- 크기가 동적으로 변할 수 있어 유연하다.
+*	- 단점
+*		- 탐색 속도가 매우 느리다(처음부터 순서대로 찾아야 한다.)
+*		- 다음 노드를 저장하기 위한 포인터를 위해 추가 메모리 공간이 필요하다.(오버해드 발생)
+*/
+
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -544,6 +602,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0915.h"
 #include "Day0916.h"
 #include "Day0917.h"
+#include "Day0918.h"
 
 #include "Position.h"
 
@@ -557,12 +616,15 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	srand(time(0));
 
 	printf("\n\n\n\n\n\n\n\n\n");
+	
+	Day0918 day0918;
+	day0918.TestSingleLinkedList();
 
-	Day0917 day0917;
+	//Day0917 day0917;
 	//day0917.TestPolymorphism();
 	//day0917.TestVirtualFunction();
 	//day0917.TestPractice1();
-	day0917.TestAbstractClass();
+	//day0917.TestAbstractClass();
 
 	//Day0916 day0916;
 	//day0916.ClassInstance();
@@ -582,7 +644,7 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	pPos = nullptr;*/
 
 	//Position pos2;
-	Position pos2 = Position();
+	//Position pos2 = Position();
 	
 	//Day0912_Struct();
 	//Day0912_OperatorOverloading();
