@@ -17,7 +17,7 @@ int FixedStack::Pop()
 	if (IsEmpty())
 	{
 		printf("오류: 스택이 비어있습니다! (Stack Underflow)\n");
-		return;
+		return Empty; // 실제 값이 아니라 오류값으로 우리가 설정한 값을 리턴하는 것
 	}
 	int Result = Data[TopIndex];
 	TopIndex--;
@@ -26,7 +26,7 @@ int FixedStack::Pop()
 
 int FixedStack::Top() const
 {
-	if (IsEmpty)
+	if (IsEmpty())
 	{
 		printf("오류: 스택이 비어있습니다! 값을 반환할 수 없습니다.\n");
 		return Empty;	// 실제 값이 아니라 오류값으로 우리가 설정한 값을 리턴하는 것
