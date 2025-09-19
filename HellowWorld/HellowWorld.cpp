@@ -581,6 +581,27 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 *		- 다음 노드를 저장하기 위한 포인터를 위해 추가 메모리 공간이 필요하다.(오버해드 발생)
 */
 
+/*
+* 스택(Stack)
+*  - 특징
+*	- 후입선출(Last In First Out, LIFO) 구조
+*  - 구조
+*	- 속성(맴버 변수)
+		- Top : 데이터 입출력 위치
+*	- 기능(맴버 함수)
+*		- Push : Top에 데이터 추가
+*		- Pop : Top에서 데이터 가져오기
+*  - 장점
+*	- 구조가 단순하다 -> 구현이 쉽다.
+*	- 데이터 저장 및 읽기 속도가 빠름
+*	- 적절한 사용 예
+*		- UI 창 닫는 순서, 실행 취소(Undo), 함수 콜 스택 등등
+*  - 단점
+*	- 맨 위의 데이터 외에는 접근하거나 탐색할 수 없음
+*	- 기능이 단순하여 활용도가 제한적
+*		
+*/
+
 
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
@@ -603,6 +624,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0916.h"
 #include "Day0917.h"
 #include "Day0918.h"
+#include "Day0919.h"
 
 #include "Position.h"
 
@@ -616,9 +638,12 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	srand(time(0));
 
 	printf("\n\n\n\n\n\n\n\n\n");
-	
-	Day0918 day0918;
-	day0918.TestSingleLinkedList();
+
+	Day0919 day0919;
+	day0919.TestStack();
+
+	//Day0918 day0918;
+	//day0918.TestSingleLinkedList();
 
 	//Day0917 day0917;
 	//day0917.TestPolymorphism();
