@@ -18,3 +18,12 @@ void Day0919::TestStack()
 	// 5. 스택 언더플로우 테스트
 	//	스택 다 비우고 한번 더 빼보기
 }
+
+void Day0919::TestQueue()
+{
+	// 메뉴 만들기
+	//	1. Enqueue
+	//	2. Dequeue
+	//	3. Peek	
+	//	4. TestPrintQueue
+}
