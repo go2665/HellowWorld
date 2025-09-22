@@ -42,6 +42,6 @@ private:
 	int TurnRemains = MaxTurns;
 
 	// 테스트 모드 여부(히든맵을 보여준다)
-	bool IsTestMode = true;
+	bool IsTestMode = false;
 };
 

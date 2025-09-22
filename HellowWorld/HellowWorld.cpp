@@ -663,7 +663,7 @@ int global = 10;
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	srand(time(0));
+	//srand(time(0));
 
 	printf("\n\n\n\n\n\n\n\n\n");
 

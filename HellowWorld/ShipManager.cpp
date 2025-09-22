@@ -20,7 +20,7 @@ void ShipManager::PlaceAllShips(HiddenMap& InMap)
             {
                 // 배치할 수 있으면 배치 처리
                 Position PlacePosition[Ship::MaxShipSize];
-                for (int j = 0; j < ShipSizes[j]; j++)
+                for (int j = 0; j < ShipSizes[i]; j++)
                 {
                     int NewX = x + (IsHorizontal ? j : 0);
                     int NewY = y + (IsHorizontal ? 0 : j);
