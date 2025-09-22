@@ -96,10 +96,13 @@
     <ClCompile Include="Day0919.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CircularQueue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Car.cpp">
+      <Filter>자료구조</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularQueue2.cpp">
+      <Filter>자료구조</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularQueue.cpp">
       <Filter>자료구조</Filter>
     </ClCompile>
   </ItemGroup>
@@ -186,6 +189,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CircularQueue.h">
+      <Filter>자료구조</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularQueue2.h">
       <Filter>자료구조</Filter>
     </ClInclude>
   </ItemGroup>

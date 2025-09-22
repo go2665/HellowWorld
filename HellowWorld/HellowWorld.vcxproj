@@ -127,6 +127,7 @@
     <ClCompile Include="Blackjack.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CircularQueue.cpp" />
+    <ClCompile Include="CircularQueue2.cpp" />
     <ClCompile Include="Day0908.cpp" />
     <ClCompile Include="Day0909.cpp" />
     <ClCompile Include="Day0910.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Blackjack.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CircularQueue.h" />
+    <ClInclude Include="CircularQueue2.h" />
     <ClInclude Include="Day0911.h" />
     <ClInclude Include="Day0908.h" />
     <ClInclude Include="Day0909.h" />

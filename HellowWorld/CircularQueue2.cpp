@@ -1,6 +1,6 @@
-#include "CircularQueue.h"
+#include "CircularQueue2.h"
 
-void CircularQueue::Enqueue(int InValue)
+void CircularQueue2::Enqueue(int InValue)
 {
 	if (IsFull())
 	{
@@ -19,7 +19,7 @@ void CircularQueue::Enqueue(int InValue)
 	TestPrintQueue();
 }
 
-int CircularQueue::Dequeue()
+int CircularQueue2::Dequeue()
 {
 	if (IsEmpty())
 	{
@@ -44,7 +44,7 @@ int CircularQueue::Dequeue()
 	return Result;
 }
 
-void CircularQueue::TestPrintQueue()
+void CircularQueue2::TestPrintQueue()
 {
 	// Front부터 Rear까지 출력하기
 	printf("Queue : ");
