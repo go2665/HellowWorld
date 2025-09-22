@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="BattleShip.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="Blackjack.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CircularQueue.cpp" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="Animal.h" />
     <ClInclude Include="BattleShip.h" />
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="Blackjack.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CircularQueue.h" />
