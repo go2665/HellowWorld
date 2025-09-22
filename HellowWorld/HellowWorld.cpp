@@ -691,7 +691,8 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	printf("\n\n\n\n\n\n\n\n\n");
 
 	Day0922 day0922;
-	day0922.TestBattleShip();
+	//day0922.TestBattleShip();
+	day0922.TestTree();
 
 	//Day0919 day0919;
 	//day0919.TestStack();
