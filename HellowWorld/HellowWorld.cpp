@@ -652,6 +652,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0917.h"
 #include "Day0918.h"
 #include "Day0919.h"
+#include "Day0922.h"
 
 #include "Position.h"
 
@@ -666,11 +667,14 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	printf("\n\n\n\n\n\n\n\n\n");
 
-	Day0919 day0919;
+	Day0922 day0922;
+	day0922.TestBattleShip();
+
+	//Day0919 day0919;
 	//day0919.TestStack();
 	//day0919.TestQueue();
 	//day0919.TestQueue2();
-	day0919.TestSwallowCopy();
+	//day0919.TestSwallowCopy();
 
 	//Day0918 day0918;
 	//day0918.TestSingleLinkedList();

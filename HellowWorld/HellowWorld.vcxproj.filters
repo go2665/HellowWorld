@@ -22,6 +22,12 @@
     <Filter Include="자료구조">
       <UniqueIdentifier>{2ac5ca2d-0794-41ad-85ce-ec0cfc17ebce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="일자별 헬퍼함수">
+      <UniqueIdentifier>{7f58d27b-2cef-4128-a21d-1f85fa8ffb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BattleShip">
+      <UniqueIdentifier>{71b24325-3b79-4865-9573-b1cab7179d7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HellowWorld.cpp">
@@ -33,27 +39,6 @@
     <ClCompile Include="TestMath.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Practice_0905.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0908.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0909.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0910.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0911.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0912.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0915.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="DayOfWeek.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -63,17 +48,11 @@
     <ClCompile Include="Position.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Day0916.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Animal.cpp">
       <Filter>동물시리즈</Filter>
     </ClCompile>
     <ClCompile Include="Tiger.cpp">
       <Filter>동물시리즈</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0917.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Hawk.cpp">
       <Filter>동물시리즈</Filter>
@@ -84,17 +63,11 @@
     <ClCompile Include="Shape.cpp">
       <Filter>모양</Filter>
     </ClCompile>
-    <ClCompile Include="Day0918.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="LinkedList.cpp">
       <Filter>자료구조</Filter>
     </ClCompile>
     <ClCompile Include="FixedStack.cpp">
       <Filter>자료구조</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0919.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Car.cpp">
       <Filter>자료구조</Filter>
@@ -105,6 +78,57 @@
     <ClCompile Include="CircularQueue.cpp">
       <Filter>자료구조</Filter>
     </ClCompile>
+    <ClCompile Include="Day0908.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0909.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0910.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0911.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0912.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0915.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0916.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0917.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0918.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0919.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice_0905.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0922.cpp">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenMap.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMap.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="ShipManager.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleShip.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -113,37 +137,13 @@
     <ClInclude Include="TestMath.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Practice_0905.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0908.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0909.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0910.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0911.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0912.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Position.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0915.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="DayOfWeek.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Blackjack.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0916.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Car.h">
@@ -154,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="Tiger.h">
       <Filter>동물시리즈</Filter>
-    </ClInclude>
-    <ClInclude Include="Day0917.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Hawk.h">
       <Filter>동물시리즈</Filter>
@@ -176,23 +173,71 @@
     <ClInclude Include="ICanBattle.h">
       <Filter>동물시리즈</Filter>
     </ClInclude>
-    <ClInclude Include="Day0918.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="LinkedList.h">
       <Filter>자료구조</Filter>
     </ClInclude>
     <ClInclude Include="FixedStack.h">
       <Filter>자료구조</Filter>
     </ClInclude>
-    <ClInclude Include="Day0919.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CircularQueue.h">
       <Filter>자료구조</Filter>
     </ClInclude>
     <ClInclude Include="CircularQueue2.h">
       <Filter>자료구조</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0908.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0909.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0910.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0911.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0912.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0915.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0916.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0917.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0918.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0919.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Practice_0905.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0922.h">
+      <Filter>일자별 헬퍼함수</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenMap.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMap.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="ShipManager.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleShip.h">
+      <Filter>BattleShip</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

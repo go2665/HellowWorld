@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="BattleShip.cpp" />
     <ClCompile Include="Blackjack.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CircularQueue.cpp" />
@@ -137,22 +138,28 @@
     <ClCompile Include="Day0917.cpp" />
     <ClCompile Include="Day0918.cpp" />
     <ClCompile Include="Day0919.cpp" />
+    <ClCompile Include="Day0922.cpp" />
     <ClCompile Include="DayOfWeek.cpp" />
     <ClCompile Include="Dog.cpp" />
     <ClCompile Include="FixedStack.cpp" />
     <ClCompile Include="Hawk.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="HellowWorld.cpp" />
+    <ClCompile Include="HiddenMap.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="PlayerMap.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="ShipManager.cpp" />
     <ClCompile Include="TestMath.cpp" />
     <ClCompile Include="Day0915.cpp" />
     <ClCompile Include="Tiger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="BattleShip.h" />
     <ClInclude Include="Blackjack.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CircularQueue.h" />
@@ -167,17 +174,23 @@
     <ClInclude Include="Day0917.h" />
     <ClInclude Include="Day0918.h" />
     <ClInclude Include="Day0919.h" />
+    <ClInclude Include="Day0922.h" />
     <ClInclude Include="DayOfWeek.h" />
     <ClInclude Include="Dog.h" />
     <ClInclude Include="FixedStack.h" />
     <ClInclude Include="Hawk.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="HiddenMap.h" />
     <ClInclude Include="ICanBattle.h" />
     <ClInclude Include="IFlyable.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="PlayerMap.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="Ship.h" />
+    <ClInclude Include="ShipManager.h" />
     <ClInclude Include="TestMath.h" />
     <ClInclude Include="TestSample.h" />
     <ClInclude Include="Tiger.h" />
