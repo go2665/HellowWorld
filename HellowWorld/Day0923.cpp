@@ -3,6 +3,8 @@
 #include "Calcurator.h"
 #include <cstdio>
 #include <vector>
+#include <limits>
+#include <algorithm>
 
 void Day0923::TestTemplateClass()
 {
@@ -136,11 +138,142 @@ void Day0923::TestVectorPractice()
 	/*
 		1. 정수 입력받고 출력하기
 		2. 최대, 최소 구하기
-		3. 정렬하기 (std::sort)
+		3. 정렬하기 (std::sort, #include <algorithm> 필수)
 		4. 특정 값 찾기 (std::find없이)
 		5. 중복 제거하기
 		6. 벡터 두개 합치기
 		7. 문자열 뒤집어서 출력하기
 		8. 모든 요소 더하기
 	*/
+
+	// 1. 정수 입력받고 출력하기(-1을 입력받을 때까지 반복입력 받기)
+	//constexpr int ExitNumber = -1;
+	//std::vector<int> Numbers;
+	//Numbers.reserve(10);
+	//int InputNumber = 0;
+	//while ( InputNumber != ExitNumber)
+	//{
+	//	printf("1. 숫자를 입력하세요(-1이면 종료) : ");
+	//	std::cin >> InputNumber;
+	//	if (InputNumber != ExitNumber)
+	//	{
+	//		Numbers.push_back(InputNumber);
+	//	}
+	//} 
+	//printf("입력 받은 숫자 : ");
+	//for (int Number : Numbers)
+	//{
+	//	printf("%d ", Number);
+	//}
+	//printf("\n\n");
+
+	//// 2. 최대, 최소 구하기
+	//std::vector<int> Numbers2 = { 10, 20, 30, 40, 50 };
+	//
+	//int Min = INT_MAX;
+	//int Max = INT_MIN;
+	//for (int i = 0; i < Numbers2.size(); i++)
+	//{
+	//	if (Min > Numbers2[i])
+	//	{
+	//		Min = Numbers2[i];
+	//	}
+	//	if (Max < Numbers2[i])
+	//	{
+	//		Max = Numbers2[i];
+	//	}
+	//}
+	//printf("Min = %d, Max = %d\n", Min, Max);
+
+	//auto MinMax = std::minmax_element(Numbers2.begin(), Numbers2.end());
+	////std::pair<std::vector<int>::iterator, std::vector<int>::iterator> MinMax = std::minmax_element(Numbers2.begin(), Numbers2.end());
+	//Min = *(MinMax.first);
+	//Max = *(MinMax.second);
+	//printf("Min = %d, Max = %d\n", Min, Max);
+
+	//// 3. 정렬하기 (std::sort, #include <algorithm> 필수)
+	//std::vector<int> Numbers3 = { 5,7,3,2,4 };
+	//std::sort(Numbers3.begin(), Numbers3.end()); // 오름차순 정렬
+	//printf("오름차순 정렬 : ");
+	//for (int n : Numbers3)
+	//{
+	//	printf("%d ", n);
+	//}
+	//printf("\n\n");
+
+	////4. 특정 값 찾기 (std::find없이)
+	//std::vector<int> Numbers4 = { 10, 20, 30, 40 ,50 };
+	//int FindNumber = 300;
+	//auto Iter = Numbers4.begin();
+	//while (Iter != Numbers4.end())
+	//{
+	//	if (FindNumber == *Iter)
+	//	{
+	//		break;
+	//	}
+	//	Iter++;
+	//}
+	//if (Iter != Numbers4.end())
+	//{
+	//	// 찾았다.
+	//	printf("%d는 벡터 내부에 있습니다.\n", FindNumber);
+	//}
+	//else
+	//{
+	//	// 못찾았다.
+	//	printf("%d는 벡터 내부에 없습니다.\n", FindNumber);
+	//}
+
+	//// 5. 중복 제거하기
+	//std::vector<int> Numbers5 = { 10, 20, 30, 30, 40, 50, 30, 40 };
+	//std::vector<int> Result5;
+	//Result5.reserve(Numbers5.size());
+	//for (int n : Numbers5)
+	//{
+	//	auto iter = std::find(Result5.begin(), Result5.end(), n);
+	//	if (iter == Result5.end())
+	//	{
+	//		Result5.push_back(n);
+	//	}
+	//}
+	////Numbers5 = Result5;
+	//printf("중복제거 결과 : ");
+	//for (int n : Result5)
+	//{
+	//	printf("%d ", n);
+	//}
+	//printf("\n\n");
+	//std::sort(Numbers5.begin(), Numbers5.end());	// unique를 쓰기위해서는 정렬되어 있어야 한다.
+	//auto last = std::unique(Numbers5.begin(), Numbers5.end());	// 중복되는 값들은 뒤로 보내고 중복되기 전 마지막을 리턴
+	//Numbers5.erase(last, Numbers5.end());	// 중복되던 부분들을 실제로 삭제
+	//printf("중복제거 결과 : ");
+	//for (int n : Numbers5)
+	//{
+	//	printf("%d ", n);
+	//}
+	//printf("\n\n");
+
+	//// 6. 벡터 두개 합치기
+	//std::vector<int> Numbers6_1 = { 10, 20, 30 };
+	//std::vector<int> Numbers6_2 = { 100, 200, 300 };
+	//std::vector<int> Result6(Numbers6_1);
+	//for (int n : Numbers6_2)
+	//{
+	//	Result6.push_back(n);
+	//}
+
+	// 7. 문자열 뒤집어서 출력하기
+	printf("문자열을 입력하세요 : ");
+	std::string InputWord;
+	std::cin >> InputWord;
+	std::vector<char> chars(InputWord.begin(), InputWord.end());
+	printf("뒤집힌 결과 : ");
+	for (auto rIter = chars.rbegin(); rIter != chars.rend(); rIter++)
+	{
+		printf("%c", *rIter);
+	}
+	printf("\n\n");
+
+	std::reverse(chars.begin(), chars.end());
+	int i = 0;
 }
