@@ -132,6 +132,9 @@
     <ClCompile Include="BinarySearchTree.cpp">
       <Filter>자료구조</Filter>
     </ClCompile>
+    <ClCompile Include="Day0923.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -244,6 +247,12 @@
     </ClInclude>
     <ClInclude Include="BinarySearchTree.h">
       <Filter>자료구조</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0923.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
