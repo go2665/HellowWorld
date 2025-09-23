@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <type_traits>
+#include <limits>
 
 template <typename T>
 struct Coordinate
@@ -34,22 +35,63 @@ struct Coordinate
 		}
 	}
 
-	//Coordinate& operator+=(const Coordinate& other)
-	//{
-	//	x += other.x;
-	//	y += other.y;
-	//	return *this;
-	//}
-	//Coordinate& operator-=(const Coordinate& other)
-	//{
-	//	x -= other.x;
-	//	y -= other.y;
-	//	return *this;
-	//}
+	Coordinate& operator+=(const Coordinate& other)
+	{
+		x += other.x;
+		y += other.y;
+		return *this;
+	}
+	Coordinate& operator-=(const Coordinate& other)
+	{
+		x -= other.x;
+		y -= other.y;
+		return *this;
+	}
 };
 
-//// 이항연산자는 구조체 밖에 쓰는 것이 일반적이다.
-//Coordinate operator+(const Coordinate& a, const Coordinate& b);
-//Coordinate operator-(const Coordinate& a, const Coordinate& b);
-//bool operator==(const Coordinate& a, const Coordinate& b);
-//bool operator!=(const Coordinate& a, const Coordinate& b);
+template <typename T>
+T Abs(T InValue)
+{
+	return (InValue < 0) ? -InValue : InValue;
+}
+
+template <typename T>
+Coordinate<T> operator+(const Coordinate<T>& a, const Coordinate<T>& b)
+{
+	return Coordinate<T>(a.x + b.x, a.y + b.y);
+}
+
+template <typename T>
+Coordinate<T> operator-(const Coordinate<T>& a, const Coordinate<T>& b)
+{
+	return Coordinate<T>(a.x - b.x, a.y - b.y);
+}
+
+template <typename T>
+bool operator==(const Coordinate<T>& a, const Coordinate<T>& b)
+{
+	return a.x == b.x && a.y == b.y;
+}
+
+// 앞에 template<>를 붙이고 T자리에 특수화하고 싶은 타입을 적는다.
+template <>
+bool operator==(const Coordinate<float>& a, const Coordinate<float>& b)
+{
+	return Abs(a.x - b.x) <= FLT_EPSILON && Abs(a.y - b.y) <= FLT_EPSILON;
+}
+template <>
+bool operator==(const Coordinate<double>& a, const Coordinate<double>& b)
+{
+	return Abs(a.x - b.x) <= DBL_EPSILON && Abs(a.y - b.y) <= DBL_EPSILON;
+}
+
+template <typename T>
+bool operator!=(const Coordinate<T>& a, const Coordinate<T>& b)
+{
+	return !(a == b);
+}
+
+// 간단 실습
+// 계산기 클래스 만들기
+//	맴버 함수 : Add, Sub, Multiply, Divide, Equal
+//	실수형에 대해 Equal 함수를 특수화 처리
