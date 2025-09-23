@@ -68,6 +68,12 @@ Coordinate<T> operator-(const Coordinate<T>& a, const Coordinate<T>& b)
 }
 
 template <typename T>
+Coordinate<T> operator*(const Coordinate<T>& a, const Coordinate<T>& b)
+{
+	return Coordinate<T>(a.x * b.x, a.y * b.y);
+}
+
+template <typename T>
 bool operator==(const Coordinate<T>& a, const Coordinate<T>& b)
 {
 	return a.x == b.x && a.y == b.y;
@@ -91,7 +97,3 @@ bool operator!=(const Coordinate<T>& a, const Coordinate<T>& b)
 	return !(a == b);
 }
 
-// 간단 실습
-// 계산기 클래스 만들기
-//	맴버 함수 : Add, Sub, Multiply, Divide, Equal
-//	실수형에 대해 Equal 함수를 특수화 처리

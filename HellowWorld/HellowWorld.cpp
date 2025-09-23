@@ -678,6 +678,24 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 	- 방식 : 함수 앞에 template<>를 붙이고 T자리에 특수화하고 싶은 타입을 적는다.
 */
 
+/*
+* STL(Standard Template Library)
+*	- 구성요소
+*		- 컨테이너 : 데이터 저장 방식(자료구조)
+*		- 알고리즘 : 데이터를 각종 방식으로 조작(정렬, 탐색, 스왑 등등)
+*		- 반복자(Iterator) : 컨테이너를 순회할 수 있게 해주는 포인터 같은 것
+*		- 함수객체(Functor) : 알고리즘에서 실제 처리할 방법을 지정하는데 사용(함수를 변수처럼 사용). 람다식으로 많이 사용
+*/
+
+/*
+* std::vector
+*- 특징
+	- 동적 배열(자동으로 크기가 조절됨)
+	- 연속된 메모리를 가진다.(배열의 특성) -> 캐시효율 좋음, 랜덤엑세스 성능 좋음( O(1) ), 마지막에 추가 삭제할 때 매우 효율적
+ - 사용처
+	- 데이터 컨테이너가 필요하면 대부분의 경우 vector로 커버가 된다.
+	- 배열처럼 사용해야 할 때
+*/
 
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
@@ -718,7 +736,9 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	printf("\n\n\n\n\n\n\n\n\n");
 
 	Day0923 day0923;
-	day0923.TestTemplateClass();
+	//day0923.TestTemplateClass();
+	//day0923.TestCalcurator();
+	day0923.TestVector();
 
 	//Day0922 day0922;
 	////day0922.TestBattleShip();

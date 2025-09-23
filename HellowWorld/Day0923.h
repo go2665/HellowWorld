@@ -1,8 +1,11 @@
 #pragma once
-#include "Coordinate.h"
+
 class Day0923
 {
 public:
 	void TestTemplateClass();
+	void TestCalcurator();
+	void TestVector();
+	void TestVectorPractice();
 };
 
