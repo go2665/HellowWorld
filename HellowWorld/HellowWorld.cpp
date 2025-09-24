@@ -697,6 +697,30 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 	- 배열처럼 사용해야 할 때
 */
 
+/*
+* 람다(Lambda)
+	- 익명 함수(이름이 없는 함수)
+	- 짧은 함수를 코드 내에서 바로 정의하고 사용하는 용도
+	- 기본구조
+		[캡쳐](파라메터) -> 리턴타입 { 함수 본문 }
+		캡쳐 : 람다 함수 외부의 변수에 어떻게 접근할지 지정.
+			- [] : 외부 변수를 사용하지 않는다.
+				- 가능하면 사용하지 말것(성능에 영향을 준다)
+				- [&] : 외부의 모든 변수를 참조로 캡쳐한다.(값 변경 불가능)
+				- [=] : 외부의 모든 변수를 복사로 캡쳐한다.(값 변경 불가능)
+				- [this] : 클래스 맴버 변수와 맴버 함수에 접근 할 수 있다.
+			- [변수명] : 특정 변수만 복사로 캡쳐
+			- [&변수명] : 특정 변수만 참조로 캡쳐
+			- [변수명1, &변수명2] : 여러변수를 복사/참조로 캡쳐
+		파라메터 : 일반 함수처럼 람다함수가 받을 파라메터들을 정의
+		-> 리턴타입 : 람다 함수의 리턴타입을 명시적으로 지정(생략 가능)
+		{ 함수 본문 } : 실제 실행할 코드
+	- 주의 사항
+		- 대규모 캡쳐는 피하는 것이 좋다(&,=,this)
+		- 지연 실행시 참조캡쳐와 포인터변수 캡쳐는 대상이 이미 사라졌을 수 있다.(댕글링 참조)
+		- 값 캡쳐는 불필요한 사본을 만들지 않게 해라.
+*/
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -721,6 +745,7 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0919.h"
 #include "Day0922.h"
 #include "Day0923.h"
+#include "Day0924.h"
 
 #include "Position.h"
 
@@ -735,11 +760,15 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	printf("\n\n\n\n\n\n\n\n\n");
 
-	Day0923 day0923;
-	//day0923.TestTemplateClass();
-	//day0923.TestCalcurator();
-	//day0923.TestVector();
-	day0923.TestVectorPractice();
+	Day0924 day0924;
+	//day0924.TestLambda();
+	day0924.TestLambda2();
+
+	//Day0923 day0923;
+	////day0923.TestTemplateClass();
+	////day0923.TestCalcurator();
+	////day0923.TestVector();
+	//day0923.TestVectorPractice();
 
 	//Day0922 day0922;
 	////day0922.TestBattleShip();
