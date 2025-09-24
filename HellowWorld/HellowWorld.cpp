@@ -721,6 +721,35 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 		- 값 캡쳐는 불필요한 사본을 만들지 않게 해라.
 */
 
+/*
+* std::set
+*  특징
+	- 데이터를 중복 없이 정렬된 상태로 저장하고 싶을 때 사용. 
+	- 탐색 속도도 빠르다.( 레드-블랙 트리 알고리즘 사용. O(log N) )
+	- 노드가 키값만 가지고 있음.(우리가 만든 BST랑 유사.)
+   사용처
+	- 데이터의 유일성, 정렬, 빠른 검색이 필요한 경우에 유용하다.
+*/
+
+/*
+std::map
+  특징
+	- Key와 Value의 쌍을 묶어서 저장
+	- 키는 중복 금지, 자동 정렬, 탐색이 빠르다.(레드-블랙 트리, O(log N) )
+  사용처
+	- 데이터에 중복이 없는 키값이 설정되어 있고, 필요할 때 빠르게 찾아하는 경우 유용.
+	- 리소스 관리자, 다국어 지원 등등
+*/
+
+/*
+* std::unordered_map
+   특징
+	- Key와 Value의 쌍을 묶어서 저장
+	- 키는 중복 금지, 정렬 없음(순서가 보장안됨), 탐색이 매우 빠르다.(해시 테이블, O(1))
+   사용처
+    - 맵이랑 거의 같다.(데이터의 순서가 중요하지 않으면 무조건 unordered_map)
+*/
+
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
@@ -762,7 +791,12 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	Day0924 day0924;
 	//day0924.TestLambda();
-	day0924.TestLambda2();
+	//day0924.TestLambda2();
+	//day0924.TestLambdaPractice();
+	//day0924.TestSet();
+	//day0924.TestSetPractice();
+	//day0924.TestMap();
+	day0924.TestUnorderedMap();
 
 	//Day0923 day0923;
 	////day0923.TestTemplateClass();
