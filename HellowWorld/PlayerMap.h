@@ -3,7 +3,7 @@
 class PlayerMap : public Map
 {
 public:
-	// ÇÃ·¹ÀÌ¾îÀÇ °ø°İ °á°ú¸¦ ¸Ê°ú ÇÔ²² Ãâ·ÂÇÑ´Ù.
+	// í”Œë ˆì´ì–´ì˜ ê³µê²© ê²°ê³¼ë¥¼ ë§µê³¼ í•¨ê»˜ ì¶œë ¥í•œë‹¤.
 	virtual void PrintMap() const override;
 };
 

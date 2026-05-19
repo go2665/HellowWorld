@@ -3,40 +3,40 @@
 #include "HiddenMap.h"
 #include "Position.h"
 
-// Àû ÇÔ¼±µéÀÇ ¹èÄ¡, ÇÇ°İÃ³¸®, »óÅÂ °ü¸® µîµîÀ» Ã³¸®
+// ì  í•¨ì„ ë“¤ì˜ ë°°ì¹˜, í”¼ê²©ì²˜ë¦¬, ìƒíƒœ ê´€ë¦¬ ë“±ë“±ì„ ì²˜ë¦¬
 class ShipManager
 {
 public:
 	ShipManager() = default;
 
-	// ¸ğµç ÇÔ¼±À» ¸Ê¿¡ ¹èÄ¡
+	// ëª¨ë“  í•¨ì„ ì„ ë§µì— ë°°ì¹˜
 	void PlaceAllShips(HiddenMap& InMap);
 
-	// Æ¯Á¤ ÁÂÇ¥¿¡ ´ëÇÑ °ø°İ Ã³¸®. ÇÇ°İµÇ¸é true
+	// íŠ¹ì • ì¢Œí‘œì— ëŒ€í•œ ê³µê²© ì²˜ë¦¬. í”¼ê²©ë˜ë©´ true
 	bool ProcessAttack(const Position& InAttackPos);
 
-	// ¹æ±İ ¹è°¡ Ä§¸ôÇß´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	// ë°©ê¸ˆ ë°°ê°€ ì¹¨ëª°í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	inline bool WasShipJustSunk() const { return ShipJustSunk; }
 
-	// ¸ğµç ¹è°¡ Ä§¸ôÇß´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	// ëª¨ë“  ë°°ê°€ ì¹¨ëª°í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	inline bool IsAllSunk() const { return SunkShipCount >= ShipTypeCount; }
 
-	// Ä§¸ôÇÏÁö ¾ÊÀº ¹èÀÇ ¼ö
+	// ì¹¨ëª°í•˜ì§€ ì•Šì€ ë°°ì˜ ìˆ˜
 	inline int GetAliveShipCount() const { return ShipTypeCount - SunkShipCount; }
 
 private:
-	static constexpr int ShipTypeCount = 4;	// ÇÔ¼±ÀÇ °¡Áö¼ö
+	static constexpr int ShipTypeCount = 4;	// í•¨ì„ ì˜ ê°€ì§€ìˆ˜
 
-	// Àû ÇÔ¼±µé
+	// ì  í•¨ì„ ë“¤
 	Ship Ships[ShipTypeCount];
 
-	// Ä§¸ôÇÑ ¹èÀÇ ¼ö
+	// ì¹¨ëª°í•œ ë°°ì˜ ìˆ˜
 	int SunkShipCount = 0;
 
-	// °¡Àå ÃÖ±Ù °ø°İÀ¸·Î ÇÔ¼±ÀÌ Ä§¸ôÇß´ÂÁö ¿©ºÎ(¹è°¡ °¡¶ó¾É¾ÒÀ» ¶§ Ãâ·Â Ã¼Å©¿ë)
+	// ê°€ì¥ ìµœê·¼ ê³µê²©ìœ¼ë¡œ í•¨ì„ ì´ ì¹¨ëª°í–ˆëŠ”ì§€ ì—¬ë¶€(ë°°ê°€ ê°€ë¼ì•‰ì•˜ì„ ë•Œ ì¶œë ¥ ì²´í¬ìš©)
 	bool ShipJustSunk = false;
 
-	// ÇÔ¼±ÀÌ ¹èÄ¡ °¡´ÉÇÑÁö È®ÀÎÇÏ´Â ÇïÆÛ ÇÔ¼ö.
+	// í•¨ì„ ì´ ë°°ì¹˜ ê°€ëŠ¥í•œì§€ í™•ì¸í•˜ëŠ” í—¬í¼ í•¨ìˆ˜.
 	bool CanPlaceShip(int InX, int InY, int InSize, bool InHorizontal, const HiddenMap& InMap) const;
 };
 

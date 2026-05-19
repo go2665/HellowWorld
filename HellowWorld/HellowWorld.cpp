@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 
 // HellowWorld.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
@@ -754,6 +754,7 @@ std::map
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #include <crtdbg.h>
 
+#include <Windows.h>
 #include <iostream>	// 입출력 관련(cout)
 #include <stdio.h>
 #include <time.h>
@@ -785,18 +786,19 @@ int global = 10;
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	//srand(time(0));
+	srand(time(0));
 
 	printf("\n\n\n\n\n\n\n\n\n");
+	//Sleep(100);	// 0.1초 멈추기 #include <windows.h> 필요
 
-	Day0924 day0924;
+	//Day0924 day0924;
 	//day0924.TestLambda();
 	//day0924.TestLambda2();
 	//day0924.TestLambdaPractice();
 	//day0924.TestSet();
 	//day0924.TestSetPractice();
 	//day0924.TestMap();
-	day0924.TestUnorderedMap();
+	//day0924.TestUnorderedMap();
 
 	//Day0923 day0923;
 	////day0923.TestTemplateClass();
@@ -846,7 +848,7 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	//Day0912_Struct();
 	//Day0912_OperatorOverloading();
 
-	//Day0911();
+	Day0911();
 
 	//Day0910_String();
 

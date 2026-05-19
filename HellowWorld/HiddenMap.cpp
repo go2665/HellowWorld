@@ -2,8 +2,8 @@
 
 void HiddenMap::PrintMap() const
 {
-	// »ó´Ü Ãâ·Â
-	printf("Àû ÇÔ¼± À§Ä¡ : \n");
+	// ìƒë‹¨ ì¶œë ¥
+	printf("ì  í•¨ì„  ìœ„ì¹˜ : \n");
 	printf("   ");
 	for (int i = 0; i < Map::MapSize; i++)
 	{
@@ -11,13 +11,13 @@ void HiddenMap::PrintMap() const
 	}
 	printf("\n");
 
-	// ¿ŞÂÊ ÁÂÇ¥ + ¹è ¹èÄ¡ »óÅÂ
+	// ì™¼ìª½ ì¢Œí‘œ + ë°° ë°°ì¹˜ ìƒíƒœ
 	for (int y = 0; y < Map::MapSize; y++)
 	{
-		printf("%2d ", y);	// ¿ŞÂÊ ÁÂÇ¥
+		printf("%2d ", y);	// ì™¼ìª½ ì¢Œí‘œ
 		for (int x = 0; x < Map::MapSize; x++)
 		{
-			if (Cells[y][x] == CellType::Ship) // ¼¿ »óÅÂ¿¡ ¶§¶ó ¹è ¹èÄ¡ »óÅÂ Âï±â
+			if (Cells[y][x] == CellType::Ship) // ì…€ ìƒíƒœì— ë•Œë¼ ë°° ë°°ì¹˜ ìƒíƒœ ì°ê¸°
 			{
 				printf(" S ");
 			}

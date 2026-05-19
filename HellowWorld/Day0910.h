@@ -3,11 +3,11 @@
 void Day0910_String();
 
 /// <summary>
-/// TargetString¿¡¼­ TargetCharacter°¡ ¸î¹øÂ° ÀÖ´ÂÁö Ã£¾ÆÁÖ´Â ÇÔ¼ö
+/// TargetStringì—ì„œ TargetCharacterê°€ ëª‡ë²ˆì§¸ ìˆëŠ”ì§€ ì°¾ì•„ì£¼ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="TargetString">Ã£¾ÆÁú ¹®ÀÚ¿­</param>
-/// <param name="TargetCharacter">Ã£À» ±ÛÀÚ</param>
-/// <returns>-1ÀÌ¸é ¸øÃ£À½, ±× ¿Ü´Â TargetCharacterÀÇ ÀÎµ¦½º</returns>
+/// <param name="TargetString">ì°¾ì•„ì§ˆ ë¬¸ìì—´</param>
+/// <param name="TargetCharacter">ì°¾ì„ ê¸€ì</param>
+/// <returns>-1ì´ë©´ ëª»ì°¾ìŒ, ê·¸ ì™¸ëŠ” TargetCharacterì˜ ì¸ë±ìŠ¤</returns>
 int FindCharIndex(const char* TargetString, const char TargetCharacter);
 
 int MyStringLength(const char* Target);

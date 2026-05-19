@@ -7,15 +7,15 @@ void Day0918::TestSingleLinkedList()
 {
 	LinkedList MyList;
 
-	// Add Å×½ºÆ®
-	printf("Add Å×½ºÆ®---------------------------------\n");
+	// Add í…ŒìŠ¤íŠ¸
+	printf("Add í…ŒìŠ¤íŠ¸---------------------------------\n");
 	MyList.Add(10);
 	MyList.Add(20);
 	MyList.Add(30);
 	MyList.PrintList();
 
 	// InsertAt test
-	printf("InsertAt Å×½ºÆ®---------------------------------\n");
+	printf("InsertAt í…ŒìŠ¤íŠ¸---------------------------------\n");
 	MyList.InsertAt(40, 100);
 	MyList.PrintList();
 	MyList.InsertAt(5, 0);
@@ -24,14 +24,14 @@ void Day0918::TestSingleLinkedList()
 	MyList.PrintList();
 
 	// Remove test
-	printf("Remove Å×½ºÆ®---------------------------------\n");
+	printf("Remove í…ŒìŠ¤íŠ¸---------------------------------\n");
 	MyList.Remove(20);
 	MyList.PrintList();
 	MyList.Remove(123);
 	MyList.PrintList();
 
 	// RemoveAt test
-	printf("RemoveAt Å×½ºÆ®---------------------------------\n");
+	printf("RemoveAt í…ŒìŠ¤íŠ¸---------------------------------\n");
 	MyList.RemoveAt(10);
 	MyList.PrintList();
 	MyList.RemoveAt(1);
@@ -41,20 +41,20 @@ void Day0918::TestSingleLinkedList()
 	ListNode* Found = MyList.Search(15);
 	if (Found)
 	{
-		printf("15¸¦ Ã£¾Ò½À´Ï´Ù.\n");
+		printf("15ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n");
 	}
 	else
 	{
-		printf("15°¡ ¾ø½À´Ï´Ù.\n");
+		printf("15ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
 	}
 	Found = MyList.Search(999);
 	if (Found)
 	{
-		printf("999¸¦ Ã£¾Ò½À´Ï´Ù.\n");
+		printf("999ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n");
 	}
 	else
 	{
-		printf("999°¡ ¾ø½À´Ï´Ù.\n");
+		printf("999ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
 	}
 
 }

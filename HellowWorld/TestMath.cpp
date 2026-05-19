@@ -8,7 +8,7 @@ void PrintHelloWorld()
 	return;
 }
 
-int Sum(int Test1, int Test2)		// int Sum(int, int); ÀÌ ¼±¾ğÀ» Á¤ÀÇÇß´Ù.
+int Sum(int Test1, int Test2)		// int Sum(int, int); ì´ ì„ ì–¸ì„ ì •ì˜í–ˆë‹¤.
 {
 	int Result = Test1 + Test2;
 

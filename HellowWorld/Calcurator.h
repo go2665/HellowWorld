@@ -1,9 +1,9 @@
 #pragma once
 #include <limits>
-// °£´Ü ½Ç½À
-// °è»ê±â Å¬·¡½º ¸¸µé±â
-//	¸É¹ö ÇÔ¼ö : Add, Sub, Multiply, Divide, Equal
-//	½Ç¼öÇü¿¡ ´ëÇØ Equal ÇÔ¼ö¸¦ Æ¯¼öÈ­ Ã³¸®
+// ê°„ë‹¨ ì‹¤ìŠµ
+// ê³„ì‚°ê¸° í´ë˜ìŠ¤ ë§Œë“¤ê¸°
+//	ë§´ë²„ í•¨ìˆ˜ : Add, Sub, Multiply, Divide, Equal
+//	ì‹¤ìˆ˜í˜•ì— ëŒ€í•´ Equal í•¨ìˆ˜ë¥¼ íŠ¹ìˆ˜í™” ì²˜ë¦¬
 
 class Calcurator
 {
@@ -11,19 +11,19 @@ public:
 	template<typename T>
 	T Add(const T& a, const T& b)
 	{
-		return T(a + b);	// + ¿¬»êÀÚ°¡ Á¤ÀÇµÇ¾î ÀÖ´Â Å¸ÀÔ¸¸ °¡´ÉÇÏ´Ù.
+		return T(a + b);	// + ì—°ì‚°ìê°€ ì •ì˜ë˜ì–´ ìˆëŠ” íƒ€ì…ë§Œ ê°€ëŠ¥í•˜ë‹¤.
 	}
 
 	template<typename T>
 	T Sub(const T& a, const T& b)
 	{
-		return T(a - b);	// - ¿¬»êÀÚ°¡ Á¤ÀÇµÇ¾î ÀÖ´Â Å¸ÀÔ¸¸ °¡´ÉÇÏ´Ù.
+		return T(a - b);	// - ì—°ì‚°ìê°€ ì •ì˜ë˜ì–´ ìˆëŠ” íƒ€ì…ë§Œ ê°€ëŠ¥í•˜ë‹¤.
 	}
 
 	template<typename T>
 	T Multiply(const T& a, const T& b)
 	{
-		return T(a * b);	// * ¿¬»êÀÚ°¡ Á¤ÀÇµÇ¾î ÀÖ´Â Å¸ÀÔ¸¸ °¡´ÉÇÏ´Ù.
+		return T(a * b);	// * ì—°ì‚°ìê°€ ì •ì˜ë˜ì–´ ìˆëŠ” íƒ€ì…ë§Œ ê°€ëŠ¥í•˜ë‹¤.
 	}
 
 	template<typename T>

@@ -40,7 +40,7 @@ TreeNode* BinarySearchTree::InsertNode(TreeNode* InNode, int InKey)
 {
     if (InNode == nullptr)
     {
-        return new TreeNode(InKey); // ¼­ºê·çÆ®°¡ nullÀÌ¸é ±×°÷¿¡ »õ ³ëµå ¸¸µé¾î¼­ ¿¬°áµÇ°Ô ÇÏ±â
+        return new TreeNode(InKey); // ì„œë¸Œë£¨íŠ¸ê°€ nullì´ë©´ ê·¸ê³³ì— ìƒˆ ë…¸ë“œ ë§Œë“¤ì–´ì„œ ì—°ê²°ë˜ê²Œ í•˜ê¸°
     }
 
     if (InKey < InNode->Key)
@@ -53,8 +53,8 @@ TreeNode* BinarySearchTree::InsertNode(TreeNode* InNode, int InKey)
     }
     //else
     //{
-    //    // Æ®¸®¿¡¼­´Â Å°°¡ Áßº¹µÇ¸é ¾ÈµÊ.
-    //    // Áßº¹µÈ Å°´Â ¹«½Ã
+    //    // íŠ¸ë¦¬ì—ì„œëŠ” í‚¤ê°€ ì¤‘ë³µë˜ë©´ ì•ˆë¨.
+    //    // ì¤‘ë³µëœ í‚¤ëŠ” ë¬´ì‹œ
     //}
 
     return InNode;
@@ -77,23 +77,23 @@ TreeNode* BinarySearchTree::DeleteNode(TreeNode* InNode, int InKey)
     }
     else
     {
-        // »èÁ¦ÇÒ ³ëµå¸¦ Ã£¾Ò´Ù.
+        // ì‚­ì œí•  ë…¸ë“œë¥¼ ì°¾ì•˜ë‹¤.
         if (InNode->Left == nullptr)
         {
-            // ¿ŞÂÊ ÀÚ½ÄÀÌ ¾ø´Ù. ÀÚ½ÄÀÌ µÑ ´Ù ¾ø´Ù.
+            // ì™¼ìª½ ìì‹ì´ ì—†ë‹¤. ìì‹ì´ ë‘˜ ë‹¤ ì—†ë‹¤.
             TreeNode* Temp = InNode->Right;
             delete InNode;
             return Temp;
         }
         else if (InNode->Right == nullptr)
         {
-            // ¿À¸¥ÂÊ ÀÚ½Ä¸¸ ¾ø´Ù.
+            // ì˜¤ë¥¸ìª½ ìì‹ë§Œ ì—†ë‹¤.
             TreeNode* Temp = InNode->Left;
             delete InNode;
             return Temp;
         }
 
-        // µÎ ÀÚ½ÄÀÌ ¸ğµÎ ÀÖ´Ù. -> ¿À¸¥ÂÊ ¼­ºêÆ®¸®ÀÇ ÃÖ¼Ò°ªÀ¸·Î ´ëÃ¼
+        // ë‘ ìì‹ì´ ëª¨ë‘ ìˆë‹¤. -> ì˜¤ë¥¸ìª½ ì„œë¸ŒíŠ¸ë¦¬ì˜ ìµœì†Œê°’ìœ¼ë¡œ ëŒ€ì²´
         TreeNode* Temp = FindMinNode(InNode->Right);
         InNode->Key = Temp->Key;
         InNode->Right = DeleteNode(InNode->Right, Temp->Key);
@@ -105,20 +105,20 @@ TreeNode* BinarySearchTree::SearchNode(TreeNode* InNode, int InKey)
 {
     if (InNode == nullptr)
     {
-        return nullptr; // ¸øÃ£¾Ò´Ù.
+        return nullptr; // ëª»ì°¾ì•˜ë‹¤.
     }
 
     if (InKey < InNode->Key)
     {
-        return SearchNode(InNode->Left, InKey);     // Ã£´Â Áß
+        return SearchNode(InNode->Left, InKey);     // ì°¾ëŠ” ì¤‘
     }
     else if (InKey > InNode->Key)
     {
-        return SearchNode(InNode->Right, InKey);    // Ã£´Â Áß
+        return SearchNode(InNode->Right, InKey);    // ì°¾ëŠ” ì¤‘
     }
     else
     {
-        return InNode;  // Ã£¾Ò´Ù.
+        return InNode;  // ì°¾ì•˜ë‹¤.
     }
 }
 
@@ -153,8 +153,8 @@ void BinarySearchTree::DestroyTree(TreeNode* InNode)
 {
     if (InNode != nullptr)
     {
-        DestroyTree(InNode->Left);  // ¿ŞÂÊ ¼­ºêÆ®¸® »èÁ¦ÇÏ°í
-        DestroyTree(InNode->Right); // ¿À¸¥ÂÊ ¼­ºêÆ®¸® »èÁ¦ÇÏ°í 
-        delete InNode;  // ³ª¸¦ Áö¿ö¶ó(ÈÄÀ§¼øÈ¸ÇÏ¸ç »èÁ¦ÇÏ±â)
+        DestroyTree(InNode->Left);  // ì™¼ìª½ ì„œë¸ŒíŠ¸ë¦¬ ì‚­ì œí•˜ê³ 
+        DestroyTree(InNode->Right); // ì˜¤ë¥¸ìª½ ì„œë¸ŒíŠ¸ë¦¬ ì‚­ì œí•˜ê³  
+        delete InNode;  // ë‚˜ë¥¼ ì§€ì›Œë¼(í›„ìœ„ìˆœíšŒí•˜ë©° ì‚­ì œí•˜ê¸°)
     }
 }

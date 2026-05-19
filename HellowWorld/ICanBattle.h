@@ -8,6 +8,6 @@ public:
 	virtual void Attack(ICanBattle* InTarget) = 0;
 	virtual void TakeDamage(float InDamage) = 0;
 
-	// ¸É¹ö º¯¼ö°¡ ²À ÇÊ¿äÇÒ °æ¿ì. Getter°¡ ÀÖ´Ù´Â °ÍÀ» ¸í½Ã
+	// ë§´ë²„ ë³€ìˆ˜ê°€ ê¼­ í•„ìš”í•  ê²½ìš°. Getterê°€ ìˆë‹¤ëŠ” ê²ƒì„ ëª…ì‹œ
 	//virtual void GetAttackPower() = 0;
 };

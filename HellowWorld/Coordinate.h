@@ -19,8 +19,8 @@ struct Coordinate
 
 	void Print() const
 	{
-		// std::is_same_v<T, int> : T Å¸ÀÔÀÌ int¸é true, ¾Æ´Ï¸é false
-		// if constexpr : ÄÄÆÄÀÏ Å¸ÀÓ¿¡ Á¶°ÇÀÌ true¸é ÄÚµå¸¦ »ı¼ºÇÏ°í ¾Æ´Ï¸é »ı¼ºÇÏÁö ¾Ê´Â´Ù.
+		// std::is_same_v<T, int> : T íƒ€ì…ì´ intë©´ true, ì•„ë‹ˆë©´ false
+		// if constexpr : ì»´íŒŒì¼ íƒ€ì„ì— ì¡°ê±´ì´ trueë©´ ì½”ë“œë¥¼ ìƒì„±í•˜ê³  ì•„ë‹ˆë©´ ìƒì„±í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		if constexpr (std::is_same_v<T, int>)
 		{
 			printf("(%d, %d)\n", x, y);
@@ -79,7 +79,7 @@ bool operator==(const Coordinate<T>& a, const Coordinate<T>& b)
 	return a.x == b.x && a.y == b.y;
 }
 
-// ¾Õ¿¡ template<>¸¦ ºÙÀÌ°í TÀÚ¸®¿¡ Æ¯¼öÈ­ÇÏ°í ½ÍÀº Å¸ÀÔÀ» Àû´Â´Ù.
+// ì•ì— template<>ë¥¼ ë¶™ì´ê³  Tìë¦¬ì— íŠ¹ìˆ˜í™”í•˜ê³  ì‹¶ì€ íƒ€ì…ì„ ì ëŠ”ë‹¤.
 template <>
 bool operator==(const Coordinate<float>& a, const Coordinate<float>& b)
 {

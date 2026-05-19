@@ -2,26 +2,26 @@
 
 
 /// <summary>
-/// ³¯Â¥¸¦ ÀÔ·ÂÇÏ¸é ¿äÀÏÀ» ¾Ë·ÁÁÖ´Â ÇÔ¼ö
+/// ë‚ ì§œë¥¼ ìž…ë ¥í•˜ë©´ ìš”ì¼ì„ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="Year">¸î³â</param>
-/// <param name="Month">¸î¿ù</param>
-/// <param name="Day">¸îÀÏ</param>
-/// <returns>ÇØ´ç ¿äÀÏ ¹®ÀÚ¿­</returns>
+/// <param name="Year">ëª‡ë…„</param>
+/// <param name="Month">ëª‡ì›”</param>
+/// <param name="Day">ëª‡ì¼</param>
+/// <returns>í•´ë‹¹ ìš”ì¼ ë¬¸ìžì—´</returns>
 const char* GetDayOfWeek(int Year, int Month, int Day);
 
 /// <summary>
-/// À±³â ÆÇº° ÇÔ¼ö
+/// ìœ¤ë…„ íŒë³„ í•¨ìˆ˜
 /// </summary>
-/// <param name="Year">È®ÀÎÇÒ ¿¬µµ</param>
-/// <returns>À±³âÀÌ¸é true, ¾Æ´Ï¸é false</returns>
+/// <param name="Year">í™•ì¸í•  ì—°ë„</param>
+/// <returns>ìœ¤ë…„ì´ë©´ true, ì•„ë‹ˆë©´ false</returns>
 bool IsLeap(int Year);
 
 /// <summary>
-/// 1³â 1¿ù 1ÀÏ¿¡¼­ ¸çÄ¥ÀÌ Áö³µ´ÂÁö °è»êÇÏ´Â ÇÔ¼ö
+/// 1ë…„ 1ì›” 1ì¼ì—ì„œ ë©°ì¹ ì´ ì§€ë‚¬ëŠ”ì§€ ê³„ì‚°í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="Year">¸î³â</param>
-/// <param name="Month">¸î¿ù</param>
-/// <param name="Day">¸îÀÏ</param>
-/// <returns>ÀüÃ¼ ÀÏ¼ö</returns>
+/// <param name="Year">ëª‡ë…„</param>
+/// <param name="Month">ëª‡ì›”</param>
+/// <param name="Day">ëª‡ì¼</param>
+/// <returns>ì „ì²´ ì¼ìˆ˜</returns>
 int GetTotalDays(int Year, int Month, int Day);

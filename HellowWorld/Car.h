@@ -5,14 +5,14 @@ class Car
 {
 public:
 	std::string Name;
-	float Speed = 0.0f;	// ¼Óµµ
-	float fuel = 1.0f;	// ¿¬·á·®
+	float Speed = 0.0f;	// ì†ë„
+	float fuel = 1.0f;	// ì—°ë£ŒëŸ‰
 
 	Car(const char* InName);
 	~Car();
 
-	void Accel();		// °¡¼Ó ±â´É
-	void Brake();		// °¨¼Ó ±â´É
-	void HandleTurn();	// ÇÚµé Á¶Çâ
+	void Accel();		// ê°€ì† ê¸°ëŠ¥
+	void Brake();		// ê°ì† ê¸°ëŠ¥
+	void HandleTurn();	// í•¸ë“¤ ì¡°í–¥
 };
 

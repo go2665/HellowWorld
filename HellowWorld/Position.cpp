@@ -1,7 +1,7 @@
 #include "Position.h"
 
 
-// ÀÌÇ×¿¬»êÀÚ´Â ±¸Á¶Ã¼ ¹Û¿¡ ¾²´Â °ÍÀÌ ÀÏ¹İÀûÀÌ´Ù.
+// ì´í•­ì—°ì‚°ìëŠ” êµ¬ì¡°ì²´ ë°–ì— ì“°ëŠ” ê²ƒì´ ì¼ë°˜ì ì´ë‹¤.
 Position operator+(const Position& a, const Position& b)
 {
 	return Position(a.x + b.x, a.y + b.y);

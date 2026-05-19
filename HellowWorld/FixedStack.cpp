@@ -5,19 +5,19 @@ void FixedStack::Push(int InValue)
 {
 	if (IsFull())
 	{
-		printf("©ю╥Ы: ╫╨ецюл ╟║╣Ф ц║╫ю╢о╢ы! (Stack Overflow)\n");
+		printf("Л≤╓К╔≤: Л┼╓М┐²Л²╢ Й╟─К⌠² Л╟╪Л┼╣К▀┬К▀╓! (Stack Overflow)\n");
 		return;
 	}
-	TopIndex++;					// Topю╖д║╦╕ аУ╟║ ╫це╟╟М
-	Data[TopIndex] = InValue;	// ╠в ю╖д║©║ ╟╙ю╩ Ёж╠Б
+	TopIndex++;					// TopЛ°└Л╧≤К╔╪ Л╕²Й╟─ Л▀°М┌╓ЙЁ═
+	Data[TopIndex] = InValue;	// Й╥╦ Л°└Л╧≤Л≈░ Й╟▓Л²└ К└ёЙ╦╟
 }
 
 int FixedStack::Pop()
 {
 	if (IsEmpty())
 	{
-		printf("©ю╥Ы: ╫╨ецюл ╨Я╬Нюж╫ю╢о╢ы! (Stack Underflow)\n");
-		return Empty; // ╫га╕ ╟╙юл ╬ф╢о╤С ©ю╥Ы╟╙ю╦╥н ©Л╦╝╟║ ╪Ёа╓гя ╟╙ю╩ ╦╝еого╢б ╟м
+		printf("Л≤╓К╔≤: Л┼╓М┐²Л²╢ К╧└Л√╢Л·┬Л┼╣К▀┬К▀╓! (Stack Underflow)\n");
+		return Empty; // Л▀╓Л═° Й╟▓Л²╢ Л∙└К▀┬К²╪ Л≤╓К╔≤Й╟▓Л°╪К║° Л ╟К╕╛Й╟─ Л└╓Л═∙М∙° Й╟▓Л²└ К╕╛М└╢М∙≤К┼■ Й╡┐
 	}
 	int Result = Data[TopIndex];
 	TopIndex--;
@@ -28,8 +28,8 @@ int FixedStack::Top() const
 {
 	if (IsEmpty())
 	{
-		printf("©ю╥Ы: ╫╨ецюл ╨Я╬Нюж╫ю╢о╢ы! ╟╙ю╩ ╧щх╞гр ╪Ж ╬Ь╫ю╢о╢ы.\n");
-		return Empty;	// ╫га╕ ╟╙юл ╬ф╢о╤С ©ю╥Ы╟╙ю╦╥н ©Л╦╝╟║ ╪Ёа╓гя ╟╙ю╩ ╦╝еого╢б ╟м
+		printf("Л≤╓К╔≤: Л┼╓М┐²Л²╢ К╧└Л√╢Л·┬Л┼╣К▀┬К▀╓! Й╟▓Л²└ К╟≤М≥≤М∙═ Л┬≤ Л≈├Л┼╣К▀┬К▀╓.\n");
+		return Empty;	// Л▀╓Л═° Й╟▓Л²╢ Л∙└К▀┬К²╪ Л≤╓К╔≤Й╟▓Л°╪К║° Л ╟К╕╛Й╟─ Л└╓Л═∙М∙° Й╟▓Л²└ К╕╛М└╢М∙≤К┼■ Й╡┐
 	}
 
 	return Data[TopIndex];

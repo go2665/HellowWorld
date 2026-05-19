@@ -5,20 +5,20 @@
 
 //Day0916::Day0916()
 //{
-//	// °´Ã¼°¡ »ı¼º µÉ ¶§ È£Ãâ
+//	// ê°ì²´ê°€ ìƒì„± ë  ë•Œ í˜¸ì¶œ
 //}
 //
 //Day0916::~Day0916()
 //{
-//	// °´Á¦°¡ ÇØÁ¦µÉ ¶§ È£Ãâ
+//	// ê°ì œê°€ í•´ì œë  ë•Œ í˜¸ì¶œ
 //}
 
 void Day0916::ClassInstance()
 {
-	Car myCar = Car("Áö¿ªº¯¼ö");	// ÀÎ½ºÅÏ½º »ı¼º. »ç¶óÁö´Â Å¸ÀÌ¹ÖÀº ÇÔ¼ö°¡ Á¾·áµÇ¾úÀ» ¶§ »ç¶óÁü
+	Car myCar = Car("ì§€ì—­ë³€ìˆ˜");	// ì¸ìŠ¤í„´ìŠ¤ ìƒì„±. ì‚¬ë¼ì§€ëŠ” íƒ€ì´ë°ì€ í•¨ìˆ˜ê°€ ì¢…ë£Œë˜ì—ˆì„ ë•Œ ì‚¬ë¼ì§
 	myCar.Accel();
 	
-	Car* pCar = new Car("µ¿ÀûÇÒ´ç");
+	Car* pCar = new Car("ë™ì í• ë‹¹");
 	pCar->HandleTurn();
 	delete pCar;
 	pCar = nullptr;
@@ -48,16 +48,16 @@ void Day0916::TestAnimal()
 
 void Day0916::TestTiger()
 {
-	Tiger tiger = Tiger("È£½ÄÀÌ");
+	Tiger tiger = Tiger("í˜¸ì‹ì´");
 	tiger.Move();
 	tiger.Hunt();
 	tiger.ShowInfo();
 
-	Animal* pAnimal = new Tiger("È£µ¹ÀÌ");
+	Animal* pAnimal = new Tiger("í˜¸ëŒì´");
 	delete pAnimal;
 	pAnimal = nullptr;
 }
 
-// °£´Ü ½Ç½À
-// ´Ù¸¥ µ¿¹° ¸¸µé¾îº¸±â(3Á¾·ù)
-// ´Ù¸¥ µ¿¹° Àü¿ë ÇÔ¼ö ±¸ÇöÇÏ±â
+// ê°„ë‹¨ ì‹¤ìŠµ
+// ë‹¤ë¥¸ ë™ë¬¼ ë§Œë“¤ì–´ë³´ê¸°(3ì¢…ë¥˜)
+// ë‹¤ë¥¸ ë™ë¬¼ ì „ìš© í•¨ìˆ˜ êµ¬í˜„í•˜ê¸°

@@ -1,8 +1,8 @@
 #pragma once
-class Shape	// Draw ¶§¹®¿¡ Ãß»ó Å¬·¡½º°¡ µÇ¾ú´Ù.
+class Shape	// Draw ë•Œë¬¸ì— ì¶”ìƒ í´ë˜ìŠ¤ê°€ ë˜ì—ˆë‹¤.
 {
 public:
-	virtual void Draw() = 0;	// ¼ø¼ö °¡»ó ÇÔ¼ö.
+	virtual void Draw() = 0;	// ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜.
 	void Move();
 };
 

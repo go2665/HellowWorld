@@ -3,7 +3,7 @@
 class Day0916
 {
 public:
-	Day0916() = default;	// »ı¼ºÀÚ(ÀÌ »ı¼ºÀÚ´Â ±âº» »ı¼ºÀÚ´Ù)	
+	Day0916() = default;	// ìƒì„±ì(ì´ ìƒì„±ìëŠ” ê¸°ë³¸ ìƒì„±ìë‹¤)	
 
 	void ClassInstance();
 	void TestAnimal();

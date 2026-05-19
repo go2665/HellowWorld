@@ -5,12 +5,12 @@ struct Position
 	int x = 0;
 	int y = 0;
 
-	// ÇÞ±ò¸± ¼ö ÀÖ´Â »óÈ²ÀÌ¸é ¸í½ÃÀûÀ¸·Î ÀÌ¾ß±â ÇØÁÖ´Â °ÍÀÌ ÁÁ´Ù.
-	Position() = default;	// ÀÚµ¿À¸·Î »ý¼ºµÇ´Â ±âº»»ý¼ºÀÚ¿Í °°´Ù.	
+	// í–‡ê¹”ë¦´ ìˆ˜ ìžˆëŠ” ìƒí™©ì´ë©´ ëª…ì‹œì ìœ¼ë¡œ ì´ì•¼ê¸° í•´ì£¼ëŠ” ê²ƒì´ ì¢‹ë‹¤.
+	Position() = default;	// ìžë™ìœ¼ë¡œ ìƒì„±ë˜ëŠ” ê¸°ë³¸ìƒì„±ìžì™€ ê°™ë‹¤.	
 	Position(int InX, int InY)
 		: x(InX), y(InY)
 	{	
-		// Ãß°¡ °è»êÀÌ ÇÊ¿äÇÑ °æ¿ì. ÀÌÂÊ¿¡ »õ·Î ´ëÀÔÇÏ±â.
+		// ì¶”ê°€ ê³„ì‚°ì´ í•„ìš”í•œ ê²½ìš°. ì´ìª½ì— ìƒˆë¡œ ëŒ€ìž…í•˜ê¸°.
 	}
 
 	Position& operator+=(const Position& other)
@@ -27,7 +27,7 @@ struct Position
 	}
 };
 
-// ÀÌÇ×¿¬»êÀÚ´Â ±¸Á¶Ã¼ ¹Û¿¡ ¾²´Â °ÍÀÌ ÀÏ¹ÝÀûÀÌ´Ù.
+// ì´í•­ì—°ì‚°ìžëŠ” êµ¬ì¡°ì²´ ë°–ì— ì“°ëŠ” ê²ƒì´ ì¼ë°˜ì ì´ë‹¤.
 Position operator+(const Position& a, const Position& b);
 Position operator-(const Position& a, const Position& b);
 bool operator==(const Position& a, const Position& b);

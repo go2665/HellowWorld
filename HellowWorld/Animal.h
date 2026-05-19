@@ -4,8 +4,8 @@
 class Animal
 {
 public:
-	virtual void Move() = 0;	// Move´Â ¼ø¼ö°¡»óÇÔ¼ö´Ù
-	virtual void MakeSound();	// MakeSound´Â °¡»óÇÔ¼ö´Ù
+	virtual void Move() = 0;	// MoveëŠ” ìˆœìˆ˜ê°€ìƒí•¨ìˆ˜ë‹¤
+	virtual void MakeSound();	// MakeSoundëŠ” ê°€ìƒí•¨ìˆ˜ë‹¤
 	void Eat();
 	void Sleep();
 
@@ -15,7 +15,7 @@ public:
 	inline const std::string& GetName() const { return Name; }
 	inline const int GetAge() const { return Age; }
 
-	// Energy´Â ¿ÜºÎ¿¡¼­´Â ÀĞ±â Àü¿ëÀÌ´Ù.
+	// EnergyëŠ” ì™¸ë¶€ì—ì„œëŠ” ì½ê¸° ì „ìš©ì´ë‹¤.
 	inline const float GetEnergy() const { return Energy; }	
 		
 public:
@@ -23,13 +23,13 @@ public:
 	Animal(std::string InName)
 		: Name(InName)
 	{
-	}	// ÂªÀº °æ¿ì´Â ÇÔ¼öÀÇ ±¸ÇöÀÌ ÇØ´õ¿¡ ÀÖ¾îµµ µÈ´Ù(ÀÚµ¿ inlineÃ³¸®)
+	}	// ì§§ì€ ê²½ìš°ëŠ” í•¨ìˆ˜ì˜ êµ¬í˜„ì´ í•´ë”ì— ìˆì–´ë„ ëœë‹¤(ìë™ inlineì²˜ë¦¬)
 	virtual ~Animal(){}
 
 protected:
 	inline void SetEnergy(float InEnergy) 
 	{ 
-		// EnergyÀÇ ¹üÀ§´Â 0.0f ~ 1.0fÀÌ´Ù.
+		// Energyì˜ ë²”ìœ„ëŠ” 0.0f ~ 1.0fì´ë‹¤.
 		if (InEnergy < 0)
 		{
 			Energy = 0.0f;
@@ -44,21 +44,21 @@ protected:
 		}
 	}
 
-	std::string Name = "µ¿¹°";
+	std::string Name = "ë™ë¬¼";
 	int Age = 0;
-	float Energy = 1.0f;	// 0.0f ~ 1.0f : 1.0fÀÏ ¶§ 100%;
+	float Energy = 1.0f;	// 0.0f ~ 1.0f : 1.0fì¼ ë•Œ 100%;
 };
 
 
 /*
-µ¿¹° Å¬·¡½º ¸¸µé¾îº¸±â
+ë™ë¬¼ í´ë˜ìŠ¤ ë§Œë“¤ì–´ë³´ê¸°
 	Name : std::string
 	Energy : float
 	Age : int
 
-	µ¿¹°Àº ¿òÁ÷ÀÌ¸é(Move) ¿¡³ÊÁö¸¦ ¼ÒºñÇÑ´Ù.
-	µ¿¹°Àº ¼Ò¸®¸¦ Áö¸¦ ¼ö ÀÖ´Ù.(MakeSound)
-	µ¿¹°Àº ¸ÔÀ¸¸é(Eat) ¿¡³ÊÁö°¡ Áõ°¡ÇÑ´Ù.
-	µ¿¹°Àº ÀáÀ» ÀÚ¸é(Sleep) ³ªÀÌ°¡ Áõ°¡ÇÏ°í ¿¡³ÊÁö°¡ ¿ÏÀü È¸º¹µÈ´Ù.
-	µ¿¹°ÀÇ ¸ğµç Á¤º¸¸¦ Ãâ·ÂÇÒ ¼ö ÀÖ´Ù.(ShowInfo)
+	ë™ë¬¼ì€ ì›€ì§ì´ë©´(Move) ì—ë„ˆì§€ë¥¼ ì†Œë¹„í•œë‹¤.
+	ë™ë¬¼ì€ ì†Œë¦¬ë¥¼ ì§€ë¥¼ ìˆ˜ ìˆë‹¤.(MakeSound)
+	ë™ë¬¼ì€ ë¨¹ìœ¼ë©´(Eat) ì—ë„ˆì§€ê°€ ì¦ê°€í•œë‹¤.
+	ë™ë¬¼ì€ ì ì„ ìë©´(Sleep) ë‚˜ì´ê°€ ì¦ê°€í•˜ê³  ì—ë„ˆì§€ê°€ ì™„ì „ íšŒë³µëœë‹¤.
+	ë™ë¬¼ì˜ ëª¨ë“  ì •ë³´ë¥¼ ì¶œë ¥í•  ìˆ˜ ìˆë‹¤.(ShowInfo)
 */

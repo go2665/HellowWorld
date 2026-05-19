@@ -3,53 +3,53 @@
 
 BattleShip::BattleShip()
 {
-    // ³ª¸ÓÁö´Â °¢ÀÚÀÇ »ı¼ºÀÚ¿¡¼­ ¸ğµÎ ÃÊ±âÈ­ µÊ
-    EnemyFleet.PlaceAllShips(GameHiddenMap);    // ¹èµé¸¸ ÃÊ±âÈ­
+    // ë‚˜ë¨¸ì§€ëŠ” ê°ìì˜ ìƒì„±ìì—ì„œ ëª¨ë‘ ì´ˆê¸°í™” ë¨
+    EnemyFleet.PlaceAllShips(GameHiddenMap);    // ë°°ë“¤ë§Œ ì´ˆê¸°í™”
 }
 
 void BattleShip::Play()
 {
-    printf("°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù! ¸ğµç Àû ÇÔ¼±À» %dÅÏ ¾È¿¡ Ä§¸ô½ÃÅ°¼¼¿ä.\n", MaxTurns);
+    printf("ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤! ëª¨ë“  ì  í•¨ì„ ì„ %dí„´ ì•ˆì— ì¹¨ëª°ì‹œí‚¤ì„¸ìš”.\n", MaxTurns);
 
-    while (!IsGameEnd())    // °ÔÀÓÀÌ ³¡ÀÌ ¾È³µÀ¸¸é °è¼Ó ¹İº¹
+    while (!IsGameEnd())    // ê²Œì„ì´ ëì´ ì•ˆë‚¬ìœ¼ë©´ ê³„ì† ë°˜ë³µ
     {
-        PrintGameState();   // ÇöÀç °ÔÀÓ »óÅÂ Ãâ·ÂÇÏ°í
-        HandleInput();      // ÀÔ·Â Ã³¸®ÇÏ±â
-        TurnRemains--;      // ÅÏ °¨¼Ò
+        PrintGameState();   // í˜„ì¬ ê²Œì„ ìƒíƒœ ì¶œë ¥í•˜ê³ 
+        HandleInput();      // ì…ë ¥ ì²˜ë¦¬í•˜ê¸°
+        TurnRemains--;      // í„´ ê°ì†Œ
     }
-    PrintGameResult();      // °ÔÀÓÀÌ ³¡³µÀ¸¸é °á°ú Ãâ·Â
+    PrintGameResult();      // ê²Œì„ì´ ëë‚¬ìœ¼ë©´ ê²°ê³¼ ì¶œë ¥
 }
 
 bool BattleShip::Shoot(int InX, int InY)
 {
     if (!Map::IsValidPoition(InX, InY))
     {
-        printf("Àß¸øµÈ ÁÂÇ¥ÀÔ´Ï´Ù.\n");
+        printf("ì˜ëª»ëœ ì¢Œí‘œì…ë‹ˆë‹¤.\n");
         return false;
     }
 
     if (!GamePlayerMap.IsCellEmpty(InX, InY))
     {
-        printf("ÀÌ¹Ì °ø°İÇÑ ÁÂÇ¥ÀÔ´Ï´Ù.\n");
+        printf("ì´ë¯¸ ê³µê²©í•œ ì¢Œí‘œì…ë‹ˆë‹¤.\n");
         return false;
     }
 
     Position AttackPos(InX, InY);
     if (EnemyFleet.ProcessAttack(AttackPos))
     {
-        // ¸Â¾Ò´Ù.
+        // ë§ì•˜ë‹¤.
         GamePlayerMap.SetCellType(AttackPos, CellType::Hit);
-        printf("¸íÁß!\n");
+        printf("ëª…ì¤‘!\n");
         if (EnemyFleet.WasShipJustSunk())
         {
-            printf("¹è°¡ Ä§¸ôÇß½À´Ï´Ù!\n");
+            printf("ë°°ê°€ ì¹¨ëª°í–ˆìŠµë‹ˆë‹¤!\n");
         }
     }
     else
     {
-        // ºø³ª°¬´Ù.
+        // ë¹—ë‚˜ê°”ë‹¤.
         GamePlayerMap.SetCellType(AttackPos, CellType::Miss);
-        printf("ºø³ª°¬½À´Ï´Ù...\n");
+        printf("ë¹—ë‚˜ê°”ìŠµë‹ˆë‹¤...\n");
     }
 
     return true;
@@ -59,9 +59,9 @@ void BattleShip::HandleInput()
 {
     int x;
     int y;
-    printf("°ø°İ ÁÂÇ¥¸¦ ÀÔ·ÂÇÏ¼¼¿ä (x y) : ");
+    printf("ê³µê²© ì¢Œí‘œë¥¼ ì…ë ¥í•˜ì„¸ìš” (x y) : ");
     std::cin >> x >> y;
-    Shoot(x, y);    // ÀÔ·Â¹ŞÀº ÁÂÇ¥ °ø°İ
+    Shoot(x, y);    // ì…ë ¥ë°›ì€ ì¢Œí‘œ ê³µê²©
 }
 
 void BattleShip::PrintGameState() const
@@ -71,19 +71,19 @@ void BattleShip::PrintGameState() const
         GameHiddenMap.PrintMap();
     }
     GamePlayerMap.PrintMap();
-    printf("³²Àº ÅÏ ¼ö : %d\n", TurnRemains);
-    printf("³²Àº Àû ÇÔ¼±ÀÇ ¼ö : %d\n", EnemyFleet.GetAliveShipCount());
+    printf("ë‚¨ì€ í„´ ìˆ˜ : %d\n", TurnRemains);
+    printf("ë‚¨ì€ ì  í•¨ì„ ì˜ ìˆ˜ : %d\n", EnemyFleet.GetAliveShipCount());
 }
 
 void BattleShip::PrintGameResult() const
 {
     if (EnemyFleet.IsAllSunk())
     {
-        printf("½Â¸®!\n");
+        printf("ìŠ¹ë¦¬!\n");
     }
     else
     {
-        printf("ÆĞ¹è...\n");
+        printf("íŒ¨ë°°...\n");
         GameHiddenMap.PrintMap();
     }
 }

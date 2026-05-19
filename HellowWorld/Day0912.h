@@ -1,20 +1,20 @@
 #pragma once
 #include <string>
 
-// ±¸Á¶Ã¼´Â ÇØ´õ¿¡ ¼±¾ğÇÑ´Ù.
+// êµ¬ì¡°ì²´ëŠ” í•´ë”ì— ì„ ì–¸í•œë‹¤.
 struct Enemy
 {
-	// ¸É¹ö º¯¼öµé
-	std::string Name = "°íºí¸°";	
+	// ë§´ë²„ ë³€ìˆ˜ë“¤
+	std::string Name = "ê³ ë¸”ë¦°";	
 	float Health = 100.0f;
 	float AttackPower = 10.0f;
 	int DropGold = 100;
 
-	// ±âº» »ı¼ºÀÚ.
+	// ê¸°ë³¸ ìƒì„±ì.
 	Enemy()
 	{
-		// Á¤ÇØÁø °ªÀÌ ¾Æ´Ñ °ªµé·Î ÃÊ±âÈ­ µÇ¾î¾ß ÇÒ ¶§ »ç¿ë
-		DropGold = rand() % 100 + 50;	// 50 ~ 150 ·£´ıÀ¸·Î »ı¼ºµÊ
+		// ì •í•´ì§„ ê°’ì´ ì•„ë‹Œ ê°’ë“¤ë¡œ ì´ˆê¸°í™” ë˜ì–´ì•¼ í•  ë•Œ ì‚¬ìš©
+		DropGold = rand() % 100 + 50;	// 50 ~ 150 ëœë¤ìœ¼ë¡œ ìƒì„±ë¨
 	}
 
 	Enemy(std::string _Name)
@@ -22,11 +22,11 @@ struct Enemy
 		Name = _Name;
 	}
 
-	// °£´Ü ½Ç½À
-	// float Modifier¸¦ ÆÄ¶ó¸ŞÅÍ·Î ¹Ş´Â »ı¼ºÀÚ ¸¸µé±â
-	//	- Health´Â ¸ğµğÆÄÀÌ¾îÀÇ 10¹è·Î ¼³Á¤
-	//	- AttackPower´Â ¸ğµğÆÄÀÌ¾îÀÇ 5¹è·Î ¼³Á¤
-	//	- DropGold´Â ¸ğµğÆÄÀÌ¾îÀÇ 100¹è·Î ¼³Á¤
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// float Modifierë¥¼ íŒŒë¼ë©”í„°ë¡œ ë°›ëŠ” ìƒì„±ì ë§Œë“¤ê¸°
+	//	- HealthëŠ” ëª¨ë””íŒŒì´ì–´ì˜ 10ë°°ë¡œ ì„¤ì •
+	//	- AttackPowerëŠ” ëª¨ë””íŒŒì´ì–´ì˜ 5ë°°ë¡œ ì„¤ì •
+	//	- DropGoldëŠ” ëª¨ë””íŒŒì´ì–´ì˜ 100ë°°ë¡œ ì„¤ì •
 
 	Enemy(float Modifier)
 	{
@@ -44,54 +44,54 @@ struct Enemy
 	}
 
 	Enemy(std::string _Name, float _Health, float _AttackPower, int _DropGold)
-		: Name(_Name), Health(_Health), AttackPower(_AttackPower), DropGold(_DropGold)	// ¸¸µé¶§ºÎÅÍ °ªÀÌ ¹ÚÈùÃ¼·Î ¸¸µé¾îÁø´Ù.
+		: Name(_Name), Health(_Health), AttackPower(_AttackPower), DropGold(_DropGold)	// ë§Œë“¤ë•Œë¶€í„° ê°’ì´ ë°•íŒì²´ë¡œ ë§Œë“¤ì–´ì§„ë‹¤.
 	{
-		// ¿©±â¼­ ¾²´Â °ÍÀº ¸¸µé¾î ³õ°í °íÃÄ ¾²´Â °Í(±×·¡¼­ °è»êÀÌ ÇÊ¿äÇÑ °ÍµéÀº ÀÌÂÊ¿¡ ÇØ¾ßÇÔ)
+		// ì—¬ê¸°ì„œ ì“°ëŠ” ê²ƒì€ ë§Œë“¤ì–´ ë†“ê³  ê³ ì³ ì“°ëŠ” ê²ƒ(ê·¸ë˜ì„œ ê³„ì‚°ì´ í•„ìš”í•œ ê²ƒë“¤ì€ ì´ìª½ì— í•´ì•¼í•¨)
 		//Name = _Name;
 		//Health = _Health;
 		//AttackPower = _AttackPower;
 		//DropGold = _DropGold;
 	}
 
-	// +¿¬»êÀÚ¸¦ »õ·Î ¾²°Ú´Ù.
-	// +´Â ÀÌÇ×¿¬»êÀÚ(+ÀÇ ¿ŞÂÊ°ú ¿À¸¥ÂÊÀ» °è»êÇÏ´Âµ¥ »ç¿ëÇÑ´Ù)
-	//	¿ŞÂÊ : ÀÚ±â ÀÚ½Å
-	//	¿À¸¥ÂÊ : other
-	//	°á°ú : ¸®ÅÏ °ª
-	Enemy operator+(const Enemy& other) const	// <- ¸¶Áö¸·¿¡ ºÙÀº const´Â ÀÌ ÇÔ¼ö¿¡¼­ ¸É¹ö º¯¼öÀÇ ¼öÁ¤À» ¾ÈÇÏ°Ú´Ù´Â ÀÇ¹Ì
+	// +ì—°ì‚°ìë¥¼ ìƒˆë¡œ ì“°ê² ë‹¤.
+	// +ëŠ” ì´í•­ì—°ì‚°ì(+ì˜ ì™¼ìª½ê³¼ ì˜¤ë¥¸ìª½ì„ ê³„ì‚°í•˜ëŠ”ë° ì‚¬ìš©í•œë‹¤)
+	//	ì™¼ìª½ : ìê¸° ìì‹ 
+	//	ì˜¤ë¥¸ìª½ : other
+	//	ê²°ê³¼ : ë¦¬í„´ ê°’
+	Enemy operator+(const Enemy& other) const	// <- ë§ˆì§€ë§‰ì— ë¶™ì€ constëŠ” ì´ í•¨ìˆ˜ì—ì„œ ë§´ë²„ ë³€ìˆ˜ì˜ ìˆ˜ì •ì„ ì•ˆí•˜ê² ë‹¤ëŠ” ì˜ë¯¸
 	{
-		// ÀÌ¸§Àº ¿ŞÂÊ°ÍÀ» »ç¿ë
-		// Health´Â ÇÕÄ¡°í
-		// AttackPower´Â ¾çÂÊ´Ù 70%»ç¿ë
-		// DropGold´Â ÇÕÄ¡±â
+		// ì´ë¦„ì€ ì™¼ìª½ê²ƒì„ ì‚¬ìš©
+		// HealthëŠ” í•©ì¹˜ê³ 
+		// AttackPowerëŠ” ì–‘ìª½ë‹¤ 70%ì‚¬ìš©
+		// DropGoldëŠ” í•©ì¹˜ê¸°
 		return Enemy(
-			Name + "(ÇÕÃ¼)",
+			Name + "(í•©ì²´)",
 			Health + other.Health,
 			AttackPower * 0.7f + other.AttackPower * 0.7f,
 			DropGold + other.DropGold);
 	}
 
-	// °£´Ü ½Ç½À
-	// 1. Enemy -¿¬»êÀÚ ¿À¹ö·ÎµùÇÏ±â
-	//		¿ŞÂÊ¿¡ ÀÖ´Â °Í¿¡¼­ ¿À¸¥ÂÊÀÇ °ª Àı¹İÀ» »©±â
-	// 2. Enemy *¿¬»êÀÚ ¿À¹ö·ÎµùÇÏ±â
-	//		¿ŞÂÊÀº floatÅ¸ÀÔÀÌ´Ù.
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// 1. Enemy -ì—°ì‚°ì ì˜¤ë²„ë¡œë”©í•˜ê¸°
+	//		ì™¼ìª½ì— ìˆëŠ” ê²ƒì—ì„œ ì˜¤ë¥¸ìª½ì˜ ê°’ ì ˆë°˜ì„ ë¹¼ê¸°
+	// 2. Enemy *ì—°ì‚°ì ì˜¤ë²„ë¡œë”©í•˜ê¸°
+	//		ì™¼ìª½ì€ floatíƒ€ì…ì´ë‹¤.
 	//		Enemy operator*(float Multiplier) const { return };
-	//		// ½Ç»ç¿ë ¿¹½Ã
+	//		// ì‹¤ì‚¬ìš© ì˜ˆì‹œ
 	//		Enemy Goblin;
 	//		Enemy Goblin2 = Goblin * 2.0f;
-	// 3. Enemy *= ¿¬»êÀÚ ¿À¹ö·ÎµùÇÏ±â
+	// 3. Enemy *= ì—°ì‚°ì ì˜¤ë²„ë¡œë”©í•˜ê¸°
 	//		Enemy& operator*=(float Multiplier) { return };
 };
 
 struct Weapon
 {
-	std::string Name = "¹«±â";
-	std::string Desc = "¹«±â ¹è°æ ÀÌ¾ß±â";
+	std::string Name = "ë¬´ê¸°";
+	std::string Desc = "ë¬´ê¸° ë°°ê²½ ì´ì•¼ê¸°";
 	float AttackPower = 10.0f;
 	int Price = 100;
 
-	//Weapon()	// ¾ø¾îµµ ÀÚµ¿À¸·Î »ı±è
+	//Weapon()	// ì—†ì–´ë„ ìë™ìœ¼ë¡œ ìƒê¹€
 	//{
 	//}	
 };
@@ -100,7 +100,7 @@ void Day0912_Struct();
 void Day0912_OperatorOverloading();
 
 /// <summary>
-/// Àû Á¤º¸ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+/// ì  ì •ë³´ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="pEnemy">Ãâ·ÂÇÒ Àû(ÀĞ±â Àü¿ë)</param>
-void PrintEnemy(const Enemy* pEnemy);	// pEnemy´Â ÀĞ±â Àü¿ë
+/// <param name="pEnemy">ì¶œë ¥í•  ì (ì½ê¸° ì „ìš©)</param>
+void PrintEnemy(const Enemy* pEnemy);	// pEnemyëŠ” ì½ê¸° ì „ìš©

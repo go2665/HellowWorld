@@ -6,7 +6,7 @@
 
 void Practice0905_01_05()
 {
-	// ÅÆÇÃ¸´ ÇÔ¼ö·Î Clamp ÇÔ¼ö ±¸ÇöÇÏ±â
+	// íƒ¬í”Œë¦¿ í•¨ìˆ˜ë¡œ Clamp í•¨ìˆ˜ êµ¬í˜„í•˜ê¸°
 
 	int Value = -120;
 	int Min = 10;
@@ -25,12 +25,12 @@ void Practice0905_01_05()
 void Practice0905_02_05()
 {
 	/*
-	½ÃÀÛ ±İ¾× 10000
-	ÇÑÆÇ¿¡ ¹«Á¶°Ç ÃÖ¼Ò 100 ¹èÆÃÇØ¾ß ÇÔ. ¸¸¾à ¼ÒÁö±İ¾×ÀÌ 100 ÀÌÇÏÀÏ °æ¿ì °ÔÀÓ Á¾·á.
-	µô·¯´Â A~K±îÁöÀÇ Æ®·³ÇÁ Ä«µå Áß 2ÀåÀ» Áßº¹¾øÀÌ ¼±ÅÃÇÏ°í Á¶Ä¿ Ä«µå°¡ Ãß°¡µÈ´Ù.
-	ÇÃ·¹ÀÌ¾î´Â µô·¯ÀÇ Ä«µå Áß ÇÑÀåÀ» ¼±ÅÃÇÑ´Ù.
-	¸¸¾à ÇÃ·¹ÀÌ¾î°¡ Á¶Ä¿¸¦ »ÌÀÖ´Ù¸é ÇÃ·¹ÀÌ¾îÀÇ ½Â¸®. ¹èÆÃ ±İ¾×ÀÇ 2¹è¸¦ ¹Ş´Â´Ù.
-	ÇÃ·¹ÀÌ¾î°¡ Á¶Ä¿¸¦ »ÌÁö ¸øÇß´Ù¸é ´ÙÀ½ °ÔÀÓÀ» ½ÃÀÛÇÏ°Å³ª ¹èÆÃ ±İ¾×ÀÇ 2¹è¸¦ Ãß°¡·Î ÁöºÒÇÏ°í ÇÑ¹ø ´õ ¼±ÅÃÇÒ ¼ö ÀÖ´Ù.
+	ì‹œì‘ ê¸ˆì•¡ 10000
+	í•œíŒì— ë¬´ì¡°ê±´ ìµœì†Œ 100 ë°°íŒ…í•´ì•¼ í•¨. ë§Œì•½ ì†Œì§€ê¸ˆì•¡ì´ 100 ì´í•˜ì¼ ê²½ìš° ê²Œì„ ì¢…ë£Œ.
+	ë”œëŸ¬ëŠ” A~Kê¹Œì§€ì˜ íŠ¸ëŸ¼í”„ ì¹´ë“œ ì¤‘ 2ì¥ì„ ì¤‘ë³µì—†ì´ ì„ íƒí•˜ê³  ì¡°ì»¤ ì¹´ë“œê°€ ì¶”ê°€ëœë‹¤.
+	í”Œë ˆì´ì–´ëŠ” ë”œëŸ¬ì˜ ì¹´ë“œ ì¤‘ í•œì¥ì„ ì„ íƒí•œë‹¤.
+	ë§Œì•½ í”Œë ˆì´ì–´ê°€ ì¡°ì»¤ë¥¼ ë½‘ìˆë‹¤ë©´ í”Œë ˆì´ì–´ì˜ ìŠ¹ë¦¬. ë°°íŒ… ê¸ˆì•¡ì˜ 2ë°°ë¥¼ ë°›ëŠ”ë‹¤.
+	í”Œë ˆì´ì–´ê°€ ì¡°ì»¤ë¥¼ ë½‘ì§€ ëª»í–ˆë‹¤ë©´ ë‹¤ìŒ ê²Œì„ì„ ì‹œì‘í•˜ê±°ë‚˜ ë°°íŒ… ê¸ˆì•¡ì˜ 2ë°°ë¥¼ ì¶”ê°€ë¡œ ì§€ë¶ˆí•˜ê³  í•œë²ˆ ë” ì„ íƒí•  ìˆ˜ ìˆë‹¤.
 	*/
 
 	enum Card
@@ -59,13 +59,13 @@ void Practice0905_02_05()
 	{
 		int CurrentBet = MinimumBet;
 		
-		printf("¹èÆÃÀ» ÇØÁÖ¼¼¿ä (100~%d) : ", Money);
+		printf("ë°°íŒ…ì„ í•´ì£¼ì„¸ìš” (100~%d) : ", Money);
 		std::cin >> CurrentBet;
-		printf("%d¿øÀ» ¹èÆÃÇß½À´Ï´Ù.\n", CurrentBet);
+		printf("%dì›ì„ ë°°íŒ…í–ˆìŠµë‹ˆë‹¤.\n", CurrentBet);
 
 		Money -= CurrentBet;
 
-		// ¹èÆÃÀ» ¾ÈÇÏ°í ÀÖ´Ù.
+		// ë°°íŒ…ì„ ì•ˆí•˜ê³  ìˆë‹¤.
 
 		int Dealer1 = rand() % CardJoker;
 		int Dealer2 = -1;
@@ -92,56 +92,56 @@ void Practice0905_02_05()
 			Dealer3 = CardJoker;
 			break;
 		default:
-			// Àı´ë µé¾î¿À¸é ¾ÈµÈ´Ù.
+			// ì ˆëŒ€ ë“¤ì–´ì˜¤ë©´ ì•ˆëœë‹¤.
 			break;
 		}
 
-		printf("Ä«µå¸¦ ¼±ÅÃÇÏ¼¼¿ä (0, 1, 2) : ");
+		printf("ì¹´ë“œë¥¼ ì„ íƒí•˜ì„¸ìš” (0, 1, 2) : ");
 		int PlayerInput = 0;
 		std::cin >> PlayerInput;
 
 		bool PlayerWin = false;
-		printf("ÇÃ·¹ÀÌ¾î´Â %d¸¦ ¼±ÅÃÇß½À´Ï´Ù.\n", PlayerInput);
+		printf("í”Œë ˆì´ì–´ëŠ” %dë¥¼ ì„ íƒí–ˆìŠµë‹ˆë‹¤.\n", PlayerInput);
 		switch (PlayerInput)
 		{
 		case 0:
 			if (Dealer1 == CardJoker)
 			{
-				// ¹ß°ßÇÔ
+				// ë°œê²¬í•¨
 				PlayerWin = true;
 			}
 			break;
 		case 1:
 			if (Dealer2 == CardJoker)
 			{
-				// ¹ß°ßÇÔ
+				// ë°œê²¬í•¨
 				PlayerWin = true;
 			}
 			break;
 		case 2:
 			if (Dealer3 == CardJoker)
 			{
-				// ¹ß°ßÇÔ
+				// ë°œê²¬í•¨
 				PlayerWin = true;
 			}
 			break;
 		default:
-			// Àı´ë µé¾î¿À¸é ¾ÈµÈ´Ù.
+			// ì ˆëŒ€ ë“¤ì–´ì˜¤ë©´ ì•ˆëœë‹¤.
 			break;
 		}
 
 		if (PlayerWin)
 		{
 			Money += CurrentBet * 2;
-			printf("Á¶Ä¿¸¦ »Ì¾Ò½À´Ï´Ù. ´ç½ÅÀÇ ÇöÀç ±İ¾×Àº %dÀÔ´Ï´Ù.\n", Money);
+			printf("ì¡°ì»¤ë¥¼ ë½‘ì•˜ìŠµë‹ˆë‹¤. ë‹¹ì‹ ì˜ í˜„ì¬ ê¸ˆì•¡ì€ %dì…ë‹ˆë‹¤.\n", Money);
 		}
 		else
 		{
-			printf("´ç½ÅÀÌ »ÌÀº Ä«µå´Â Á¶Ä¿°¡ ¾Æ´Õ´Ï´Ù.\n");
+			printf("ë‹¹ì‹ ì´ ë½‘ì€ ì¹´ë“œëŠ” ì¡°ì»¤ê°€ ì•„ë‹™ë‹ˆë‹¤.\n");
 
 			if (Money >= CurrentBet * 2)
 			{
-				printf("Ãß°¡ µµÀü ÇÏ½Ã°Ú½À´Ï±î ? (0:yes, 1 : no) : ");
+				printf("ì¶”ê°€ ë„ì „ í•˜ì‹œê² ìŠµë‹ˆê¹Œ ? (0:yes, 1 : no) : ");
 				int Select = -1;
 				std::cin >> Select;
 				if (Select == 0)
@@ -155,7 +155,7 @@ void Practice0905_02_05()
 					{
 						do
 						{
-							printf("³²Àº Ä«µå Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä (1,2) : ");
+							printf("ë‚¨ì€ ì¹´ë“œ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” (1,2) : ");
 							std::cin >> PlayerSecondInput;
 						} //while (!(PlayerSecondInput == 1 || PlayerSecondInput == 2));
 						while (PlayerSecondInput != 1 && PlayerSecondInput != 2);
@@ -165,7 +165,7 @@ void Practice0905_02_05()
 					{
 						do
 						{
-							printf("³²Àº Ä«µå Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä (0,2) : ");
+							printf("ë‚¨ì€ ì¹´ë“œ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” (0,2) : ");
 							std::cin >> PlayerSecondInput;
 						} while (PlayerSecondInput != 0 && PlayerSecondInput != 2);
 					}
@@ -174,63 +174,63 @@ void Practice0905_02_05()
 					{
 						do
 						{
-							printf("³²Àº Ä«µå Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä (0,1) : ");
+							printf("ë‚¨ì€ ì¹´ë“œ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” (0,1) : ");
 							std::cin >> PlayerSecondInput;
 						} while (PlayerSecondInput != 0 && PlayerSecondInput != 1);
 					}
 					break;
 					default:
-						// Àı´ë µé¾î¿À¸é ¾ÈµÈ´Ù.
+						// ì ˆëŒ€ ë“¤ì–´ì˜¤ë©´ ì•ˆëœë‹¤.
 						break;
 					}
 
-					printf("ÇÃ·¹ÀÌ¾î´Â µÎ¹øÂ°·Î %d¸¦ ¼±ÅÃÇß½À´Ï´Ù.\n", PlayerSecondInput);
+					printf("í”Œë ˆì´ì–´ëŠ” ë‘ë²ˆì§¸ë¡œ %dë¥¼ ì„ íƒí–ˆìŠµë‹ˆë‹¤.\n", PlayerSecondInput);
 					switch (PlayerSecondInput)
 					{
 					case 0:
 						if (Dealer1 == CardJoker)
 						{
-							// ¹ß°ßÇÔ
+							// ë°œê²¬í•¨
 							PlayerWin = true;
 						}
 						break;
 					case 1:
 						if (Dealer2 == CardJoker)
 						{
-							// ¹ß°ßÇÔ
+							// ë°œê²¬í•¨
 							PlayerWin = true;
 						}
 						break;
 					case 2:
 						if (Dealer3 == CardJoker)
 						{
-							// ¹ß°ßÇÔ
+							// ë°œê²¬í•¨
 							PlayerWin = true;
 						}
 						break;
 					default:
-						// Àı´ë µé¾î¿À¸é ¾ÈµÈ´Ù.
+						// ì ˆëŒ€ ë“¤ì–´ì˜¤ë©´ ì•ˆëœë‹¤.
 						break;
 					}
 
 					if (PlayerWin)
 					{
 						Money += CurrentBet * 2;
-						printf("Á¶Ä¿¸¦ »Ì¾Ò½À´Ï´Ù. ´ç½ÅÀÇ ÇöÀç ±İ¾×Àº %dÀÔ´Ï´Ù.\n", Money);
+						printf("ì¡°ì»¤ë¥¼ ë½‘ì•˜ìŠµë‹ˆë‹¤. ë‹¹ì‹ ì˜ í˜„ì¬ ê¸ˆì•¡ì€ %dì…ë‹ˆë‹¤.\n", Money);
 					}
 					else
 					{
-						printf("´ç½ÅÀÇ ÆĞ¹èÀÔ´Ï´Ù.\n");
+						printf("ë‹¹ì‹ ì˜ íŒ¨ë°°ì…ë‹ˆë‹¤.\n");
 					}
 				}
 				else
 				{
-					printf("´ç½ÅÀÇ ÆĞ¹èÀÔ´Ï´Ù.\n");
+					printf("ë‹¹ì‹ ì˜ íŒ¨ë°°ì…ë‹ˆë‹¤.\n");
 				}
 			}
 			else
 			{
-				printf("´ç½ÅÀÇ ÆĞ¹èÀÔ´Ï´Ù.\n");
+				printf("ë‹¹ì‹ ì˜ íŒ¨ë°°ì…ë‹ˆë‹¤.\n");
 			}			
 		}
 	}

@@ -9,9 +9,9 @@ void Day0915_WeekPractice()
 	int Year = 0;
 	int Month = 0;
 	int Day = 0;
-	printf("³¯Â¥¸¦ ÀÔ·Â ÇÏ¼¼¿ä(¿¹: 2025 9 15) : ");
+	printf("ë‚ ì§œë¥¼ ìž…ë ¥ í•˜ì„¸ìš”(ì˜ˆ: 2025 9 15) : ");
 	std::cin >> Year >> Month >> Day;
-	printf("ÇØ´ç ³¯Â¥´Â [%s]ÀÔ´Ï´Ù.\n", GetDayOfWeek(Year, Month, Day));	
+	printf("í•´ë‹¹ ë‚ ì§œëŠ” [%s]ìž…ë‹ˆë‹¤.\n", GetDayOfWeek(Year, Month, Day));	
 }
 
 void Day0915_WeekPracticeTest()
@@ -24,7 +24,7 @@ void Day0915_WeekPracticeTest()
 	for (int i = 1; i < 31; i++)
 	{
 		Day = i;
-		printf("(%d/%d/%d)´Â [%s]ÀÔ´Ï´Ù.\n", Year, Month, Day, GetDayOfWeek(Year, Month, Day));
+		printf("(%d/%d/%d)ëŠ” [%s]ìž…ë‹ˆë‹¤.\n", Year, Month, Day, GetDayOfWeek(Year, Month, Day));
 	}
 
 }
@@ -36,7 +36,7 @@ void Day0915_WeekPracticeBlackjack()
 
 void Day0915_WeekPracticeBlackjackTest()
 {
-	//'¢¼', '¢½', '¡Þ', '¢À'
+	//'â™ ', 'â™¡', 'â—‡', 'â™£'
 	Card Dealer[5] = { {10, 'S'}, {11, 'S'}, {1,'S'}, {5,'S'}, {3,'S'} };
 	PrintDealerHand(Dealer, 5, true);
 	printf("\n");

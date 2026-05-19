@@ -8,40 +8,40 @@
 
 void Day0917::TestPolymorphism()
 {
-	Tiger* pTiger = new Tiger("È£½ÄÀÌ");
-	Hawk* pHawk = new Hawk("¸ÅÇü");
+	Tiger* pTiger = new Tiger("í˜¸ì‹ì´");
+	Hawk* pHawk = new Hawk("ë§¤í˜•");
 
-	printf("È£½ÄÀÌ ÀÌµ¿\n");
+	printf("í˜¸ì‹ì´ ì´ë™\n");
 	pTiger->Move();
-	printf("¸ÅÇü ÀÌµ¿\n");
+	printf("ë§¤í˜• ì´ë™\n");
 	pHawk->Move();
 
-	printf("µ¿¹° ÀÌµ¿\n");
+	printf("ë™ë¬¼ ì´ë™\n");
 	Animal* pAnimal = pHawk;
-	pAnimal->Move();	// AnimalÀÇ Move°¡ ½ÇÇàµÊ -> °¡»óÇÔ¼ö°¡ µÈ ÈÄ¿¡´Â ¿ø·¡ Å¬·¡½ºÀÇ Move°¡ ½ÇÇàµÈ´Ù.
+	pAnimal->Move();	// Animalì˜ Moveê°€ ì‹¤í–‰ë¨ -> ê°€ìƒí•¨ìˆ˜ê°€ ëœ í›„ì—ëŠ” ì›ë˜ í´ë˜ìŠ¤ì˜ Moveê°€ ì‹¤í–‰ëœë‹¤.
 	pAnimal = pTiger;
 	pAnimal->Move();
 
-	// C ½ºÅ¸ÀÏ Ä³½ºÆÃ(À§Çè)
+	// C ìŠ¤íƒ€ì¼ ìºìŠ¤íŒ…(ìœ„í—˜)
 	//Tiger* pTempTiger = (Tiger*)pAnimal;
 	//pTempTiger->Hunt();
 	//((Tiger*)pAnimal)->Hunt();
 
-	// C++ ½ºÅ¸ÀÏ Ä³½ºÆÃ Áß ÇÏ³ª
-	// dynamic_cast : ·±Å¸ÀÓ(½ÇÇàÁß)¿¡ ÀÌ ÁÖ¼Ò°¡ ½ÇÁ¦ ¾î¶² ÀÚ½Ä Å¬·¡½ºÀÇ °´Ã¼¸¦ °¡¸®Å°°í ÀÖ´ÂÁö ¾ÈÀüÇÏ°Ô È®ÀÎÇØÁÖ´Â cast
+	// C++ ìŠ¤íƒ€ì¼ ìºìŠ¤íŒ… ì¤‘ í•˜ë‚˜
+	// dynamic_cast : ëŸ°íƒ€ì„(ì‹¤í–‰ì¤‘)ì— ì´ ì£¼ì†Œê°€ ì‹¤ì œ ì–´ë–¤ ìì‹ í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ê³  ìˆëŠ”ì§€ ì•ˆì „í•˜ê²Œ í™•ì¸í•´ì£¼ëŠ” cast
 
 	Tiger* pTempTiger = dynamic_cast<Tiger*>(pAnimal);
 	if (pTempTiger == nullptr)
 	{
-		// pAnimalÀº Tiger*°¡ ¾Æ´Ï´Ù.
+		// pAnimalì€ Tiger*ê°€ ì•„ë‹ˆë‹¤.
 	}
 	else
 	{
-		// pAnimal¿¡ ÀúÀåµÈ ÁÖ¼Ò´Â TigerÀÇ ÁÖ¼Ò°¡ ¸Â´Ù.
+		// pAnimalì— ì €ì¥ëœ ì£¼ì†ŒëŠ” Tigerì˜ ì£¼ì†Œê°€ ë§ë‹¤.
 		pTempTiger->Hunt();
 	}
 
-	// pAnimal->Hunt(); // »ç¿ë ºÒ°¡´É
+	// pAnimal->Hunt(); // ì‚¬ìš© ë¶ˆê°€ëŠ¥
 
 	delete pTiger;
 	pTiger = nullptr;
@@ -52,25 +52,25 @@ void Day0917::TestPolymorphism()
 
 void Day0917::TestVirtualFunction()
 {
-	Parent* pParent = new Child();	// °¡´É
+	Parent* pParent = new Child();	// ê°€ëŠ¥
 	delete pParent;
 	pParent = nullptr;
 }
 
 void Day0917::TestPractice1()
 {
-	// °£´Ü ½Ç½À
-	// Animal*ÀÇ ¹è¿­ ¸¸µé±â
-	// ¿©·¯ Á¾·ùÀÇ µ¿¹°À» ³Ö±â
-	// ¹è¿­¿¡ µé¾îÀÖ´Â ¸ğµç µ¿¹°ÀÇ MakeSound ½ÇÇàÇÏ±â
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// Animal*ì˜ ë°°ì—´ ë§Œë“¤ê¸°
+	// ì—¬ëŸ¬ ì¢…ë¥˜ì˜ ë™ë¬¼ì„ ë„£ê¸°
+	// ë°°ì—´ì— ë“¤ì–´ìˆëŠ” ëª¨ë“  ë™ë¬¼ì˜ MakeSound ì‹¤í–‰í•˜ê¸°
 
 	const int Size = 5;
 	Animal* Zoo[Size];
-	Zoo[0] = new Tiger("È£½ÄÀÌ");
-	Zoo[1] = new Tiger("È£µ¹ÀÌ");
-	Zoo[2] = new Hawk("¸ÅÇü");
-	Zoo[3] = new Hawk("¸Åµ¿»ı");
-	Zoo[4] = new Dog("¸Û¸ÛÀÌ");
+	Zoo[0] = new Tiger("í˜¸ì‹ì´");
+	Zoo[1] = new Tiger("í˜¸ëŒì´");
+	Zoo[2] = new Hawk("ë§¤í˜•");
+	Zoo[3] = new Hawk("ë§¤ë™ìƒ");
+	Zoo[4] = new Dog("ë©ë©ì´");
 
 	for (int i = 0; i < Size; i++)
 	{
@@ -90,17 +90,17 @@ void Day0917::TestAbstractClass()
 {
 	//Shape* pShape = new Shape();
 
-	// °£´Ü ½Ç½À
-	// AnimalÀÇ MoveÇÔ¼ö¸¦ ¼ø¼ö °¡»ó ÇÔ¼ö·Î ¸¸µé¾î¼­ AnimalÀ» Ãß»óÅ¬·¡½º·Î ¸¸µé±â
-	// °¢ µ¿¹°µéÀÇ Move´Â º°µµ·Î ´Ù ±¸ÇöÇÏ±â
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// Animalì˜ Moveí•¨ìˆ˜ë¥¼ ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜ë¡œ ë§Œë“¤ì–´ì„œ Animalì„ ì¶”ìƒí´ë˜ìŠ¤ë¡œ ë§Œë“¤ê¸°
+	// ê° ë™ë¬¼ë“¤ì˜ MoveëŠ” ë³„ë„ë¡œ ë‹¤ êµ¬í˜„í•˜ê¸°
 
 	const int Size = 5;
 	Animal* Zoo[Size];
-	Zoo[0] = new Tiger("È£½ÄÀÌ");
-	Zoo[1] = new Tiger("È£µ¹ÀÌ");
-	Zoo[2] = new Hawk("¸ÅÇü");
-	Zoo[3] = new Hawk("¸Åµ¿»ı");
-	Zoo[4] = new Dog("¸Û¸ÛÀÌ");
+	Zoo[0] = new Tiger("í˜¸ì‹ì´");
+	Zoo[1] = new Tiger("í˜¸ëŒì´");
+	Zoo[2] = new Hawk("ë§¤í˜•");
+	Zoo[3] = new Hawk("ë§¤ë™ìƒ");
+	Zoo[4] = new Dog("ë©ë©ì´");
 
 	for (int i = 0; i < Size; i++)
 	{
@@ -114,9 +114,9 @@ void Day0917::TestAbstractClass()
 	}
 }
 
-// °£´Ü ½Ç½À
-// ¼ö¿µ ÀÎÅÍÆäÀÌ½º ¸¸µé±â
-// ÀüÅõ ÀÎÅÍÆäÀÌ½º ¸¸µé±â
+// ê°„ë‹¨ ì‹¤ìŠµ
+// ìˆ˜ì˜ ì¸í„°í˜ì´ìŠ¤ ë§Œë“¤ê¸°
+// ì „íˆ¬ ì¸í„°í˜ì´ìŠ¤ ë§Œë“¤ê¸°
 void Day0917::TestEnumClass()
 {
 	enum Color
@@ -134,13 +134,13 @@ void Day0917::TestEnumClass()
 	//enum TrafficLight
 	//{
 	//	Red, Yellow, Green
-	//};	// ±âÁ¸ enumÀº ¹üÀ§°¡ Àü¿ªÀÌ±â ¶§¹®¿¡ ÀÌ¸§ÀÌ °ãÄ¡¸é ¾ÈµÊ
+	//};	// ê¸°ì¡´ enumì€ ë²”ìœ„ê°€ ì „ì—­ì´ê¸° ë•Œë¬¸ì— ì´ë¦„ì´ ê²¹ì¹˜ë©´ ì•ˆë¨
 
 	Color myColor = Green;
 	Fruit myFruit = Orange;
 	if (myColor == myFruit)
 	{
-		// ³í¸®ÀûÀ¸·Î´Â ¸»ÀÌ ¾ÈµÇÁö¸¸ ¹®¹ıÀûÀ¸·Î Çã¿ëÀÌ µÊ
+		// ë…¼ë¦¬ì ìœ¼ë¡œëŠ” ë§ì´ ì•ˆë˜ì§€ë§Œ ë¬¸ë²•ì ìœ¼ë¡œ í—ˆìš©ì´ ë¨
 	}
 
 	enum class Color2
@@ -157,7 +157,7 @@ void Day0917::TestEnumClass()
 	};
 	enum class TrafficLight2
 	{
-		Red = 0,	// TrafficLight2¾È¿¡ ÀÖ´Â Red±â ¶§¹®¿¡ ÀÌ¸§ÀÌ °ãÄ¡Áö ¾Ê´Â´Ù.
+		Red = 0,	// TrafficLight2ì•ˆì— ìˆëŠ” Redê¸° ë•Œë¬¸ì— ì´ë¦„ì´ ê²¹ì¹˜ì§€ ì•ŠëŠ”ë‹¤.
 		Yellow, 
 		Green
 	};
@@ -165,18 +165,18 @@ void Day0917::TestEnumClass()
 	Fruit2 myFruit2 = Fruit2::Apple;
 	//if (myColor2 == myFruit2)
 	//{
-	//	// ¹®¹ıÀûÀ¸·Î ±İÁö.
+	//	// ë¬¸ë²•ì ìœ¼ë¡œ ê¸ˆì§€.
 	//}
-	//int Number = myColor2;	// ¾Ï½ÃÀû Ä³½ºÆÃÀº ±İÁö
-	int Number = static_cast<int>(myColor2);	// ¸í½ÃÀû Ä³½ºÆÃÀÌ ÇÊ¼ö
+	//int Number = myColor2;	// ì•”ì‹œì  ìºìŠ¤íŒ…ì€ ê¸ˆì§€
+	int Number = static_cast<int>(myColor2);	// ëª…ì‹œì  ìºìŠ¤íŒ…ì´ í•„ìˆ˜
 
 		
 
 	PlayerState state = PlayerState::None;
 	state = static_cast<PlayerState>(static_cast<int>(state) | static_cast<int>(PlayerState::OnGround));
-	state = state | PlayerState::OnGround;	// ¸í·É¾î ¿À¹ö·ÎµùÀ» ÇØ¾ß °¡´É
+	state = state | PlayerState::OnGround;	// ëª…ë ¹ì–´ ì˜¤ë²„ë¡œë”©ì„ í•´ì•¼ ê°€ëŠ¥
 
-	// °£´Ü ½Ç½À
+	// ê°„ë‹¨ ì‹¤ìŠµ
 	// &, ~, |=, &=
 
 }

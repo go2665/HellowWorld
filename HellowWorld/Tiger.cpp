@@ -2,31 +2,31 @@
 
 void Tiger::Hunt()
 {
-	printf("[%s]°¡ »ç³ÉÀ» ÇÕ´Ï´Ù.\n", Name.c_str());
+	printf("[%s]ê°€ ì‚¬ëƒ¥ì„ í•©ë‹ˆë‹¤.\n", Name.c_str());
 	SetEnergy(Energy - 0.5f);
-	printf("[%s] : ¿¡³ÊÁö°¡ 50% °¨¼ÒÇÕ´Ï´Ù.\n", Name.c_str());
+	printf("[%s] : ì—ë„ˆì§€ê°€ 50% ê°ì†Œí•©ë‹ˆë‹¤.\n", Name.c_str());
 }
 
 void Tiger::Move()
 {
-	printf("[%s]°¡ Æ÷È¿ÇÕ´Ï´Ù.\n", Name.c_str());
+	printf("[%s]ê°€ í¬íš¨í•©ë‹ˆë‹¤.\n", Name.c_str());
 	//Animal::Move();
 	if (Energy < 0.1f)
 	{
-		printf("[%s] : ÈûÀÌ ¾ø¾î¼­ ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : í˜ì´ ì—†ì–´ì„œ ì›€ì§ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Name.c_str());
 	}
 	else
 	{
-		printf("[%s] : ¿òÁ÷ÀÔ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ì›€ì§ì…ë‹ˆë‹¤.\n", Name.c_str());
 		SetEnergy(Energy - 0.1f);
-		printf("[%s] : ¿¡³ÊÁö°¡ 10% °¨¼ÒÇÕ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ì—ë„ˆì§€ê°€ 10% ê°ì†Œí•©ë‹ˆë‹¤.\n", Name.c_str());
 	}
 }
 
 void Tiger::MakeSound()
 {
 	Animal::MakeSound();
-	printf("¾îÈï!\n");
+	printf("ì–´í¥!\n");
 }
 
 void Tiger::Attack(ICanBattle* InTarget)
@@ -36,5 +36,5 @@ void Tiger::Attack(ICanBattle* InTarget)
 
 void Tiger::TakeDamage(float InDamage)
 {
-	printf("[%.0f]ÀÇ ÇÇÇØ¸¦ ÀÔ¾ú´Ù.", InDamage);
+	printf("[%.0f]ì˜ í”¼í•´ë¥¼ ì…ì—ˆë‹¤.", InDamage);
 }

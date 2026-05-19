@@ -19,18 +19,18 @@ bool ReadMapFile(const char* MapFileName, std::string& OutDataString)
 	strcat(FilePath, MapFileName);
 
 	std::ifstream InputFile(FilePath);
-	if (!InputFile.is_open())	// ÆÄÀÏÀÌ ¿­·È´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	if (!InputFile.is_open())	// íŒŒì¼ì´ ì—´ë ¸ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	{
-		printf("ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.\n");
-		printf("[%s] °æ·Î¸¦ È®ÀÎÇÏ¼¼¿ä.\n", FilePath);
+		printf("íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
+		printf("[%s] ê²½ë¡œë¥¼ í™•ì¸í•˜ì„¸ìš”.\n", FilePath);
 		return false;
 	}
 
 	OutDataString = std::string((std::istreambuf_iterator<char>(InputFile)),
-		std::istreambuf_iterator<char>()); // InputFile¿¡ ÀÖ´Â ±ÛÀÚµéÀ» ¸ğµÎ ÀĞ¾î¼­ OutDataString¿¡ ÀúÀåÇÏ±â
+		std::istreambuf_iterator<char>()); // InputFileì— ìˆëŠ” ê¸€ìë“¤ì„ ëª¨ë‘ ì½ì–´ì„œ OutDataStringì— ì €ì¥í•˜ê¸°
 
-	//printf("ÆÄÀÏ ³»¿ëÀº ´ÙÀ½°ú °°½À´Ï´Ù.\n");
-	//printf("%s\n", FileContents.c_str());	// FileContents¾È¿¡ ÀÖ´Â ¹®ÀÚ¿­À» const char*·Î µ¹·ÁÁÖ´Â ÇÔ¼ö	
+	//printf("íŒŒì¼ ë‚´ìš©ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.\n");
+	//printf("%s\n", FileContents.c_str());	// FileContentsì•ˆì— ìˆëŠ” ë¬¸ìì—´ì„ const char*ë¡œ ëŒë ¤ì£¼ëŠ” í•¨ìˆ˜	
 
 	return true;
 }
@@ -41,17 +41,17 @@ bool ParseMapData(std::string& DataString)
 	char* Current = Source;
 	strcpy(Source, DataString.c_str());
 
-	// Ã¹Â° ÁÙ Ã³¸®
-	// ¶óÀÎ ºĞ¸®ÇÏ±â
+	// ì²«ì§¸ ì¤„ ì²˜ë¦¬
+	// ë¼ì¸ ë¶„ë¦¬í•˜ê¸°
 	char* LinePtr = GetLine(&Current);
 
-	// ¶óÀÎ ÆÄ½ÌÇÏ±â
+	// ë¼ì¸ íŒŒì‹±í•˜ê¸°
 	int SizeNumbers[2] = { 0 };
 	ParseLineData(LinePtr, 2, SizeNumbers);
 	
 	//printf("ArraySize : %d, %d\n", SizeNumbers[0], SizeNumbers[1]);
 
-	// ¸ÊÀÇ Å©±â¸¦ ¾Ë¾Ò´Ù. => Maze »ı¼º
+	// ë§µì˜ í¬ê¸°ë¥¼ ì•Œì•˜ë‹¤. => Maze ìƒì„±
 	MazeWidth = SizeNumbers[0];
 	MazeHeight = SizeNumbers[1];
 
@@ -63,13 +63,13 @@ bool ParseMapData(std::string& DataString)
 	}
 
 	int HeightIndex = 0;
-	while ((*Current) != '\0')	// Current°¡ \0ÀÌ µÉ ¶§±îÁö ¹İº¹
+	while ((*Current) != '\0')	// Currentê°€ \0ì´ ë  ë•Œê¹Œì§€ ë°˜ë³µ
 	{
-		LinePtr = GetLine(&Current);	// ÇÑÁÙ Àß¶ó³»°í
-		ParseLineData(LinePtr, MazeWidth, Maze[HeightIndex]);	// ÆÄ½ÌÇØ¼­ µ¥ÀÌÅÍ ³Ö°í	
+		LinePtr = GetLine(&Current);	// í•œì¤„ ì˜ë¼ë‚´ê³ 
+		ParseLineData(LinePtr, MazeWidth, Maze[HeightIndex]);	// íŒŒì‹±í•´ì„œ ë°ì´í„° ë„£ê³ 	
 		HeightIndex++;
 
-		if (HeightIndex >= MazeHeight)	// Å©±âÀ» ¹ş¾î³ªÁö ¸øÇÏ°Ô Ã¼Å©
+		if (HeightIndex >= MazeHeight)	// í¬ê¸°ì„ ë²—ì–´ë‚˜ì§€ ëª»í•˜ê²Œ ì²´í¬
 			break;
 	}
 
@@ -102,16 +102,16 @@ void ParseLineData(const char* LineData, int ArraySize, int* OutArray)
 		int Result = 0;
 		while ((*LinePointer) != ',' && (*LinePointer) != '\0')
 		{
-			Result = Result * 10 + (*LinePointer) - '0';	// ¼ıÀÚ ¸¸µé±â
+			Result = Result * 10 + (*LinePointer) - '0';	// ìˆ«ì ë§Œë“¤ê¸°
 			LinePointer++;
 		}
-		OutArray[SizeIndex] = Result;	// ¼ıÀÚ °á°ú ÀúÀå
+		OutArray[SizeIndex] = Result;	// ìˆ«ì ê²°ê³¼ ì €ì¥
 		SizeIndex++;
 
-		if (ArraySize <= SizeIndex)	// ¹è¿­ Å©±â ÀÌ»óÀ¸·Î ³Ö´Â °ÍÀ» ¹æÁö
+		if (ArraySize <= SizeIndex)	// ë°°ì—´ í¬ê¸° ì´ìƒìœ¼ë¡œ ë„£ëŠ” ê²ƒì„ ë°©ì§€
 			break;
 
-		if (*LinePointer < '0' || *LinePointer > '9')	// ¼ıÀÚ ¿Ü¿¡´Â ½ºÅµ
+		if (*LinePointer < '0' || *LinePointer > '9')	// ìˆ«ì ì™¸ì—ëŠ” ìŠ¤í‚µ
 			LinePointer++;
 	}
 }
@@ -119,9 +119,9 @@ void ParseLineData(const char* LineData, int ArraySize, int* OutArray)
 void InitializeMaze()
 {
 	std::string Data;
-	ReadMapFile("MapData.txt", Data);	// ÆÄÀÏ ÀĞ±â
+	ReadMapFile("MapData.txt", Data);	// íŒŒì¼ ì½ê¸°
 
-	ParseMapData(Data);	// ÀĞÀº µ¥ÀÌÅÍ·Î ¸Ê Á¤º¸ ±¸¼ºÇÏ±â
+	ParseMapData(Data);	// ì½ì€ ë°ì´í„°ë¡œ ë§µ ì •ë³´ êµ¬ì„±í•˜ê¸°
 }
 
 void ClearMaze()

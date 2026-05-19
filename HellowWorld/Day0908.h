@@ -5,6 +5,6 @@ void Day0908();
 void Day0908_Cast();
 
 void Shuffle(int Array[], int Length);
-//void Shuffle(int* Array, int Length);	// ÀÏ¹ÝÀûÀ¸·Î ÀÌ·¸°Ô »ç¿ëÇÏ´Â °ÍÀÌ º¸Åë
+//void Shuffle(int* Array, int Length);	// ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 void Day0908_Ref();

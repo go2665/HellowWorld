@@ -4,40 +4,40 @@
 //{
 //	if (Energy < 0.1f)
 //	{
-//		printf("[%s] : ÈûÀÌ ¾ø¾î¼­ ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.\n", Name.c_str());
+//		printf("[%s] : íž˜ì´ ì—†ì–´ì„œ ì›€ì§ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Name.c_str());
 //	}
 //	else
 //	{
-//		printf("[%s] : ¿òÁ÷ÀÔ´Ï´Ù.\n", Name.c_str());
+//		printf("[%s] : ì›€ì§ìž…ë‹ˆë‹¤.\n", Name.c_str());
 //		SetEnergy(Energy - 0.1f);
-//		printf("[%s] : ¿¡³ÊÁö°¡ 10% °¨¼ÒÇÕ´Ï´Ù.\n", Name.c_str());
+//		printf("[%s] : ì—ë„ˆì§€ê°€ 10% ê°ì†Œí•©ë‹ˆë‹¤.\n", Name.c_str());
 //	}
 //}
 
 void Animal::MakeSound()
 {
-	printf("[%s] : ¼Ò¸®¸¦ ³À´Ï´Ù.\n", Name.c_str());
+	printf("[%s] : ì†Œë¦¬ë¥¼ ëƒ…ë‹ˆë‹¤.\n", Name.c_str());
 }
 
 void Animal::Eat()
 {
-	printf("[%s] : ¸Ô½À´Ï´Ù.\n", Name.c_str());
-	printf("[%s] : ¿¡³ÊÁö¸¦ 30% È¸º¹ÇÕ´Ï´Ù.\n", Name.c_str());
+	printf("[%s] : ë¨¹ìŠµë‹ˆë‹¤.\n", Name.c_str());
+	printf("[%s] : ì—ë„ˆì§€ë¥¼ 30% íšŒë³µí•©ë‹ˆë‹¤.\n", Name.c_str());
 	SetEnergy(Energy + 0.3f);
 }
 
 void Animal::Sleep()
 {
-	printf("[%s] : ÀáÀ» Àâ´Ï´Ù.\n", Name.c_str());
-	printf("[%s] : ¿¡³ÊÁö¸¦ 100% È¸º¹ÇÕ´Ï´Ù.\n", Name.c_str());
+	printf("[%s] : ìž ì„ ìž¡ë‹ˆë‹¤.\n", Name.c_str());
+	printf("[%s] : ì—ë„ˆì§€ë¥¼ 100% íšŒë³µí•©ë‹ˆë‹¤.\n", Name.c_str());
 	SetEnergy(1.0f);
 	Age++;
-	printf("[%s] : ³ªÀÌ°¡ ÇÑ»ì Áõ°¡ÇÕ´Ï´Ù. %d»ì ÀÔ´Ï´Ù.\n", Name.c_str(), Age);
+	printf("[%s] : ë‚˜ì´ê°€ í•œì‚´ ì¦ê°€í•©ë‹ˆë‹¤. %dì‚´ ìž…ë‹ˆë‹¤.\n", Name.c_str(), Age);
 }
 
 void Animal::ShowInfo()
 {
-	printf("ÀÌ¸§\t: %s\n", Name.c_str());
-	printf("³ªÀÌ\t: %d »ì\n", Age);
-	printf("¿¡³ÊÁö\t: %.0f ÆÛ¼¾Æ®\n", Energy * 100);
+	printf("ì´ë¦„\t: %s\n", Name.c_str());
+	printf("ë‚˜ì´\t: %d ì‚´\n", Age);
+	printf("ì—ë„ˆì§€\t: %.0f í¼ì„¼íŠ¸\n", Energy * 100);
 }

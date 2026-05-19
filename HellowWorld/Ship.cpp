@@ -2,7 +2,7 @@
 
 void Ship::Place(const Position* InPosition, int InSize)
 {
-	// ÇÔ¼±À» ¹èÄ¡ÇÏ¸é¼­ µ¥ÀÌÅÍ ÃÊ±âÈ­°¡ ÀÏ¾î³­´Ù.
+	// í•¨ì„ ì„ ë°°ì¹˜í•˜ë©´ì„œ ë°ì´í„° ì´ˆê¸°í™”ê°€ ì¼ì–´ë‚œë‹¤.
 	Size = InSize;
 	Hits = 0;
 	for (int i = 0; i < Size; i++)
@@ -11,23 +11,23 @@ void Ship::Place(const Position* InPosition, int InSize)
 	}
 	for (int i = Size; i < MaxShipSize; i++)
 	{
-		Positions[i] = Position(-1, -1);	// ¾È¾²´Â °÷Àº ºÒ°¡´ÉÇÑ ÁÂÇ¥·Î ÃÊ±âÈ­
+		Positions[i] = Position(-1, -1);	// ì•ˆì“°ëŠ” ê³³ì€ ë¶ˆê°€ëŠ¥í•œ ì¢Œí‘œë¡œ ì´ˆê¸°í™”
 	}
 }
 
 bool Ship::CheckAndProcessHit(const Position& InAttackPos)
 {
 	if (IsSunk())
-		return false;	// ÀÌ¹Ì Ä§¸ôÇÑ ¹è´Â ´õ Ã³¸® ¾ÈÇÑ´Ù.
+		return false;	// ì´ë¯¸ ì¹¨ëª°í•œ ë°°ëŠ” ë” ì²˜ë¦¬ ì•ˆí•œë‹¤.
 
 	for (int i = 0; i < Size; i++)
 	{
-		if (Positions[i] == InAttackPos)	// ¸íÁßÇßÀ¸¸é
+		if (Positions[i] == InAttackPos)	// ëª…ì¤‘í–ˆìœ¼ë©´
 		{
-			Hits++;			// ÇÇ°Ý È¸¼ö Áõ°¡
-			return true;	// ¸Â¾Ò´Ù°í ¸®ÅÏ
+			Hits++;			// í”¼ê²© íšŒìˆ˜ ì¦ê°€
+			return true;	// ë§žì•˜ë‹¤ê³  ë¦¬í„´
 		}
 	}
 
-	return false;	// ¸íÁßÇÑ °÷ÀÌ ¾ø´Ù.
+	return false;	// ëª…ì¤‘í•œ ê³³ì´ ì—†ë‹¤.
 }

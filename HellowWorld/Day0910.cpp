@@ -25,13 +25,13 @@ void Day0910_String()
 	//char HelloString[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\n' };
 	//char HelloString[] = "Hello World!\n";
 
-	printf("%s", HelloString);	// ¹®ÀÚ¿­ Ãâ·ÂÇÏ±â
+	printf("%s", HelloString);	// ë¬¸ìì—´ ì¶œë ¥í•˜ê¸°
 
 	HelloString[5] = '\0';
-	printf("%s", HelloString);	// Hello¸¸ Ãâ·ÂµÊ
+	printf("%s", HelloString);	// Helloë§Œ ì¶œë ¥ë¨
 
-	// °£´Ü ½Ç½À
-	// HelloString¿¡¼­ 'e'°¡ ¸î¹øÂ°¿¡ ÀÖ´ÂÁö Ãâ·ÂÇØº¸±â
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// HelloStringì—ì„œ 'e'ê°€ ëª‡ë²ˆì§¸ì— ìˆëŠ”ì§€ ì¶œë ¥í•´ë³´ê¸°
 
 	printf("\n\n\n\n\n\n\n\n\n\n\n");
 	//int Index = 0;
@@ -48,75 +48,75 @@ void Day0910_String()
 	//}
 	//if (IsFind)
 	//{
-	//	printf("[%c]´Â %d¹ø ÀÎµ¦½º¿¡ ÀÖ½À´Ï´Ù.\n", Target, Index);
+	//	printf("[%c]ëŠ” %dë²ˆ ì¸ë±ìŠ¤ì— ìˆìŠµë‹ˆë‹¤.\n", Target, Index);
 	//}
 	//else
 	//{
-	//	printf("[%c]´Â Ã£À» ¼ö ¾ø½À´Ï´Ù.\n", Target);
+	//	printf("[%c]ëŠ” ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Target);
 	//}
 
 	char Target = 'e';
 	int Index = FindCharIndex(HelloString, Target);
 	if (Index >= 0)
 	{
-		printf("[%c]´Â %d¹ø ÀÎµ¦½º¿¡ ÀÖ½À´Ï´Ù.\n", Target, Index);
+		printf("[%c]ëŠ” %dë²ˆ ì¸ë±ìŠ¤ì— ìˆìŠµë‹ˆë‹¤.\n", Target, Index);
 	}
 	else
 	{
-		printf("[%c]´Â Ã£À» ¼ö ¾ø½À´Ï´Ù.\n", Target);
+		printf("[%c]ëŠ” ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Target);
 	}
 
-	// ½Ç½À
-	// 1. ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ÃøÁ¤ÇÏ´Â ÇÔ¼ö ¸¸µé±â
+	// ì‹¤ìŠµ
+	// 1. ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ ì¸¡ì •í•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
 	//		int MyStringLength(const char* Target);
 	const char* TestString = "Hello";
 	int Length = MyStringLength(TestString);
-	printf("\n\n¹®ÀÚ¿­ ±æÀÌ ÃøÁ¤\n");
-	printf("[%s]ÀÇ ±æÀÌ´Â %dÀÔ´Ï´Ù.", TestString, Length);
+	printf("\n\në¬¸ìì—´ ê¸¸ì´ ì¸¡ì •\n");
+	printf("[%s]ì˜ ê¸¸ì´ëŠ” %dì…ë‹ˆë‹¤.", TestString, Length);
 
-	// 2. ¹®ÀÚ¿­À» º¹»çÇÏ´Â ÇÔ¼ö ¸¸µé±â
+	// 2. ë¬¸ìì—´ì„ ë³µì‚¬í•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
 	//		void MyStringCopy(const char* Source, char* Destination);
-	char Destination[256] = {0};	// Å©±â´Â ±×³É ÃæºĞÇÏ´Ù°í °¡Á¤
-	char* Destination2 = new char[MyStringLength(TestString) + 1];	// +1Àº '\0'¿ë °ø°£
+	char Destination[256] = {0};	// í¬ê¸°ëŠ” ê·¸ëƒ¥ ì¶©ë¶„í•˜ë‹¤ê³  ê°€ì •
+	char* Destination2 = new char[MyStringLength(TestString) + 1];	// +1ì€ '\0'ìš© ê³µê°„
 	MyStringCopy(TestString, Destination2);
-	printf("\n\n¹®ÀÚ¿­ º¹»çÇÏ±â\n");
+	printf("\n\në¬¸ìì—´ ë³µì‚¬í•˜ê¸°\n");
 	printf("Source\t\t: %s\n", TestString);
 	printf("Destination\t: %s\n", Destination2);
 	delete[] Destination2;
 	Destination2 = nullptr;
 
-	// 3. ¹®ÀÚ¿­À» ÇÕÄ¡´Â ÇÔ¼ö ¸¸µé±â(Source µÚ¿¡ DestinationÀÇ ³»¿ëÀ» ºÙÀÌ±â)
+	// 3. ë¬¸ìì—´ì„ í•©ì¹˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°(Source ë’¤ì— Destinationì˜ ë‚´ìš©ì„ ë¶™ì´ê¸°)
 	//		void MyStringCat(char* Source, const char* Destination);
-	printf("\n\n¹®ÀÚ¿­ ÇÕÄ¡±â\n");
+	printf("\n\në¬¸ìì—´ í•©ì¹˜ê¸°\n");
 	char TestSource[32] = "Hello";
-	printf("¿øº» : %s\n", TestSource);
+	printf("ì›ë³¸ : %s\n", TestSource);
 	MyStringCat(TestSource, " World!");
-	printf("°á°ú : %s\n", TestSource);
+	printf("ê²°ê³¼ : %s\n", TestSource);
 	
-	// 4. ¹®ÀÚ¿­ µÎ°³¸¦ ºñ±³ÇÏ´Â ÇÔ¼ö ¸¸µé±â
-	//		¸®ÅÏ °ªÀÌ µÎ ¹®ÀÚ¿­ÀÌ °°À¸¸é 0, Ã¹¹øÂ°°¡ ÀÛÀ¸¸é À½¼ö, µÎ¹øÂ°°¡ ÀÛÀ¸¸é ¾ç¼ö
+	// 4. ë¬¸ìì—´ ë‘ê°œë¥¼ ë¹„êµí•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
+	//		ë¦¬í„´ ê°’ì´ ë‘ ë¬¸ìì—´ì´ ê°™ìœ¼ë©´ 0, ì²«ë²ˆì§¸ê°€ ì‘ìœ¼ë©´ ìŒìˆ˜, ë‘ë²ˆì§¸ê°€ ì‘ìœ¼ë©´ ì–‘ìˆ˜
 	//		int MyStringCompare(const char* String1, const char* String2);
-	printf("\n\n¹®ÀÚ¿­ ºñ±³ÇÏ±â\n");
+	printf("\n\në¬¸ìì—´ ë¹„êµí•˜ê¸°\n");
 	int CompareResult = MyStringCompare("abd", "abd");
 	if ( CompareResult < 0)
 	{
-		printf("Ã¹¹øÂ° ¹®ÀåÀÌ ´õ ÀÛ½À´Ï´Ù.");
+		printf("ì²«ë²ˆì§¸ ë¬¸ì¥ì´ ë” ì‘ìŠµë‹ˆë‹¤.");
 	}
 	else if (CompareResult > 0)
 	{
-		printf("µÎ¹øÂ° ¹®ÀåÀÌ ´õ ÀÛ½À´Ï´Ù.");
+		printf("ë‘ë²ˆì§¸ ë¬¸ì¥ì´ ë” ì‘ìŠµë‹ˆë‹¤.");
 	}
 	else
 	{
-		printf("µÎ ¹®ÀåÀº °°Àº ¹®ÀåÀÔ´Ï´Ù.");
+		printf("ë‘ ë¬¸ì¥ì€ ê°™ì€ ë¬¸ì¥ì…ë‹ˆë‹¤.");
 	}
 
-	// 5. ¹®ÀÚ¿­À» ÀÔ·Â ¹Ş¾Æ Á¤¼ö¸¦ ¸®ÅÏÇÏ´Â ÇÔ¼ö ¸¸µé±â
+	// 5. ë¬¸ìì—´ì„ ì…ë ¥ ë°›ì•„ ì •ìˆ˜ë¥¼ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
 	//		int MyAtoI(const char* Source);
 	int IntegerNumber = MyAtoI("567");
 	IntegerNumber = MyAtoI("-888");
 
-	// 6. ¹®ÀÚ¿­À» ÀÔ·Â ¹Ş¾Æ ½Ç¼ö¸¦ ¸®ÅÏÇÏ´Â ÇÔ¼ö ¸¸µé±â
+	// 6. ë¬¸ìì—´ì„ ì…ë ¥ ë°›ì•„ ì‹¤ìˆ˜ë¥¼ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
 	//		float MyAtoF(const char* Source);
 	float FloatNumber = MyAtoF("123.45");
 	FloatNumber = MyAtoF("55");
@@ -124,25 +124,25 @@ void Day0910_String()
 	int i = 0;
 	//const int Size = 32;
 	//char InputString[Size];
-	//printf("\n\n¹®ÀåÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+	//printf("\n\në¬¸ì¥ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 	//std::cin.getline(InputString, Size);
-	//printf("ÀÔ·ÂµÈ ¹®ÀåÀº [%s]ÀÔ´Ï´Ù.\n", InputString);
+	//printf("ì…ë ¥ëœ ë¬¸ì¥ì€ [%s]ì…ë‹ˆë‹¤.\n", InputString);
 
-	//// °£´Ü ½Ç½À
-	//// ,µÚ¿¡ ÀÖ´Â ¿µ¾î ¾ËÆÄºªÀº ¸ğµÎ ´ë¹®ÀÚÀÌ¾î¾ß ÇÑ´Ù.
-	//// ÀÔ·Â¹®Àå ¿¹½Ã : "Hello,World!"
-	//// Ãâ·Â¹®Àå ¿¹½Ã : "Hello,WORLD!"
+	//// ê°„ë‹¨ ì‹¤ìŠµ
+	//// ,ë’¤ì— ìˆëŠ” ì˜ì–´ ì•ŒíŒŒë²³ì€ ëª¨ë‘ ëŒ€ë¬¸ìì´ì–´ì•¼ í•œë‹¤.
+	//// ì…ë ¥ë¬¸ì¥ ì˜ˆì‹œ : "Hello,World!"
+	//// ì¶œë ¥ë¬¸ì¥ ì˜ˆì‹œ : "Hello,WORLD!"
 	//SimpleParser(InputString, ',');
-	//printf("ÆÄ½ÌµÈ ¹®ÀåÀº [%s]ÀÔ´Ï´Ù.\n", InputString);
+	//printf("íŒŒì‹±ëœ ë¬¸ì¥ì€ [%s]ì…ë‹ˆë‹¤.\n", InputString);
 
-	//// #include <direct.h> Ãß°¡
+	//// #include <direct.h> ì¶”ê°€
 	//char Working[256];
 	//if (_getcwd(Working, 256) != nullptr)
 	//{
-	//	printf("ÀÛ¾÷ µğ·ºÅä¸® : %s\n", Working);
+	//	printf("ì‘ì—… ë””ë ‰í† ë¦¬ : %s\n", Working);
 	//}
 
-	// ÆÄÀÏ ÀĞ±â
+	// íŒŒì¼ ì½ê¸°
 	ReadFile();
 	
 }
@@ -212,9 +212,9 @@ int MyStringCompare(const char* String1, const char* String2)
 		}
 		Index++;
 	}
-	// µÑ ´Ù \0°¡ µÇ¾ú´Ù.			-> µÑÀÇ ±æÀÌ°¡ °°°í ¾ÈÀÇ ±ÛÀÚµéµµ °°¾Ò´Ù. -> 0
-	// ÇÏ³ª¸¸ \0°¡ µÇ¾ú´Ù.		-> µÑÀÇ ±æÀÌ°¡ ´Ù¸£´Ù -> ¼­·Î ´Ù¸£´Ù.
-	// Áß°£¿¡ ´Ù¸¥ °÷ÀÌ ÀÖ¾ú´Ù.	-> ¼­·Î ´Ù¸£´Ù.
+	// ë‘˜ ë‹¤ \0ê°€ ë˜ì—ˆë‹¤.			-> ë‘˜ì˜ ê¸¸ì´ê°€ ê°™ê³  ì•ˆì˜ ê¸€ìë“¤ë„ ê°™ì•˜ë‹¤. -> 0
+	// í•˜ë‚˜ë§Œ \0ê°€ ë˜ì—ˆë‹¤.		-> ë‘˜ì˜ ê¸¸ì´ê°€ ë‹¤ë¥´ë‹¤ -> ì„œë¡œ ë‹¤ë¥´ë‹¤.
+	// ì¤‘ê°„ì— ë‹¤ë¥¸ ê³³ì´ ìˆì—ˆë‹¤.	-> ì„œë¡œ ë‹¤ë¥´ë‹¤.
 
 	return String1[Index] - String2[Index];
 }
@@ -233,7 +233,7 @@ int MyAtoI(const char* Source)
 	while (Source[Index] != '\0')
 	{
 		//if (Source[Index] >= '0' && Source[Index] <= '9')
-		//{ // ÇÏ¸é ÁÁ´Ù.
+		//{ // í•˜ë©´ ì¢‹ë‹¤.
 		//}
 		Result = Result * 10 + Source[Index] - '0';
 
@@ -248,7 +248,7 @@ float MyAtoF(const char* Source)
 	int PointPosition = FindCharIndex(Source, '.');
 	if (PointPosition >= 0)
 	{
-		// Á¡À» Ã£¾Ò´Ù.
+		// ì ì„ ì°¾ì•˜ë‹¤.
 		char Integral[32];
 		MyStringCopy(Source, Integral);
 		Integral[PointPosition] = '\0';
@@ -267,7 +267,7 @@ float MyAtoF(const char* Source)
 	}
 	else
 	{
-		// Á¡À» ¸øÃ£¾Ò´Ù.
+		// ì ì„ ëª»ì°¾ì•˜ë‹¤.
 		Result = static_cast<float>(MyAtoI(Source));
 	}
 
@@ -291,42 +291,42 @@ void SimpleParser(char* Source, const char Delimiter)
 
 void ReadFile()
 {
-	//#include <fstream>	#include <string> ÇÊ¿ä
+	//#include <fstream>	#include <string> í•„ìš”
 	const char* FilePath = ".\\Data\\TestData.txt";
 
 	std::ifstream InputFile(FilePath);
-	if (!InputFile.is_open())	// ÆÄÀÏÀÌ ¿­·È´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	if (!InputFile.is_open())	// íŒŒì¼ì´ ì—´ë ¸ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	{
-		printf("ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.\n");
-		printf("[%s] °æ·Î¸¦ È®ÀÎÇÏ¼¼¿ä.\n", FilePath);
+		printf("íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
+		printf("[%s] ê²½ë¡œë¥¼ í™•ì¸í•˜ì„¸ìš”.\n", FilePath);
 		return;
 	}
 
 	std::string FileContents(
 		(std::istreambuf_iterator<char>(InputFile)),
-		std::istreambuf_iterator<char>());	//InputFile¿¡ ÀÖ´Â ±ÛÀÚµéÀ» ¸ğµÎ ÀĞ¾î¼­ FileContents¿¡ ÀúÀåÇÏ±â
+		std::istreambuf_iterator<char>());	//InputFileì— ìˆëŠ” ê¸€ìë“¤ì„ ëª¨ë‘ ì½ì–´ì„œ FileContentsì— ì €ì¥í•˜ê¸°
 
-	printf("ÆÄÀÏ ³»¿ëÀº ´ÙÀ½°ú °°½À´Ï´Ù.\n");
-	printf("%s\n", FileContents.c_str());	// FileContents¾È¿¡ ÀÖ´Â ¹®ÀÚ¿­À» const char*·Î µ¹·ÁÁÖ´Â ÇÔ¼ö
+	printf("íŒŒì¼ ë‚´ìš©ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.\n");
+	printf("%s\n", FileContents.c_str());	// FileContentsì•ˆì— ìˆëŠ” ë¬¸ìì—´ì„ const char*ë¡œ ëŒë ¤ì£¼ëŠ” í•¨ìˆ˜
 }
 
 void TestString()
 {
 	//#include <string>
 	std::string str1 = "Hello";
-	std::string str2("World");	// str1º¸´Ù ÀÌÂÊÀÌ ´õ ¹Ù¶÷Á÷ÇÏ´Ù
+	std::string str2("World");	// str1ë³´ë‹¤ ì´ìª½ì´ ë” ë°”ëŒì§í•˜ë‹¤
 
 	const char* Temp1 = "Hello";
 	char Temp2[32] = { 0 };
 	//Temp2 = Temp1;
 	//char* Temp3 = Temp1;
 
-	std::string str3 = str1;		// º¹»ç
-	size_t Length = str3.length();	// ±æÀÌ È®ÀÎ
-	//int Size = Length;	// Å©±â°¡ ¾È¸Â¾Æ¼­ Â©¸± ¼ö ÀÖ´Ù.
+	std::string str3 = str1;		// ë³µì‚¬
+	size_t Length = str3.length();	// ê¸¸ì´ í™•ì¸
+	//int Size = Length;	// í¬ê¸°ê°€ ì•ˆë§ì•„ì„œ ì§¤ë¦´ ìˆ˜ ìˆë‹¤.
 	Length = str3.size();
 
-	std::string str4 = str1 + " " + str2;	// str4 = "Hello World", + ¹æ½ÄÀº ¼º´É¿¡ ¹®Á¦°¡ ÀÖÀ» ¼ö ÀÖ´Ù.
+	std::string str4 = str1 + " " + str2;	// str4 = "Hello World", + ë°©ì‹ì€ ì„±ëŠ¥ì— ë¬¸ì œê°€ ìˆì„ ìˆ˜ ìˆë‹¤.
 	str4 += "!";
 
 	if (str1 == str2)
@@ -337,19 +337,19 @@ void TestString()
 	{
 
 	}
-	if (str1 > str2)	// »çÀü ¼ø¼­´ë·Î ºñ±³
+	if (str1 > str2)	// ì‚¬ì „ ìˆœì„œëŒ€ë¡œ ë¹„êµ
 	{
 
 	}
 
 	size_t Position = str1.find('e');
-	// ¹ß°ßÀ» ¸øÇßÀ¸¸é std::string::npos ¸®ÅÏ
-	Position = str1.find('e', Position+1);	// µÎ¹øÂ° e¸¦ Ã£À» ¶§(Ã¹¹øÂ° e°¡ ¹ß°ßµÇ¾ú´Ù´Â ÀüÁ¦ÇÏ¿¡)
+	// ë°œê²¬ì„ ëª»í–ˆìœ¼ë©´ std::string::npos ë¦¬í„´
+	Position = str1.find('e', Position+1);	// ë‘ë²ˆì§¸ eë¥¼ ì°¾ì„ ë•Œ(ì²«ë²ˆì§¸ eê°€ ë°œê²¬ë˜ì—ˆë‹¤ëŠ” ì „ì œí•˜ì—)
 
-	str1[1] = 'E';	// Æ¯Á¤ À§Ä¡ÀÇ ±ÛÀÚ¿¡ Á¢±ÙÇÏ±â. ÀÎµ¦½º ¹üÀ§ È®ÀÎÀ» ¾ÈÇÔ. ·±Å¸ÀÓ ¿¡·¯°¡ ¶ã ¼ö ÀÖÀ½
-	//str1[10] = 'E';	// ÅÍÁü
-	str1.at(1) = 'E';	// ¾ÈÀüÇÏ°Ô Á¢±Ù
+	str1[1] = 'E';	// íŠ¹ì • ìœ„ì¹˜ì˜ ê¸€ìì— ì ‘ê·¼í•˜ê¸°. ì¸ë±ìŠ¤ ë²”ìœ„ í™•ì¸ì„ ì•ˆí•¨. ëŸ°íƒ€ì„ ì—ëŸ¬ê°€ ëœ° ìˆ˜ ìˆìŒ
+	//str1[10] = 'E';	// í„°ì§
+	str1.at(1) = 'E';	// ì•ˆì „í•˜ê²Œ ì ‘ê·¼
 
-	const char* temp = str1.c_str();	// C½ºÅ¸ÀÏ ¹®ÀÚ¿­ Á¢±ÙÇÏ±â
+	const char* temp = str1.c_str();	// CìŠ¤íƒ€ì¼ ë¬¸ìì—´ ì ‘ê·¼í•˜ê¸°
 }
 

@@ -6,18 +6,18 @@
 
 using uint8 = uint8_t;
 
-enum class CellType : uint8	// ¸Ê¿¡ ¹èÄ¡µÇ´Â °ÍµéÀÇ Á¾·ù¸¦ ³ªÅ¸³»´Â enum. 8bit·Î Ç¥½Ã
+enum class CellType : uint8	// ë§µì— ë°°ì¹˜ë˜ëŠ” ê²ƒë“¤ì˜ ì¢…ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ëŠ” enum. 8bitë¡œ í‘œì‹œ
 {
-	Empty = 0,	// ºóÄ­ÀÌ´Ù.
-	Ship,		// ¹è°¡ ¹èÄ¡µÇ¾î ÀÖ´Ù.
-	Hit,		// ¸íÁßÇß´Ù.
-	Miss		// ºø³ª°¬´Ù.
+	Empty = 0,	// ë¹ˆì¹¸ì´ë‹¤.
+	Ship,		// ë°°ê°€ ë°°ì¹˜ë˜ì–´ ìˆë‹¤.
+	Hit,		// ëª…ì¤‘í–ˆë‹¤.
+	Miss		// ë¹—ë‚˜ê°”ë‹¤.
 };
 
 class Map
 {
 public:
-	static constexpr int MapSize = 10;	// ¸Ê Å©±â. °ÔÀÓ ½ÃÀÛÀüºÎÅÍ °áÁ¤µÇ¾î ÀÖÀ¸´Ï ÀÌ·¸°Ô ¼³Á¤.
+	static constexpr int MapSize = 10;	// ë§µ í¬ê¸°. ê²Œì„ ì‹œì‘ì „ë¶€í„° ê²°ì •ë˜ì–´ ìˆìœ¼ë‹ˆ ì´ë ‡ê²Œ ì„¤ì •.
 
 	Map()
 	{
@@ -25,23 +25,23 @@ public:
 		{
 			for (int x = 0; x < MapSize; x++)
 			{
-				Cells[y][x] = CellType::Empty;	// ÀÏ´ÜÀº ÀüºÎ ºóÄ­À¸·Î ¼³Á¤
+				Cells[y][x] = CellType::Empty;	// ì¼ë‹¨ì€ ì „ë¶€ ë¹ˆì¹¸ìœ¼ë¡œ ì„¤ì •
 			}
 		}
 	}
 	virtual ~Map() = default;
 
-	// ¸ÊÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö. 
-	//	»ó¼Ó¹ŞÀº Å¬·¡½º¿¡¼­ ¹İµå½Ã ±¸ÇöÇØ¾ßÇÑ´Ù.(Ãâ·Â³»¿ëÀÌ ´Ù¸£´Ï±î)
-	//	MapÀ» Ãß»ó Å¬·¡½º·Î ¸¸µé¾î¼­ ÀÎ½ºÅÏ½ºÈ­ ¸ø½ÃÅ°°Ô ÇÑ´Ù(½ÇÁ¦ °ÔÀÓ¿¡¼­´Â ¾øÀ¸´Ï±î)
+	// ë§µì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜. 
+	//	ìƒì†ë°›ì€ í´ë˜ìŠ¤ì—ì„œ ë°˜ë“œì‹œ êµ¬í˜„í•´ì•¼í•œë‹¤.(ì¶œë ¥ë‚´ìš©ì´ ë‹¤ë¥´ë‹ˆê¹Œ)
+	//	Mapì„ ì¶”ìƒ í´ë˜ìŠ¤ë¡œ ë§Œë“¤ì–´ì„œ ì¸ìŠ¤í„´ìŠ¤í™” ëª»ì‹œí‚¤ê²Œ í•œë‹¤(ì‹¤ì œ ê²Œì„ì—ì„œëŠ” ì—†ìœ¼ë‹ˆê¹Œ)
 	virtual void PrintMap() const = 0;
 
-	//// ÁöÁ¤µÈ ÁÂÇ¥ÀÇ ¼¿°ªÀ» ¸®ÅÏÇÏ´Â ÇÔ¼ö
+	//// ì§€ì •ëœ ì¢Œí‘œì˜ ì…€ê°’ì„ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜
 	//inline CellType GetCellType(int InX, int InY) const
 	//{
 	//	if (IsValidPoition(InX, InY) == false)
 	//	{
-	//		return CellType::Empty;	// ¸Ê ¹üÀ§¸¦ ¹ş¾î³ª¸é ±×³É ºó°ÍÀ¸·Î Ã³¸®
+	//		return CellType::Empty;	// ë§µ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´ ê·¸ëƒ¥ ë¹ˆê²ƒìœ¼ë¡œ ì²˜ë¦¬
 	//	}
 	//	return Cells[InY][InX];
 	//}
@@ -50,7 +50,7 @@ public:
 	//	return GetCellType(InPosition.x, InPosition.y);
 	//}
 
-	// ÁöÁ¤µÈ ÁÂÇ¥ÀÇ ¼¿ÀÌ ºñ¾îÀÖ´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö(Ä¸½¶È­¸¦ À§ÇØ ÃÖ´ëÇÑ µ¥ÀÌÅÍ¸¦ ¼û±â±â À§ÇØ µû·Î ¸¸µë)
+	// ì§€ì •ëœ ì¢Œí‘œì˜ ì…€ì´ ë¹„ì–´ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜(ìº¡ìŠí™”ë¥¼ ìœ„í•´ ìµœëŒ€í•œ ë°ì´í„°ë¥¼ ìˆ¨ê¸°ê¸° ìœ„í•´ ë”°ë¡œ ë§Œë“¬)
 	inline bool IsCellEmpty(int InX, int InY) const 
 	{ 
 		if (IsValidPoition(InX, InY))
@@ -58,7 +58,7 @@ public:
 		return false;
 	}
 
-	// ÁöÁ¤µÈ ÁÂÇ¥¿¡ ¼¿À» ¼³Á¤ÇÏ´Â ÇÔ¼ö
+	// ì§€ì •ëœ ì¢Œí‘œì— ì…€ì„ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
 	inline void SetCellType(int InX, int inY, CellType InType)
 	{
 		if (IsValidPoition(InX, inY))
@@ -71,14 +71,14 @@ public:
 		SetCellType(InPosition.x, InPosition.y, InType);
 	}
 
-	// ÁÂÇ¥°¡ ¸Ê ¹üÀ§ ¾ÈÀÎÁö Ã¼Å©ÇÏ´Â ÇÔ¼ö
-	//	·±Å¸ÀÔ°ªÀÌ ÇÊ¿ä ¾ø±â ¶§¹®¿¡ staticÀ¸·Î ÇÏ³ª¸¸ Á¸ÀçÇÏ°Ô ¸¸µç´Ù.
+	// ì¢Œí‘œê°€ ë§µ ë²”ìœ„ ì•ˆì¸ì§€ ì²´í¬í•˜ëŠ” í•¨ìˆ˜
+	//	ëŸ°íƒ€ì…ê°’ì´ í•„ìš” ì—†ê¸° ë•Œë¬¸ì— staticìœ¼ë¡œ í•˜ë‚˜ë§Œ ì¡´ì¬í•˜ê²Œ ë§Œë“ ë‹¤.
 	inline static bool IsValidPoition(int InX, int InY)
 	{		
 		return InX >= 0 && InX < MapSize && InY >= 0 && InY < MapSize;
 	}
 
 protected:
-	// ¼¿ÀÇ »óÅÂ
+	// ì…€ì˜ ìƒíƒœ
 	CellType Cells[MapSize][MapSize];
 };

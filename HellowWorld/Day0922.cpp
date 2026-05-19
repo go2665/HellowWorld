@@ -6,7 +6,7 @@
 
 void Day0922::TestBattleShip()
 {
-	//Map::IsValidPoition(10, 20);	// static ÇÔ¼ö´Â ÀÌ·¸°Ô »ç¿ë °¡´É
+	//Map::IsValidPoition(10, 20);	// static í•¨ìˆ˜ëŠ” ì´ë ‡ê²Œ ì‚¬ìš© ê°€ëŠ¥
 
 	//srand(time(0));
 

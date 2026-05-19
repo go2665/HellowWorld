@@ -2,7 +2,7 @@
 
 void PlayerMap::PrintMap() const
 {
-	// »ó´Ü Ãâ·Â
+	// ìƒë‹¨ ì¶œë ¥
 	printf("   ");
 	for (int i = 0; i < Map::MapSize; i++)
 	{
@@ -10,10 +10,10 @@ void PlayerMap::PrintMap() const
 	}
 	printf("\n");
 
-	// ¿ŞÂÊ ÁÂÇ¥ + ¸íÁß ¿©ºÎ Ãâ·Â
+	// ì™¼ìª½ ì¢Œí‘œ + ëª…ì¤‘ ì—¬ë¶€ ì¶œë ¥
 	for (int y = 0; y < Map::MapSize; y++)
 	{
-		printf("%2d ", y);	// ¿ŞÂÊ ÁÂÇ¥
+		printf("%2d ", y);	// ì™¼ìª½ ì¢Œí‘œ
 		for (int x = 0; x < Map::MapSize; x++)
 		{
 			switch (Cells[y][x])

@@ -35,13 +35,13 @@ void PrintVector(std::vector<SortTest>& InVector)
 void Day0924::TestLambda()
 {
 	std::vector<int> Numbers = { 5,7,1,9,3 };
-	//std::sort(Numbers.begin(), Numbers.end());	// ¿À¸§Â÷¼ø Á¤·Ä
+	//std::sort(Numbers.begin(), Numbers.end());	// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 	PrintVector(Numbers);
 
 	std::sort(Numbers.begin(), Numbers.end(), 
 		[](int a, int b)
 		{
-			return a > b;	// ³»¸²Â÷¼ø Á¤·Ä
+			return a > b;	// ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 		}
 	);
 	PrintVector(Numbers);
@@ -64,8 +64,8 @@ void Day0924::TestLambda2()
 
 void Day0924::TestLambdaPractice()
 {
-	// °£´Ü ½Ç½À
-	// 1. ¶÷´Ù·Î SortTestÀÇ a,b ³»¸²Â÷¼ø Á¤·Ä °¢°¢ ¸¸µé¾îº¸±â
+	// ê°„ë‹¨ ì‹¤ìŠµ
+	// 1. ëŒë‹¤ë¡œ SortTestì˜ a,b ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬ ê°ê° ë§Œë“¤ì–´ë³´ê¸°
 	std::vector<SortTest> Test = { {1, 5.0f}, {7, 3.5f}, {5, 10.0f} };
 	PrintVector(Test);
 	std::sort(Test.begin(), Test.end(),
@@ -83,18 +83,18 @@ void Day0924::TestLambdaPractice()
 	);
 	PrintVector(Test);
 
-	// 2. Æ¯Á¤ Á¶°ÇÀ» ¸¸Á·ÇÏ´Â Ã¹¹øÂ° ¿ø¼Ò Ã£±â
+	// 2. íŠ¹ì • ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” ì²«ë²ˆì§¸ ì›ì†Œ ì°¾ê¸°
 	std::vector<int> Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	int Threshold = 5;	// thresholdº¸´Ù Å« Ã¹¹øÂ° ¿ø¼Ò Ã£±â
+	int Threshold = 5;	// thresholdë³´ë‹¤ í° ì²«ë²ˆì§¸ ì›ì†Œ ì°¾ê¸°
 	std::vector<int>::iterator iter = std::find_if(Numbers.begin(), Numbers.end(), 
 		[Threshold](int n)
 		{
-			return Threshold < n;	// Ä¸ÃÄÇÑ Thresholdº¸´Ù Å©¸é true
+			return Threshold < n;	// ìº¡ì³í•œ Thresholdë³´ë‹¤ í¬ë©´ true
 		});
 	if (iter != Numbers.end())
 	{
-		// Ã£¾Ò´Ù.
-		printf("%dº¸´Ù Å« Ã¹¹øÂ° ¿ø¼Ò´Â %dÀÔ´Ï´Ù.\n", Threshold, *iter);
+		// ì°¾ì•˜ë‹¤.
+		printf("%dë³´ë‹¤ í° ì²«ë²ˆì§¸ ì›ì†ŒëŠ” %dì…ë‹ˆë‹¤.\n", Threshold, *iter);
 	}
 }
 
@@ -110,92 +110,92 @@ void PrintSet(const std::set<int>& InSet)
 
 void Day0924::TestSet()
 {
-	//#include <set> ÇÊ¼ö
+	//#include <set> í•„ìˆ˜
 	std::set<int> TestSet;
 	
-	printf("\nset¿¡ Ãß°¡ÇÏ±â\n");
+	printf("\nsetì— ì¶”ê°€í•˜ê¸°\n");
 	TestSet.insert(30);
 	TestSet.insert(10);
 	TestSet.insert(50);
 	TestSet.insert(20);
-	TestSet.insert(30);	// ¹«½ÃµÊ
+	TestSet.insert(30);	// ë¬´ì‹œë¨
 	PrintSet(TestSet);
 
-	printf("\nsetÀÇ Å©±â\n");
+	printf("\nsetì˜ í¬ê¸°\n");
 	printf("size : %d\n", static_cast<int>(TestSet.size()));
 
-	printf("\n¿ø¼Ò Ã£±â\n");
+	printf("\nì›ì†Œ ì°¾ê¸°\n");
 	int Target = 200;
-	std::set<int>::iterator iter = TestSet.find(Target);	// Á¸Àç È®ÀÎ + °ªµµ È®ÀÎ
+	std::set<int>::iterator iter = TestSet.find(Target);	// ì¡´ì¬ í™•ì¸ + ê°’ë„ í™•ì¸
 	if (iter != TestSet.end())
 	{
-		// Ã£¾Ò´Ù.
-		printf("find : %d¸¦ Ã£¾Ò½À´Ï´Ù.\n", Target);
+		// ì°¾ì•˜ë‹¤.
+		printf("find : %dë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", Target);
 	}
 	else
 	{
-		// ¸øÃ£¾Ò´Ù.
-		printf("find : %d¸¦ ¸øÃ£¾Ò½À´Ï´Ù.\n", Target);
+		// ëª»ì°¾ì•˜ë‹¤.
+		printf("find : %dë¥¼ ëª»ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", Target);
 	}
-	bool IsFind = TestSet.contains(Target);	// TargetÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	bool IsFind = TestSet.contains(Target);	// Targetì´ ìˆëŠ”ì§€ ì—†ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	if (IsFind)
 	{
-		// Ã£¾Ò´Ù.
-		printf("contains : %d¸¦ Ã£¾Ò½À´Ï´Ù.\n", Target);
+		// ì°¾ì•˜ë‹¤.
+		printf("contains : %dë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", Target);
 	}
 	else
 	{
-		// ¸øÃ£¾Ò´Ù.
-		printf("contains : %d¸¦ ¸øÃ£¾Ò½À´Ï´Ù.\n", Target);
+		// ëª»ì°¾ì•˜ë‹¤.
+		printf("contains : %dë¥¼ ëª»ì°¾ì•˜ìŠµë‹ˆë‹¤.\n", Target);
 	}
 
-	printf("\nÇÏ³ª¸¸ »èÁ¦ÇÏ±â(30)\n");
+	printf("\ní•˜ë‚˜ë§Œ ì‚­ì œí•˜ê¸°(30)\n");
 	TestSet.erase(30);
 	PrintSet(TestSet);
 
-	printf("\nÀüºÎ »èÁ¦ÇÏ±â\n");
+	printf("\nì „ë¶€ ì‚­ì œí•˜ê¸°\n");
 	TestSet.clear();
 	PrintSet(TestSet);
 
-	printf("\n¼¼Æ®°¡ ºñ¾ú´ÂÁö ¾Èºñ¾ú´ÂÁö È®ÀÎÇÏ±â\n");
+	printf("\nì„¸íŠ¸ê°€ ë¹„ì—ˆëŠ”ì§€ ì•ˆë¹„ì—ˆëŠ”ì§€ í™•ì¸í•˜ê¸°\n");
 	if (TestSet.empty())
 	{
-		// ºñ¾ú´Ù.
-		printf("ºñ¾îÀÖ´Ù.");
+		// ë¹„ì—ˆë‹¤.
+		printf("ë¹„ì–´ìˆë‹¤.");
 	}
 	else
 	{
-		// ¾Èºñ¾ú´Ù.
-		printf("¾Èºñ¾îÀÖ´Ù.");
+		// ì•ˆë¹„ì—ˆë‹¤.
+		printf("ì•ˆë¹„ì–´ìˆë‹¤.");
 	}
 }
 
 void Day0924::TestSetPractice()
 {
 	/*
-	1. Áßº¹ ¾ø´Â Á¤¼ö ÀÔ·Â ¹× Ãâ·Â    
-		»ç¿ëÀÚ°¡ ¿©·¯ °³ÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¸é Áßº¹ ¾øÀÌ ÀúÀåÇÏ°í Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ¸¸µé¾îº¸¼¼¿ä.    
-	2. ÁıÇÕ ¿¬»ê(ÇÕÁıÇÕ, ±³ÁıÇÕ, Â÷ÁıÇÕ)    
-		µÎ °³ÀÇ setÀ» ¸¸µé¾î¼­ ÇÕÁıÇÕ, ±³ÁıÇÕ, Â÷ÁıÇÕÀ» ±¸ÇÏ´Â ½Ç½ÀÀ» ÇØº¸¼¼¿ä.    
-	3. Æ¯Á¤ °ªÀÇ Á¸Àç ¿©ºÎ È®ÀÎ    
-		set¿¡ Æ¯Á¤ °ªÀÌ µé¾îÀÖ´ÂÁö °Ë»çÇÏ´Â ÇÁ·Î±×·¥À» ¸¸µé¾îº¸¼¼¿ä.    
-	4. ¿À¸§Â÷¼ø/³»¸²Â÷¼ø Ãâ·Â    
-		setÀÇ ¿ø¼Ò¸¦ ¿À¸§Â÷¼ø ¶Ç´Â ³»¸²Â÷¼øÀ¸·Î Ãâ·ÂÇÏ´Â ½Ç½ÀÀ» ÇØº¸¼¼¿ä.(¹İº¹ÀÚÀÇ Á¾·ù)
-	5. ¹®ÀÚ¿­¿¡¼­ Áßº¹µÇ´Â ±ÛÀÚ Á¦°Å   ( aaabbc -> abc )
-		¹®ÀÚ¿­À» ÀÔ·Â¹Ş¾Æ Áßº¹µÇ´Â ±ÛÀÚ ¾øÀÌ ÀúÀåÇÏ°í Ãâ·ÂÇÏ´Â ½Ç½ÀÀ» ÇØº¸¼¼¿ä.    
-	6. ÃÖ´ñ°ª, ÃÖ¼Ú°ª Ã£±â    
-		set¿¡¼­ °¡Àå Å« °ª°ú ÀÛÀº °ªÀ» Ã£¾Æ Ãâ·ÂÇÏ´Â ½Ç½ÀÀ» ÇØº¸¼¼¿ä.(¹İº¹ÀÚ¸¦ È°¿ëÇÏ±â)
-	7. setÀ» vector·Î º¯È¯    
-		set¿¡ ÀúÀåµÈ °ªÀ» vector·Î ¿Å°Ü¼­ È°¿ëÇÏ´Â ÇÁ·Î±×·¥À» ¸¸µé¾îº¸¼¼¿ä.
+	1. ì¤‘ë³µ ì—†ëŠ” ì •ìˆ˜ ì…ë ¥ ë° ì¶œë ¥    
+		ì‚¬ìš©ìê°€ ì—¬ëŸ¬ ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ë©´ ì¤‘ë³µ ì—†ì´ ì €ì¥í•˜ê³  ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ë§Œë“¤ì–´ë³´ì„¸ìš”.    
+	2. ì§‘í•© ì—°ì‚°(í•©ì§‘í•©, êµì§‘í•©, ì°¨ì§‘í•©)    
+		ë‘ ê°œì˜ setì„ ë§Œë“¤ì–´ì„œ í•©ì§‘í•©, êµì§‘í•©, ì°¨ì§‘í•©ì„ êµ¬í•˜ëŠ” ì‹¤ìŠµì„ í•´ë³´ì„¸ìš”.    
+	3. íŠ¹ì • ê°’ì˜ ì¡´ì¬ ì—¬ë¶€ í™•ì¸    
+		setì— íŠ¹ì • ê°’ì´ ë“¤ì–´ìˆëŠ”ì§€ ê²€ì‚¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ë§Œë“¤ì–´ë³´ì„¸ìš”.    
+	4. ì˜¤ë¦„ì°¨ìˆœ/ë‚´ë¦¼ì°¨ìˆœ ì¶œë ¥    
+		setì˜ ì›ì†Œë¥¼ ì˜¤ë¦„ì°¨ìˆœ ë˜ëŠ” ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” ì‹¤ìŠµì„ í•´ë³´ì„¸ìš”.(ë°˜ë³µìì˜ ì¢…ë¥˜)
+	5. ë¬¸ìì—´ì—ì„œ ì¤‘ë³µë˜ëŠ” ê¸€ì ì œê±°   ( aaabbc -> abc )
+		ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ ì¤‘ë³µë˜ëŠ” ê¸€ì ì—†ì´ ì €ì¥í•˜ê³  ì¶œë ¥í•˜ëŠ” ì‹¤ìŠµì„ í•´ë³´ì„¸ìš”.    
+	6. ìµœëŒ“ê°’, ìµœì†Ÿê°’ ì°¾ê¸°    
+		setì—ì„œ ê°€ì¥ í° ê°’ê³¼ ì‘ì€ ê°’ì„ ì°¾ì•„ ì¶œë ¥í•˜ëŠ” ì‹¤ìŠµì„ í•´ë³´ì„¸ìš”.(ë°˜ë³µìë¥¼ í™œìš©í•˜ê¸°)
+	7. setì„ vectorë¡œ ë³€í™˜    
+		setì— ì €ì¥ëœ ê°’ì„ vectorë¡œ ì˜®ê²¨ì„œ í™œìš©í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ë§Œë“¤ì–´ë³´ì„¸ìš”.
 	*/
 
-	// 1. Áßº¹ ¾ø´Â Á¤¼ö ÀÔ·Â ¹× Ãâ·Â
-	//printf("\nÁßº¹ ¾ø´Â Á¤¼ö ÀÔ·Â ¹× Ãâ·Â\n");
+	// 1. ì¤‘ë³µ ì—†ëŠ” ì •ìˆ˜ ì…ë ¥ ë° ì¶œë ¥
+	//printf("\nì¤‘ë³µ ì—†ëŠ” ì •ìˆ˜ ì…ë ¥ ë° ì¶œë ¥\n");
 	//std::set<int> TestSet1;
 	//int InputNumber = 0;
 	//while (InputNumber != -1)
 	//{
-	//	printf("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä (-1: Á¾·á) : ");
+	//	printf("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” (-1: ì¢…ë£Œ) : ");
 	//	std::cin >> InputNumber;
 	//	if (InputNumber != -1)
 	//	{
@@ -204,17 +204,17 @@ void Day0924::TestSetPractice()
 	//}
 	//PrintSet(TestSet1);
 
-	// 2. ÁıÇÕ ¿¬»ê(ÇÕÁıÇÕ, ±³ÁıÇÕ, Â÷ÁıÇÕ)
+	// 2. ì§‘í•© ì—°ì‚°(í•©ì§‘í•©, êµì§‘í•©, ì°¨ì§‘í•©)
 	std::set<int> TestSet2_1 = { 1,2,3,4,5 };
 	std::set<int> TestSet2_2 = { 3,4,5,6,7 };
 	std::set<int> TestSet2_Result;
 
-	printf("\n2. ÁıÇÕ ¿¬»ê(ÇÕÁıÇÕ, ±³ÁıÇÕ, Â÷ÁıÇÕ)\n");
+	printf("\n2. ì§‘í•© ì—°ì‚°(í•©ì§‘í•©, êµì§‘í•©, ì°¨ì§‘í•©)\n");
 	PrintSet(TestSet2_1);
 	PrintSet(TestSet2_2);
 
-	printf("ÇÕÁıÇÕ = ");
-	// ÇÕÁıÇÕ
+	printf("í•©ì§‘í•© = ");
+	// í•©ì§‘í•©
 	TestSet2_Result = TestSet2_1;
 	for (int n : TestSet2_2)
 	{
@@ -222,7 +222,7 @@ void Day0924::TestSetPractice()
 	}
 	PrintSet(TestSet2_Result);
 
-	printf("±³ÁıÇÕ = ");
+	printf("êµì§‘í•© = ");
 	TestSet2_Result.clear();
 	for (int n : TestSet2_2)
 	{
@@ -233,7 +233,7 @@ void Day0924::TestSetPractice()
 	}
 	PrintSet(TestSet2_Result);
 
-	printf("Â÷ÁıÇÕ = ");
+	printf("ì°¨ì§‘í•© = ");
 	TestSet2_Result = TestSet2_1;
 	for (int n : TestSet2_2)
 	{
@@ -244,8 +244,8 @@ void Day0924::TestSetPractice()
 	}
 	PrintSet(TestSet2_Result);
 
-	// 4. ¿À¸§Â÷¼ø/³»¸²Â÷¼ø Ãâ·Â
-	printf("\n4. ¿À¸§Â÷¼ø/³»¸²Â÷¼ø Ãâ·Â\n");
+	// 4. ì˜¤ë¦„ì°¨ìˆœ/ë‚´ë¦¼ì°¨ìˆœ ì¶œë ¥
+	printf("\n4. ì˜¤ë¦„ì°¨ìˆœ/ë‚´ë¦¼ì°¨ìˆœ ì¶œë ¥\n");
 	std::set<int> TestSet4 = { 5,7,3,1,6,8,2,4,9 };
 	PrintSet(TestSet4);
 
@@ -256,8 +256,8 @@ void Day0924::TestSetPractice()
 	}
 	printf("\n");
 
-	// 5. ¹®ÀÚ¿­¿¡¼­ Áßº¹µÇ´Â ±ÛÀÚ Á¦°Å
-	printf("\n5. ¹®ÀÚ¿­¿¡¼­ Áßº¹µÇ´Â ±ÛÀÚ Á¦°Å\n");
+	// 5. ë¬¸ìì—´ì—ì„œ ì¤‘ë³µë˜ëŠ” ê¸€ì ì œê±°
+	printf("\n5. ë¬¸ìì—´ì—ì„œ ì¤‘ë³µë˜ëŠ” ê¸€ì ì œê±°\n");
 	std::string TestString = "Hello World!";	// "Helo Wrd!"
 	std::set<char> TestSet5;
 	std::string TestResult5;
@@ -273,17 +273,17 @@ void Day0924::TestSetPractice()
 	}
 	printf("Result = %s\n", TestResult5.c_str());
 
-	// 6. ÃÖ´ë°ª, ÃÖ¼Ò°ª Ã£±â
-	printf("\n6. ÃÖ´ë°ª, ÃÖ¼Ò°ª Ã£±â\n");
+	// 6. ìµœëŒ€ê°’, ìµœì†Œê°’ ì°¾ê¸°
+	printf("\n6. ìµœëŒ€ê°’, ìµœì†Œê°’ ì°¾ê¸°\n");
 	std::set<int> TestSet6 = { 5,7,6,25,8,87,65,2,4,7,52 };
 	PrintSet(TestSet6);
 	if (!TestSet6.empty())
 	{
-		printf("ÃÖ´ë°ª = %d, ÃÖ¼Ò°ª = %d\n", *TestSet6.begin(), *TestSet6.rbegin());
+		printf("ìµœëŒ€ê°’ = %d, ìµœì†Œê°’ = %d\n", *TestSet6.begin(), *TestSet6.rbegin());
 	}
 
-	// 7. setÀ» vector·Î º¯È¯
-	printf("\n7. setÀ» vector·Î º¯È¯\n");
+	// 7. setì„ vectorë¡œ ë³€í™˜
+	printf("\n7. setì„ vectorë¡œ ë³€í™˜\n");
 	std::set<int> TestSet7 = { 1,5,74,6,3,1,5,7,6,5 };
 	PrintSet(TestSet7);
 	std::vector<int> TestVector7_1(TestSet7.begin(), TestSet7.end());
@@ -303,21 +303,21 @@ std::string ToString(CharacterType InType)
 	switch (InType)
 	{
 	case CharacterType::Warrior:
-		return "Àü»ç";
+		return "ì „ì‚¬";
 	case CharacterType::Mage:
-		return "¸¶¹ı»ç";
+		return "ë§ˆë²•ì‚¬";
 	case CharacterType::Archer:
-		return "±Ã¼ö";
+		return "ê¶ìˆ˜";
 	case CharacterType::Thief:
-		return "µµÀû";
+		return "ë„ì ";
 	default:
 		break;
 	}
-	return "¾Ë ¼ö ¾øÀ½";
+	return "ì•Œ ìˆ˜ ì—†ìŒ";
 }
 void PrintStatus(const CharacterStatus& InStatus)
 {
-	printf(" | ·¹º§ : %2d | Ã¼·Â : %3d | °ø°İ·Â : %2d\n", InStatus.Level, InStatus.Health, InStatus.Attack);
+	printf(" | ë ˆë²¨ : %2d | ì²´ë ¥ : %3d | ê³µê²©ë ¥ : %2d\n", InStatus.Level, InStatus.Health, InStatus.Attack);
 }
 
 void Day0924::TestMap()
@@ -328,48 +328,48 @@ void Day0924::TestMap()
 	Characters[CharacterType::Mage] = { 8, 100, 5 };
 	Characters[CharacterType::Archer] = { 12, 150, 20 };
 
-	if (Characters.contains(CharacterType::Mage))	// ¾ø´Â Å°¿¡ Á¢±ÙÇÏ´Â °ÍÀ» ¹æÁöÇÏ±â À§ÇØ ¹İµå½Ã Ã¼Å©ÇØ¾ß ÇÑ´Ù.
+	if (Characters.contains(CharacterType::Mage))	// ì—†ëŠ” í‚¤ì— ì ‘ê·¼í•˜ëŠ” ê²ƒì„ ë°©ì§€í•˜ê¸° ìœ„í•´ ë°˜ë“œì‹œ ì²´í¬í•´ì•¼ í•œë‹¤.
 	{
-		// ÀÖ´Ù.
-		CharacterStatus& MageStatus = Characters[CharacterType::Mage]; // []¿¬»êÀÚ·Î Value¿¡ Á¢±Ù
-		printf("\n[] Á¢±Ù¹ı : %s", ToString(CharacterType::Mage).c_str());
+		// ìˆë‹¤.
+		CharacterStatus& MageStatus = Characters[CharacterType::Mage]; // []ì—°ì‚°ìë¡œ Valueì— ì ‘ê·¼
+		printf("\n[] ì ‘ê·¼ë²• : %s", ToString(CharacterType::Mage).c_str());
 		PrintStatus(MageStatus);
 	}
 	else
 	{
-		// ¾ø´Ù.
+		// ì—†ë‹¤.
 	}
 
-	// ¾ø´Â Ç×¸ñ¿¡ Á¢±ÙÇÏ¸é »õ Ç×¸ñÀÌ »ı±ä´Ù.
+	// ì—†ëŠ” í•­ëª©ì— ì ‘ê·¼í•˜ë©´ ìƒˆ í•­ëª©ì´ ìƒê¸´ë‹¤.
 	CharacterStatus& ThiefStatus = Characters[CharacterType::Thief];	
-	printf("[] ¾ø´Â Å° Á¢±Ù : %s", ToString(CharacterType::Thief).c_str());
+	printf("[] ì—†ëŠ” í‚¤ ì ‘ê·¼ : %s", ToString(CharacterType::Thief).c_str());
 	PrintStatus(ThiefStatus);
 
-	printf("\nÀüÃ¼ Ä³¸¯ÅÍ Ãâ·Â\n");
+	printf("\nì „ì²´ ìºë¦­í„° ì¶œë ¥\n");
 	for (const auto& pair : Characters)
 	//for( const std::pair<CharacterType, CharacterStatus>& pair : Characters)
 	{
-		printf("Ä³¸¯ÅÍ Å¸ÀÔ : %6s", ToString(pair.first).c_str());
-		PrintStatus(pair.second);	// first = Å°, second = value
+		printf("ìºë¦­í„° íƒ€ì… : %6s", ToString(pair.first).c_str());
+		PrintStatus(pair.second);	// first = í‚¤, second = value
 	}
 
-	printf("\nµµÀû »èÁ¦\n");
+	printf("\në„ì  ì‚­ì œ\n");
 	Characters.erase(CharacterType::Thief);
 
-	printf("\nÀüÃ¼ Ä³¸¯ÅÍ Ãâ·Â\n");
+	printf("\nì „ì²´ ìºë¦­í„° ì¶œë ¥\n");
 	for (const auto& pair : Characters)
 	{
-		printf("Ä³¸¯ÅÍ Å¸ÀÔ : %6s", ToString(pair.first).c_str());
-		PrintStatus(pair.second);	// first = Å°, second = value
+		printf("ìºë¦­í„° íƒ€ì… : %6s", ToString(pair.first).c_str());
+		PrintStatus(pair.second);	// first = í‚¤, second = value
 	}
 
-	printf("\nÀüÃ¼ »èÁ¦\n");
+	printf("\nì „ì²´ ì‚­ì œ\n");
 	Characters.clear();
-	printf("\nÀüÃ¼ Ä³¸¯ÅÍ Ãâ·Â\n");
+	printf("\nì „ì²´ ìºë¦­í„° ì¶œë ¥\n");
 	for (const auto& pair : Characters)
 	{
-		printf("Ä³¸¯ÅÍ Å¸ÀÔ : %6s", ToString(pair.first).c_str());
-		PrintStatus(pair.second);	// first = Å°, second = value
+		printf("ìºë¦­í„° íƒ€ì… : %6s", ToString(pair.first).c_str());
+		PrintStatus(pair.second);	// first = í‚¤, second = value
 	}
 
 	int i = 0;
@@ -383,7 +383,7 @@ void Day0924::TestUnorderedMap()
 	SortTest Test2 = { 3, 1.5f };
 	TestMap[Test1] = "Hello";
 	TestMap[Test2] = "World";
-	// Å°°ªÀº Hash ÇÔ¼ö°¡ ÀÖ¾î¾ß ÇÑ´Ù.
-	// Å°°ªÀÌ °°ÀºÁö ºñ±³ÇÒ ¼ö ÀÖµµ·Ï == ¿¬»êÀÚ°¡ ÀÖ¾î¾ß ÇÑ´Ù.
+	// í‚¤ê°’ì€ Hash í•¨ìˆ˜ê°€ ìˆì–´ì•¼ í•œë‹¤.
+	// í‚¤ê°’ì´ ê°™ì€ì§€ ë¹„êµí•  ìˆ˜ ìˆë„ë¡ == ì—°ì‚°ìê°€ ìˆì–´ì•¼ í•œë‹¤.
 	int i = 0;
 }

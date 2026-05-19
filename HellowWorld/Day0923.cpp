@@ -42,91 +42,91 @@ void Day0923::TestCalcurator()
 
 void Day0923::TestVector()
 {
-	// #include <vector> ÇÊ¼ö
-	std::vector<int> Scores;	// int¹è¿­ Scores¸¦ ¸¸µë
-	Scores.reserve(5);			// ³»°¡ »ç¿ëÇÒ °ÍÀ¸·Î ¿¹»óµÇ´Â ÃÖ´ë Å©±â¸¦ Àû´Â °ÍÀÌ ÁÁÀ½
+	// #include <vector> í•„ìˆ˜
+	std::vector<int> Scores;	// intë°°ì—´ Scoresë¥¼ ë§Œë“¬
+	Scores.reserve(5);			// ë‚´ê°€ ì‚¬ìš©í•  ê²ƒìœ¼ë¡œ ì˜ˆìƒë˜ëŠ” ìµœëŒ€ í¬ê¸°ë¥¼ ì ëŠ” ê²ƒì´ ì¢‹ìŒ
 
-	Scores.push_back(10);		// vectorÀÇ µÚ¿¡ Ãß°¡
+	Scores.push_back(10);		// vectorì˜ ë’¤ì— ì¶”ê°€
 	Scores.push_back(20);
 	Scores.push_back(30);
 
-	// Æ¯Á¤ °ªÀ¸·Î ÃÊ±âÈ­ µÈ vector¸¦ ¸¸µé°í ½ÍÀ» ¶§(3°³°¡ "¹«¸í"À¸·Î ÃÊ±âÈ­µÈ vector)
-	std::vector<std::string> Names(3, "¹«¸í");	
+	// íŠ¹ì • ê°’ìœ¼ë¡œ ì´ˆê¸°í™” ëœ vectorë¥¼ ë§Œë“¤ê³  ì‹¶ì„ ë•Œ(3ê°œê°€ "ë¬´ëª…"ìœ¼ë¡œ ì´ˆê¸°í™”ëœ vector)
+	std::vector<std::string> Names(3, "ë¬´ëª…");	
 
-	printf("Ã¹¹øÂ° Á¡¼ö : %d\n", Scores[0]);	// ¹è¿­ »ç¿ëÇÏµíÀÌ »ç¿ë. ´Ù¸¸ ¹üÀ§¸¦ ¹ş¾î³ª¸é ÅÍÁø´Ù.
-	//printf("³×¹øÂ° Á¡¼ö : %d\n", Scores[3]);	// ÅÍÁü
-	printf("µÎ¹øÂ° Á¡¼ö : %d\n", Scores.at(1));	// µÎ¹øÂ° ¿ä¼Ò¿¡ Á¢±Ù
-	//printf("³×¹øÂ° Á¡¼ö : %d\n", Scores.at(3));	// ³×¹øÂ° ¿ä¼Ò¿¡ Á¢±Ù(=¿¹¿Ü¸¦ ¹ß»ı)
-	printf("¼¼¹øÂ° Á¡¼ö : %d\n", Scores.back());		// ¸¶Áö¸· ¿ä¼Ò¿¡ Á¢±Ù
-	printf("Ã¹¹øÂ° Á¡¼ö : %d\n", Scores.front());	// Ã¹¹øÂ° ¿ä¼Ò¿¡ Á¢±Ù
+	printf("ì²«ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores[0]);	// ë°°ì—´ ì‚¬ìš©í•˜ë“¯ì´ ì‚¬ìš©. ë‹¤ë§Œ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´ í„°ì§„ë‹¤.
+	//printf("ë„¤ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores[3]);	// í„°ì§
+	printf("ë‘ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores.at(1));	// ë‘ë²ˆì§¸ ìš”ì†Œì— ì ‘ê·¼
+	//printf("ë„¤ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores.at(3));	// ë„¤ë²ˆì§¸ ìš”ì†Œì— ì ‘ê·¼(=ì˜ˆì™¸ë¥¼ ë°œìƒ)
+	printf("ì„¸ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores.back());		// ë§ˆì§€ë§‰ ìš”ì†Œì— ì ‘ê·¼
+	printf("ì²«ë²ˆì§¸ ì ìˆ˜ : %d\n", Scores.front());	// ì²«ë²ˆì§¸ ìš”ì†Œì— ì ‘ê·¼
 
-	// ÀÏ¹İÀûÀÎ ¼øÈ¸ ¹æ½Ä
-	printf("¸ğµç Á¡¼ö : ");
+	// ì¼ë°˜ì ì¸ ìˆœíšŒ ë°©ì‹
+	printf("ëª¨ë“  ì ìˆ˜ : ");
 	for (int i = 0; i < Scores.size(); i++)
 	{
 		printf("%d ", Scores[i]);
 	}
 	printf("\n");
 
-	// ¹İº¹ÀÚ¸¦ ÅëÇÑ ¼øÈ¸ ¹æ½Ä
-	printf("¸ğµç Á¡¼ö : ");
+	// ë°˜ë³µìë¥¼ í†µí•œ ìˆœíšŒ ë°©ì‹
+	printf("ëª¨ë“  ì ìˆ˜ : ");
 	for (auto iter = Scores.begin(); iter != Scores.end(); iter++)
 	//for (std::vector<int>::iterator iter = Scores.begin(); iter != Scores.end(); iter++)
 	{
-		printf("%d ", *iter);	// ÇöÀç iterÀ§Ä¡¿¡ ÀÖ´Â °ªÀ» Ãâ·Â
+		printf("%d ", *iter);	// í˜„ì¬ iterìœ„ì¹˜ì— ìˆëŠ” ê°’ì„ ì¶œë ¥
 	}
 	printf("\n");
 
-	// ¿ë·® È®ÀÎ(Size, Capacity)
-	//	Size : ÇöÀç vector¿¡¼­ ½ÇÁ¦ »ç¿ëµÇ´Â °ªÀÌ µé¾îÀÖ´Â °³¼ö
-	//	Capacity : ÇöÀç vector¿¡ ÇÒ´çµÈ ¸Ş¸ğ¸® °³¼ö(½ÇÁ¦ »ç¿ëÇÏÁö ¾ÊÀº °Íµµ Æ÷ÇÔ)
-	printf("ÇöÀç Á¡¼ö °³¼ö(Size) : %u\n", static_cast<unsigned int>(Scores.size()));
-	printf("ÇÒ´çµÈ ¸Ş¸ğ¸®(Capacity) : %u\n", static_cast<unsigned int>(Scores.capacity()));
+	// ìš©ëŸ‰ í™•ì¸(Size, Capacity)
+	//	Size : í˜„ì¬ vectorì—ì„œ ì‹¤ì œ ì‚¬ìš©ë˜ëŠ” ê°’ì´ ë“¤ì–´ìˆëŠ” ê°œìˆ˜
+	//	Capacity : í˜„ì¬ vectorì— í• ë‹¹ëœ ë©”ëª¨ë¦¬ ê°œìˆ˜(ì‹¤ì œ ì‚¬ìš©í•˜ì§€ ì•Šì€ ê²ƒë„ í¬í•¨)
+	printf("í˜„ì¬ ì ìˆ˜ ê°œìˆ˜(Size) : %u\n", static_cast<unsigned int>(Scores.size()));
+	printf("í• ë‹¹ëœ ë©”ëª¨ë¦¬(Capacity) : %u\n", static_cast<unsigned int>(Scores.capacity()));
 
-	// »èÁ¦ÇÏ±â : µÚ¿¡¼­ »èÁ¦ÇÏ´Â °ÍÀÌ ÁÁ´Ù.
-	Scores.pop_back(); // ¸¶Áö¸· ¿ø¼Ò ÇÏ³ª Á¦°Å
-	printf("¸ğµç Á¡¼ö : ");
+	// ì‚­ì œí•˜ê¸° : ë’¤ì—ì„œ ì‚­ì œí•˜ëŠ” ê²ƒì´ ì¢‹ë‹¤.
+	Scores.pop_back(); // ë§ˆì§€ë§‰ ì›ì†Œ í•˜ë‚˜ ì œê±°
+	printf("ëª¨ë“  ì ìˆ˜ : ");
 	for (auto iter = Scores.begin(); iter != Scores.end(); iter++)
 	{
 		printf("%d ", *iter);
 	}
 	printf("\n");
 
-	Scores.clear();	// ¸ğµç ¿ø¼Ò Á¦°Å(Size´Â 0, Capacity´Â ±×´ë·Î)
-	printf("¸ğµç Á¡¼ö : ");
+	Scores.clear();	// ëª¨ë“  ì›ì†Œ ì œê±°(SizeëŠ” 0, CapacityëŠ” ê·¸ëŒ€ë¡œ)
+	printf("ëª¨ë“  ì ìˆ˜ : ");
 	for (auto iter = Scores.begin(); iter != Scores.end(); iter++)
 	{
 		printf("%d ", *iter);	
 	}
 	printf("\n");
-	printf("ÇöÀç Á¡¼ö °³¼ö(Size) : %u\n", static_cast<unsigned int>(Scores.size()));
-	printf("ÇÒ´çµÈ ¸Ş¸ğ¸®(Capacity) : %u\n", static_cast<unsigned int>(Scores.capacity()));
+	printf("í˜„ì¬ ì ìˆ˜ ê°œìˆ˜(Size) : %u\n", static_cast<unsigned int>(Scores.size()));
+	printf("í• ë‹¹ëœ ë©”ëª¨ë¦¬(Capacity) : %u\n", static_cast<unsigned int>(Scores.capacity()));
 
 	if (Scores.empty())
 	{
-		printf("Scores°¡ ºñ¾ú´Ù.\n");
+		printf("Scoresê°€ ë¹„ì—ˆë‹¤.\n");
 	}
 
-	// Áß°£¿¡ Ãß°¡ »èÁ¦ÇÏ´Â ÇÔ¼ö.(¾îÁö°£ÇÏ¸é ¾²Áö ¸»°Í)
+	// ì¤‘ê°„ì— ì¶”ê°€ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜.(ì–´ì§€ê°„í•˜ë©´ ì“°ì§€ ë§ê²ƒ)
 	//Scores.insert();
 	//Scores.erase();
 
-	// ½º¿Ò ¾Ø ÆË
-	// - ¹éÅÍÀÇ ¿ø¼ÒµéÀÇ ¼ø¼­°¡ Áß¿äÇÏÁö ¾ÊÀ» ¶§ »ç¿ë°¡´É.
-	// - Áß°£¿¡ ÀÖ´Â ¿ø¼Ò¸¦ »èÁ¦ÇÒ ¶§ ¸¶Áö¸·¿¡ ÀÖ´Â ¿ø¼Ò¿Í ¼­·Î ±³È¯ÇÏ°í pop_backÀ¸·Î Á¦°ÅÇÏ´Â Àü·«
+	// ìŠ¤ì™‘ ì•¤ íŒ
+	// - ë°±í„°ì˜ ì›ì†Œë“¤ì˜ ìˆœì„œê°€ ì¤‘ìš”í•˜ì§€ ì•Šì„ ë•Œ ì‚¬ìš©ê°€ëŠ¥.
+	// - ì¤‘ê°„ì— ìˆëŠ” ì›ì†Œë¥¼ ì‚­ì œí•  ë•Œ ë§ˆì§€ë§‰ì— ìˆëŠ” ì›ì†Œì™€ ì„œë¡œ êµí™˜í•˜ê³  pop_backìœ¼ë¡œ ì œê±°í•˜ëŠ” ì „ëµ
 	std::vector<int> Numbers = { 10,20,30,40,50 };
 	int DeleteNumber = 20;
 
 	std::vector<int>::iterator FindIter = std::find(Numbers.begin(), Numbers.end(), DeleteNumber);
 	if (FindIter != Numbers.end())
 	{
-		// Ã£¾Ò´Ù.
-		*FindIter = Numbers.back();	// Ã£Àº À§Ä¡¿¡ ¸¶Áö¸· °ªÀ» ³Ö¾î¶ó.
-		Numbers.pop_back();			// ¸¶Áö¸· ¿ä¼Ò Á¦°Å
+		// ì°¾ì•˜ë‹¤.
+		*FindIter = Numbers.back();	// ì°¾ì€ ìœ„ì¹˜ì— ë§ˆì§€ë§‰ ê°’ì„ ë„£ì–´ë¼.
+		Numbers.pop_back();			// ë§ˆì§€ë§‰ ìš”ì†Œ ì œê±°
 	}
 	else
 	{
-		// ¾ø´Ù.
+		// ì—†ë‹¤.
 	}
 
 	int i = 0;
@@ -134,40 +134,40 @@ void Day0923::TestVector()
 
 void Day0923::TestVectorPractice()
 {
-	// std::vector ¿¬½ÀÇÏ±â
+	// std::vector ì—°ìŠµí•˜ê¸°
 	/*
-		1. Á¤¼ö ÀÔ·Â¹Ş°í Ãâ·ÂÇÏ±â
-		2. ÃÖ´ë, ÃÖ¼Ò ±¸ÇÏ±â
-		3. Á¤·ÄÇÏ±â (std::sort, #include <algorithm> ÇÊ¼ö)
-		4. Æ¯Á¤ °ª Ã£±â (std::find¾øÀÌ)
-		5. Áßº¹ Á¦°ÅÇÏ±â
-		6. º¤ÅÍ µÎ°³ ÇÕÄ¡±â
-		7. ¹®ÀÚ¿­ µÚÁı¾î¼­ Ãâ·ÂÇÏ±â
-		8. ¸ğµç ¿ä¼Ò ´õÇÏ±â
+		1. ì •ìˆ˜ ì…ë ¥ë°›ê³  ì¶œë ¥í•˜ê¸°
+		2. ìµœëŒ€, ìµœì†Œ êµ¬í•˜ê¸°
+		3. ì •ë ¬í•˜ê¸° (std::sort, #include <algorithm> í•„ìˆ˜)
+		4. íŠ¹ì • ê°’ ì°¾ê¸° (std::findì—†ì´)
+		5. ì¤‘ë³µ ì œê±°í•˜ê¸°
+		6. ë²¡í„° ë‘ê°œ í•©ì¹˜ê¸°
+		7. ë¬¸ìì—´ ë’¤ì§‘ì–´ì„œ ì¶œë ¥í•˜ê¸°
+		8. ëª¨ë“  ìš”ì†Œ ë”í•˜ê¸°
 	*/
 
-	// 1. Á¤¼ö ÀÔ·Â¹Ş°í Ãâ·ÂÇÏ±â(-1À» ÀÔ·Â¹ŞÀ» ¶§±îÁö ¹İº¹ÀÔ·Â ¹Ş±â)
+	// 1. ì •ìˆ˜ ì…ë ¥ë°›ê³  ì¶œë ¥í•˜ê¸°(-1ì„ ì…ë ¥ë°›ì„ ë•Œê¹Œì§€ ë°˜ë³µì…ë ¥ ë°›ê¸°)
 	//constexpr int ExitNumber = -1;
 	//std::vector<int> Numbers;
 	//Numbers.reserve(10);
 	//int InputNumber = 0;
 	//while ( InputNumber != ExitNumber)
 	//{
-	//	printf("1. ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä(-1ÀÌ¸é Á¾·á) : ");
+	//	printf("1. ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”(-1ì´ë©´ ì¢…ë£Œ) : ");
 	//	std::cin >> InputNumber;
 	//	if (InputNumber != ExitNumber)
 	//	{
 	//		Numbers.push_back(InputNumber);
 	//	}
 	//} 
-	//printf("ÀÔ·Â ¹ŞÀº ¼ıÀÚ : ");
+	//printf("ì…ë ¥ ë°›ì€ ìˆ«ì : ");
 	//for (int Number : Numbers)
 	//{
 	//	printf("%d ", Number);
 	//}
 	//printf("\n\n");
 
-	//// 2. ÃÖ´ë, ÃÖ¼Ò ±¸ÇÏ±â
+	//// 2. ìµœëŒ€, ìµœì†Œ êµ¬í•˜ê¸°
 	//std::vector<int> Numbers2 = { 10, 20, 30, 40, 50 };
 	//
 	//int Min = INT_MAX;
@@ -191,17 +191,17 @@ void Day0923::TestVectorPractice()
 	//Max = *(MinMax.second);
 	//printf("Min = %d, Max = %d\n", Min, Max);
 
-	//// 3. Á¤·ÄÇÏ±â (std::sort, #include <algorithm> ÇÊ¼ö)
+	//// 3. ì •ë ¬í•˜ê¸° (std::sort, #include <algorithm> í•„ìˆ˜)
 	//std::vector<int> Numbers3 = { 5,7,3,2,4 };
-	//std::sort(Numbers3.begin(), Numbers3.end()); // ¿À¸§Â÷¼ø Á¤·Ä
-	//printf("¿À¸§Â÷¼ø Á¤·Ä : ");
+	//std::sort(Numbers3.begin(), Numbers3.end()); // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+	//printf("ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ : ");
 	//for (int n : Numbers3)
 	//{
 	//	printf("%d ", n);
 	//}
 	//printf("\n\n");
 
-	////4. Æ¯Á¤ °ª Ã£±â (std::find¾øÀÌ)
+	////4. íŠ¹ì • ê°’ ì°¾ê¸° (std::findì—†ì´)
 	//std::vector<int> Numbers4 = { 10, 20, 30, 40 ,50 };
 	//int FindNumber = 300;
 	//auto Iter = Numbers4.begin();
@@ -215,16 +215,16 @@ void Day0923::TestVectorPractice()
 	//}
 	//if (Iter != Numbers4.end())
 	//{
-	//	// Ã£¾Ò´Ù.
-	//	printf("%d´Â º¤ÅÍ ³»ºÎ¿¡ ÀÖ½À´Ï´Ù.\n", FindNumber);
+	//	// ì°¾ì•˜ë‹¤.
+	//	printf("%dëŠ” ë²¡í„° ë‚´ë¶€ì— ìˆìŠµë‹ˆë‹¤.\n", FindNumber);
 	//}
 	//else
 	//{
-	//	// ¸øÃ£¾Ò´Ù.
-	//	printf("%d´Â º¤ÅÍ ³»ºÎ¿¡ ¾ø½À´Ï´Ù.\n", FindNumber);
+	//	// ëª»ì°¾ì•˜ë‹¤.
+	//	printf("%dëŠ” ë²¡í„° ë‚´ë¶€ì— ì—†ìŠµë‹ˆë‹¤.\n", FindNumber);
 	//}
 
-	//// 5. Áßº¹ Á¦°ÅÇÏ±â
+	//// 5. ì¤‘ë³µ ì œê±°í•˜ê¸°
 	//std::vector<int> Numbers5 = { 10, 20, 30, 30, 40, 50, 30, 40 };
 	//std::vector<int> Result5;
 	//Result5.reserve(Numbers5.size());
@@ -237,23 +237,23 @@ void Day0923::TestVectorPractice()
 	//	}
 	//}
 	////Numbers5 = Result5;
-	//printf("Áßº¹Á¦°Å °á°ú : ");
+	//printf("ì¤‘ë³µì œê±° ê²°ê³¼ : ");
 	//for (int n : Result5)
 	//{
 	//	printf("%d ", n);
 	//}
 	//printf("\n\n");
-	//std::sort(Numbers5.begin(), Numbers5.end());	// unique¸¦ ¾²±âÀ§ÇØ¼­´Â Á¤·ÄµÇ¾î ÀÖ¾î¾ß ÇÑ´Ù.
-	//auto last = std::unique(Numbers5.begin(), Numbers5.end());	// Áßº¹µÇ´Â °ªµéÀº µÚ·Î º¸³»°í Áßº¹µÇ±â Àü ¸¶Áö¸·À» ¸®ÅÏ
-	//Numbers5.erase(last, Numbers5.end());	// Áßº¹µÇ´ø ºÎºĞµéÀ» ½ÇÁ¦·Î »èÁ¦
-	//printf("Áßº¹Á¦°Å °á°ú : ");
+	//std::sort(Numbers5.begin(), Numbers5.end());	// uniqueë¥¼ ì“°ê¸°ìœ„í•´ì„œëŠ” ì •ë ¬ë˜ì–´ ìˆì–´ì•¼ í•œë‹¤.
+	//auto last = std::unique(Numbers5.begin(), Numbers5.end());	// ì¤‘ë³µë˜ëŠ” ê°’ë“¤ì€ ë’¤ë¡œ ë³´ë‚´ê³  ì¤‘ë³µë˜ê¸° ì „ ë§ˆì§€ë§‰ì„ ë¦¬í„´
+	//Numbers5.erase(last, Numbers5.end());	// ì¤‘ë³µë˜ë˜ ë¶€ë¶„ë“¤ì„ ì‹¤ì œë¡œ ì‚­ì œ
+	//printf("ì¤‘ë³µì œê±° ê²°ê³¼ : ");
 	//for (int n : Numbers5)
 	//{
 	//	printf("%d ", n);
 	//}
 	//printf("\n\n");
 
-	//// 6. º¤ÅÍ µÎ°³ ÇÕÄ¡±â
+	//// 6. ë²¡í„° ë‘ê°œ í•©ì¹˜ê¸°
 	//std::vector<int> Numbers6_1 = { 10, 20, 30 };
 	//std::vector<int> Numbers6_2 = { 100, 200, 300 };
 	//std::vector<int> Result6(Numbers6_1);
@@ -262,12 +262,12 @@ void Day0923::TestVectorPractice()
 	//	Result6.push_back(n);
 	//}
 
-	// 7. ¹®ÀÚ¿­ µÚÁı¾î¼­ Ãâ·ÂÇÏ±â
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+	// 7. ë¬¸ìì—´ ë’¤ì§‘ì–´ì„œ ì¶œë ¥í•˜ê¸°
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 	std::string InputWord;
 	std::cin >> InputWord;
 	std::vector<char> chars(InputWord.begin(), InputWord.end());
-	printf("µÚÁıÈù °á°ú : ");
+	printf("ë’¤ì§‘íŒ ê²°ê³¼ : ");
 	for (auto rIter = chars.rbegin(); rIter != chars.rend(); rIter++)
 	{
 		printf("%c", *rIter);

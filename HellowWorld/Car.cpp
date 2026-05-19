@@ -4,25 +4,25 @@
 Car::Car(const char* InName)
 	: Name(InName)
 {
-	printf("[%s] ÀÚµ¿Â÷°¡ »ı¼ºµÇ¾ú½À´Ï´Ù.\n", Name.c_str());
+	printf("[%s] ìë™ì°¨ê°€ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.\n", Name.c_str());
 }
 
 Car::~Car()
 {
-	printf("[%s] ÀÚµ¿Â÷°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.\n", Name.c_str());
+	printf("[%s] ìë™ì°¨ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n", Name.c_str());
 }
 
-void Car::Accel()	// CarÅ¬·¡½ºÀÇ Accel ÇÔ¼ö
+void Car::Accel()	// Carí´ë˜ìŠ¤ì˜ Accel í•¨ìˆ˜
 {
-	printf("ÀÚµ¿Â÷¸¦ °¡¼ÓÇÕ´Ï´Ù.\n");
+	printf("ìë™ì°¨ë¥¼ ê°€ì†í•©ë‹ˆë‹¤.\n");
 }
 
 void Car::Brake()
 {
-	printf("ÀÚµ¿Â÷¸¦ °¨¼ÓÇÕ´Ï´Ù.\n");
+	printf("ìë™ì°¨ë¥¼ ê°ì†í•©ë‹ˆë‹¤.\n");
 }
 
 void Car::HandleTurn()
 {
-	printf("ÇÚµéÀ» µ¹¸³´Ï´Ù.\n");
+	printf("í•¸ë“¤ì„ ëŒë¦½ë‹ˆë‹¤.\n");
 }

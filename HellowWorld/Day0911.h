@@ -1,6 +1,6 @@
 #pragma once
 
-// extern : ´Ù¸¥ cpp¿¡ ÀÌ º¯¼ö³ª ÇÔ¼ö°¡ ÀÖ´Ù°í ¾Ë·ÁÁÖ´Â ¿ëµµ.
+// extern : ë‹¤ë¥¸ cppì— ì´ ë³€ìˆ˜ë‚˜ í•¨ìˆ˜ê°€ ìžˆë‹¤ê³  ì•Œë ¤ì£¼ëŠ” ìš©ë„.
 extern int MazeWidth;
 extern int MazeHeight;
 extern int** Maze;
@@ -8,42 +8,42 @@ extern int** Maze;
 
 
 /// <summary>
-/// ¸Ê ÆÄÀÏÀ» ÀÐ´Â ÇÔ¼ö
+/// ë§µ íŒŒì¼ì„ ì½ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="MapFileName">¸Ê ÆÄÀÏ ÀÌ¸§</param>
-/// <param name="OutDataString">Ãâ·Â¿ë. ÆÄÀÏ¿¡¼­ ÀÐÀº ÅØ½ºÆ®¸¦ µ¹·ÁÁØ´Ù.</param>
-/// <returns>ÆÄÀÏÀ» ÀÐ´Âµ¥ ¼º°øÇÏ¸é true, ½ÇÆÐÇÏ¸é false</returns>
+/// <param name="MapFileName">ë§µ íŒŒì¼ ì´ë¦„</param>
+/// <param name="OutDataString">ì¶œë ¥ìš©. íŒŒì¼ì—ì„œ ì½ì€ í…ìŠ¤íŠ¸ë¥¼ ëŒë ¤ì¤€ë‹¤.</param>
+/// <returns>íŒŒì¼ì„ ì½ëŠ”ë° ì„±ê³µí•˜ë©´ true, ì‹¤íŒ¨í•˜ë©´ false</returns>
 bool ReadMapFile(const char* MapFileName, std::string& OutDataString);
 
 /// <summary>
-/// stringÀ» ¹Þ¾Æ¼­ Maze¸¦ Ã¼¿ì´Âµ¥ ÇÊ¿äÇÑ µ¥ÀÌÅÍ¸¦ ÆÄ½ÌÇÏ´Â ÇÔ¼ö
+/// stringì„ ë°›ì•„ì„œ Mazeë¥¼ ì²´ìš°ëŠ”ë° í•„ìš”í•œ ë°ì´í„°ë¥¼ íŒŒì‹±í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="DataString">¼Ò½º¿ë ¹®ÀÚ¿­</param>
-/// <returns>true : ÆÄ½Ì¼º°ø, false : ¸Ê µ¥ÀÌÅÍ(DataString)°¡ Àß¸øµÈ °æ¿ì</returns>
+/// <param name="DataString">ì†ŒìŠ¤ìš© ë¬¸ìžì—´</param>
+/// <returns>true : íŒŒì‹±ì„±ê³µ, false : ë§µ ë°ì´í„°(DataString)ê°€ ìž˜ëª»ëœ ê²½ìš°</returns>
 bool ParseMapData(std::string& DataString);
 
 /// <summary>
-/// Source¿¡¼­ ¹ß°ßµÈ Ã¹ÁÙÀ» ¸®ÅÏÇÏ´Â ÇÔ¼ö
+/// Sourceì—ì„œ ë°œê²¬ëœ ì²«ì¤„ì„ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="InOutSource">ÁÙ(\n)À» Ã£À» ¿øº» µ¥ÀÌÅÍ</param>
-/// <returns>Source¿¡¼­ Ã¹ÁÙÀÇ ÁÖ¼Ò</returns>
+/// <param name="InOutSource">ì¤„(\n)ì„ ì°¾ì„ ì›ë³¸ ë°ì´í„°</param>
+/// <returns>Sourceì—ì„œ ì²«ì¤„ì˜ ì£¼ì†Œ</returns>
 char* GetLine(char** InOutSource);
 
 /// <summary>
-/// ¹®ÀÚ¿­ ÇÑÁÙÀ» ÆÄ½ÌÇÏ´Â ÇÔ¼ö
+/// ë¬¸ìžì—´ í•œì¤„ì„ íŒŒì‹±í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
-/// <param name="LineData">ÆÄ½ÌÇÒ ¹®ÀÚ¿­</param>
-/// <param name="ArraySize">°á°ú°¡ ÀúÀåµÉ ¹è¿­ÀÇ Å©±â</param>
-/// <param name="OutArray">°á°ú°¡ ÀúÀåµÉ ¹è¿­</param>
+/// <param name="LineData">íŒŒì‹±í•  ë¬¸ìžì—´</param>
+/// <param name="ArraySize">ê²°ê³¼ê°€ ì €ìž¥ë  ë°°ì—´ì˜ í¬ê¸°</param>
+/// <param name="OutArray">ê²°ê³¼ê°€ ì €ìž¥ë  ë°°ì—´</param>
 void ParseLineData(const char* LineData, int ArraySize, int* OutArray );
 
 /// <summary>
-/// ¹Ì·Î °ÔÀÓÀ» ÃÊ±âÈ­ ÇÏ´Â ÇÔ¼ö
+/// ë¯¸ë¡œ ê²Œìž„ì„ ì´ˆê¸°í™” í•˜ëŠ” í•¨ìˆ˜
 /// </summary>
 void InitializeMaze();
 
 /// <summary>
-/// ¹Ì·Î °ÔÀÓÀ» Á¤¸®ÇÏ´Â ÇÔ¼ö(ÇÒ´çµÈ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÏ´Â ÇÔ¼ö)
+/// ë¯¸ë¡œ ê²Œìž„ì„ ì •ë¦¬í•˜ëŠ” í•¨ìˆ˜(í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•˜ëŠ” í•¨ìˆ˜)
 /// </summary>
 void ClearMaze();
 

@@ -4,16 +4,16 @@ void CircularQueue::Enqueue(int InValue)
 {
 	if (IsFull())
 	{
-		printf("¿À·ù: Å¥°¡ °¡µæ Ã¡½À´Ï´Ù!\n");
+		printf("ì˜¤ë¥˜: íê°€ ê°€ë“ ì°¼ìŠµë‹ˆë‹¤!\n");
 		return;
 	}
 
-	if (IsEmpty())	// ºñ¾úÀ» ¶§ ³Ö´Â °æ¿ì¶ó¸é Frontµµ 0À¸·Î ¼³Á¤
+	if (IsEmpty())	// ë¹„ì—ˆì„ ë•Œ ë„£ëŠ” ê²½ìš°ë¼ë©´ Frontë„ 0ìœ¼ë¡œ ì„¤ì •
 	{
 		Front = 0;
 	}
 
-	Rear = (Rear + 1) % MaxSize;	// Rear´Â 1Áõ°¡. MaxSize¸¦ ³Ñ¾î¼­¸é ´Ù½Ã 0À¸·Î 
+	Rear = (Rear + 1) % MaxSize;	// RearëŠ” 1ì¦ê°€. MaxSizeë¥¼ ë„˜ì–´ì„œë©´ ë‹¤ì‹œ 0ìœ¼ë¡œ 
 	Data[Rear] = InValue;
 
 	TestPrintQueue();
@@ -23,19 +23,19 @@ int CircularQueue::Dequeue()
 {
 	if (IsEmpty())
 	{
-		printf("¿À·ù: Å¥°¡ ºñ¾îÀÖ½À´Ï´Ù!\n");
+		printf("ì˜¤ë¥˜: íê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤!\n");
 		return Empty;
 	}
 	int Result = Data[Front];
 
 	if (Front != Rear)
 	{
-		// ÀÏ¹İÀûÀÎ »óÈ²
+		// ì¼ë°˜ì ì¸ ìƒí™©
 		Front = (Front + 1) % MaxSize;
 	}
 	else
 	{
-		// ¸¶Áö¸·À¸·Î 1°³¸¸ ³²Àº »óÈ²
+		// ë§ˆì§€ë§‰ìœ¼ë¡œ 1ê°œë§Œ ë‚¨ì€ ìƒí™©
 		Front = Empty;
 		Rear = Empty;
 	}
@@ -46,7 +46,7 @@ int CircularQueue::Dequeue()
 
 void CircularQueue::TestPrintQueue()
 {
-	// FrontºÎÅÍ Rear±îÁö Ãâ·ÂÇÏ±â
+	// Frontë¶€í„° Rearê¹Œì§€ ì¶œë ¥í•˜ê¸°
 	printf("Queue : ");
 	for (int i = 0; i < GetSize(); i++)
 	{
@@ -54,6 +54,6 @@ void CircularQueue::TestPrintQueue()
 	}
 	printf("\n");
 
-	// Å¥ÀÇ Å©±âµµ Ãâ·Â
+	// íì˜ í¬ê¸°ë„ ì¶œë ¥
 	printf("Queue Size : %d\n", GetSize());
 }

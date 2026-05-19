@@ -4,18 +4,18 @@ void Dog::Move()
 {
 	if (Energy < 0.1f)
 	{
-		printf("[%s] : ÈûÀÌ ¾ø¾î¼­ ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : íž˜ì´ ì—†ì–´ì„œ ì›€ì§ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Name.c_str());
 	}
 	else
 	{
-		printf("[%s] : ¿òÁ÷ÀÔ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ì›€ì§ìž…ë‹ˆë‹¤.\n", Name.c_str());
 		SetEnergy(Energy - 0.1f);
-		printf("[%s] : ¿¡³ÊÁö°¡ 10% °¨¼ÒÇÕ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ì—ë„ˆì§€ê°€ 10% ê°ì†Œí•©ë‹ˆë‹¤.\n", Name.c_str());
 	}
 }
 
 void Dog::MakeSound()
 {
 	Animal::MakeSound();
-	printf("¸Û¸Û\n");
+	printf("ë©ë©\n");
 }

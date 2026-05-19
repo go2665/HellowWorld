@@ -2,22 +2,22 @@
 #include "Animal.h"
 #include "ICanBattle.h"
 
-// Tiger´Â AnimalÀ» ¸ğµÎ »ó¼Ó ¹Ş¾Ò´Ù.
+// TigerëŠ” Animalì„ ëª¨ë‘ ìƒì† ë°›ì•˜ë‹¤.
 class Tiger : public Animal, public	ICanBattle
 {
 public:
-	void Hunt();	// È£¶ûÀÌ Àü¿ë ÇÔ¼ö
-	virtual void Move() override;	// È£¶ûÀÌ´Â AnimalÀÇ MoveÇÔ¼ö¸¦ µ¤¾î¾µ²¨´Ù.
+	void Hunt();	// í˜¸ë‘ì´ ì „ìš© í•¨ìˆ˜
+	virtual void Move() override;	// í˜¸ë‘ì´ëŠ” Animalì˜ Moveí•¨ìˆ˜ë¥¼ ë®ì–´ì“¸êº¼ë‹¤.
 	virtual void MakeSound() override;
 
 	virtual void Attack(ICanBattle* Target) override;
 	virtual void TakeDamage(float InDamage) override;
 
 public:
-	// »ı¼ºÀÚ/¼Ò¸êÀÚ´Â »ó¼ÓÀÇ ´ë»óÀÌ ¾Æ´Ï´Ù.
+	// ìƒì„±ì/ì†Œë©¸ìëŠ” ìƒì†ì˜ ëŒ€ìƒì´ ì•„ë‹ˆë‹¤.
 	Tiger() = default;
 	Tiger(std::string InName)
-		: Animal(InName)	// ºÎ¸ğ Å¬·¡½ºÀÎ Animal¿¡¼­ »ı¼ºÀÚ Ã³¸®ÇÏ´Â °Í°ú ¶È°°ÀÌ ÇØ¶ó.
+		: Animal(InName)	// ë¶€ëª¨ í´ë˜ìŠ¤ì¸ Animalì—ì„œ ìƒì„±ì ì²˜ë¦¬í•˜ëŠ” ê²ƒê³¼ ë˜‘ê°™ì´ í•´ë¼.
 	{
 	}
 	virtual ~Tiger() {}

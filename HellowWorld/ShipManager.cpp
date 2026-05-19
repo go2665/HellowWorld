@@ -4,13 +4,13 @@
 
 void ShipManager::PlaceAllShips(HiddenMap& InMap)
 {
-    static constexpr int ShipSizes[ShipTypeCount] = { 5, 4, 3, 2 }; // ¹èÀÇ Å©±â
+    static constexpr int ShipSizes[ShipTypeCount] = { 5, 4, 3, 2 }; // ë°°ì˜ í¬ê¸°
 
-    // ¹è¸¦ ÇÏ³ª¾¿ ¹èÄ¡ÇÏ±â ½ÃÀÛ
+    // ë°°ë¥¼ í•˜ë‚˜ì”© ë°°ì¹˜í•˜ê¸° ì‹œì‘
     for (int i = 0; i < ShipTypeCount; i++)
     {
         bool IsPlaced = false;
-        while (!IsPlaced) // ¹èÄ¡°¡ ¿Ï·áµÉ ¶§±îÁö while ¹İº¹
+        while (!IsPlaced) // ë°°ì¹˜ê°€ ì™„ë£Œë  ë•Œê¹Œì§€ while ë°˜ë³µ
         {
             int x = rand() % Map::MapSize;
             int y = rand() % Map::MapSize;
@@ -18,17 +18,17 @@ void ShipManager::PlaceAllShips(HiddenMap& InMap)
 
             if (CanPlaceShip(x, y, ShipSizes[i], IsHorizontal, InMap))
             {
-                // ¹èÄ¡ÇÒ ¼ö ÀÖÀ¸¸é ¹èÄ¡ Ã³¸®
+                // ë°°ì¹˜í•  ìˆ˜ ìˆìœ¼ë©´ ë°°ì¹˜ ì²˜ë¦¬
                 Position PlacePosition[Ship::MaxShipSize];
                 for (int j = 0; j < ShipSizes[i]; j++)
                 {
                     int NewX = x + (IsHorizontal ? j : 0);
                     int NewY = y + (IsHorizontal ? 0 : j);
-                    InMap.SetCellType(NewX, NewY, CellType::Ship);  // ¸Ê¿¡ ±â·ÏÇÏ°í
-                    PlacePosition[j] = Position(NewX, NewY);    // ¹èÄ¡ ÁÂÇ¥ ÀüºÎ ±â·ÏÇÑ ´ÙÀ½
+                    InMap.SetCellType(NewX, NewY, CellType::Ship);  // ë§µì— ê¸°ë¡í•˜ê³ 
+                    PlacePosition[j] = Position(NewX, NewY);    // ë°°ì¹˜ ì¢Œí‘œ ì „ë¶€ ê¸°ë¡í•œ ë‹¤ìŒ
                 }
-                Ships[i].Place(PlacePosition, ShipSizes[i]);    // ½ÇÁ¦ ¹èÄ¡ Ã³¸®
-                IsPlaced = true;    // while ³¡³»¶ó°í Ç¥½Ã
+                Ships[i].Place(PlacePosition, ShipSizes[i]);    // ì‹¤ì œ ë°°ì¹˜ ì²˜ë¦¬
+                IsPlaced = true;    // while ëë‚´ë¼ê³  í‘œì‹œ
             }
         }
     }
@@ -36,26 +36,26 @@ void ShipManager::PlaceAllShips(HiddenMap& InMap)
 
 bool ShipManager::ProcessAttack(const Position& InAttackPos)
 {
-    ShipJustSunk = false;   // »õ °ø°İÀÌ ½ÃÀÛµÇ¾úÀ¸´Ï ÃÊ±âÈ­
+    ShipJustSunk = false;   // ìƒˆ ê³µê²©ì´ ì‹œì‘ë˜ì—ˆìœ¼ë‹ˆ ì´ˆê¸°í™”
     for (int i = 0; i < ShipTypeCount; i++)
     {
         if (Ships[i].IsSunk())
         {
-            continue; //°¡¶ó¾ÉÀº ¹è´Â ½ºÅµ
+            continue; //ê°€ë¼ì•‰ì€ ë°°ëŠ” ìŠ¤í‚µ
         }
 
         if (Ships[i].CheckAndProcessHit(InAttackPos))
         {
-            // ¹è°¡ ¸Â¾Ò´Ù.
+            // ë°°ê°€ ë§ì•˜ë‹¤.
             if (Ships[i].IsSunk())
             {
-                SunkShipCount++;        // Ä§¸ô ´ë¼ö Áõ°¡
-                ShipJustSunk = true;    // °¡¶ó¾É¾Ò´Ù°í Ãâ·ÂÇÏ±â À§ÇØ
+                SunkShipCount++;        // ì¹¨ëª° ëŒ€ìˆ˜ ì¦ê°€
+                ShipJustSunk = true;    // ê°€ë¼ì•‰ì•˜ë‹¤ê³  ì¶œë ¥í•˜ê¸° ìœ„í•´
             }
-            return true;    // ¸Â¾Ò´Ù.
+            return true;    // ë§ì•˜ë‹¤.
         }
     }
-    return false;   // ºø³ª°¬´Ù.
+    return false;   // ë¹—ë‚˜ê°”ë‹¤.
 }
 
 bool ShipManager::CanPlaceShip(int InX, int InY, int InSize, bool InHorizontal, const HiddenMap& InMap) const
@@ -66,12 +66,12 @@ bool ShipManager::CanPlaceShip(int InX, int InY, int InSize, bool InHorizontal, 
         int NewY = InY + (InHorizontal ? 0 : i);
         if (!Map::IsValidPoition(NewX, NewY))
         {
-            return false;   // ¸Ê ¾ÈÀÌ ¾Æ´Ï¸é ¹èÄ¡ ºÒ°¡
+            return false;   // ë§µ ì•ˆì´ ì•„ë‹ˆë©´ ë°°ì¹˜ ë¶ˆê°€
         }
         if (!InMap.IsCellEmpty(NewX, NewY))
         {
-            return false;   // ÇØ´ç ¼¿ÀÌ ºñ¾îÀÖÁö ¾ÊÀ¸¸é ¹èÄ¡ ºÒ°¡
+            return false;   // í•´ë‹¹ ì…€ì´ ë¹„ì–´ìˆì§€ ì•Šìœ¼ë©´ ë°°ì¹˜ ë¶ˆê°€
         }
     }
-    return true;    // ¸ğµç Ä­ÀÌ È®ÀÎÀÌ ³¡³µ°í ¸Ê¾ÈÀÌ°í ¼¿ÀÌ ºñ¾îÀÖ´Ù´Â°Ô È®ÀÎÀÌ ‰çÀ¸´Ï ¹èÄ¡ °¡´É
+    return true;    // ëª¨ë“  ì¹¸ì´ í™•ì¸ì´ ëë‚¬ê³  ë§µì•ˆì´ê³  ì…€ì´ ë¹„ì–´ìˆë‹¤ëŠ”ê²Œ í™•ì¸ì´ ë¬ìœ¼ë‹ˆ ë°°ì¹˜ ê°€ëŠ¥
 }

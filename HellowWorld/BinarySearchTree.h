@@ -20,9 +20,9 @@ public:
 	void Delete(int InKey);
 	TreeNode* Search(int InKey);
 
-	void PrintPreOrder() const;	// ÀüÀ§ ¼øÈ¸
-	void PrintInOrder() ;	// ÁßÀ§ ¼øÈ¸
-	void PrintPostOrder() ;// ÈÄÀ§ ¼øÈ¸
+	void PrintPreOrder() const;	// ì „ìœ„ ìˆœíšŒ
+	void PrintInOrder() ;	// ì¤‘ìœ„ ìˆœíšŒ
+	void PrintPostOrder() ;// í›„ìœ„ ìˆœíšŒ
 
 	inline bool IsEmpty() const { return Root == nullptr; }
 
@@ -32,7 +32,7 @@ private:
 	TreeNode* InsertNode(TreeNode* InNode, int InKey);
 	TreeNode* DeleteNode(TreeNode* InNode, int InKey);
 	TreeNode* SearchNode(TreeNode* InNode, int InKey);
-	TreeNode* FindMinNode(TreeNode* InNode);	// InNode¸¦ ·çÆ®·ÎÇÏ´Â ¼­ºêÆ®¸®¿¡¼­ °¡Àå ÀÛÀº Å°¸¦ °¡Áö´Â ³ëµå¸¦ Ã£´Â ÇÔ¼ö
+	TreeNode* FindMinNode(TreeNode* InNode);	// InNodeë¥¼ ë£¨íŠ¸ë¡œí•˜ëŠ” ì„œë¸ŒíŠ¸ë¦¬ì—ì„œ ê°€ì¥ ì‘ì€ í‚¤ë¥¼ ê°€ì§€ëŠ” ë…¸ë“œë¥¼ ì°¾ëŠ” í•¨ìˆ˜
 
 	void PreOrderTraversal(const TreeNode* InNode) const;
 	void InOrderTraversal( TreeNode* InNode);

@@ -2,26 +2,26 @@
 
 void Hawk::Move()
 {
-	//Animal::Move();	// ºÎ¸ğÀÎ AnimalÀÇ Move ½ÇÇàÇÏ±â
+	//Animal::Move();	// ë¶€ëª¨ì¸ Animalì˜ Move ì‹¤í–‰í•˜ê¸°
 	if (Energy < 0.1f)
 	{
-		printf("[%s] : ÈûÀÌ ¾ø¾î¼­ ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : í˜ì´ ì—†ì–´ì„œ ì›€ì§ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", Name.c_str());
 	}
 	else
 	{
-		printf("[%s] : ³¯¾Æ´Ù´Õ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ë‚ ì•„ë‹¤ë‹™ë‹ˆë‹¤.\n", Name.c_str());
 		SetEnergy(Energy - 0.1f);
-		printf("[%s] : ¿¡³ÊÁö°¡ 10% °¨¼ÒÇÕ´Ï´Ù.\n", Name.c_str());
+		printf("[%s] : ì—ë„ˆì§€ê°€ 10% ê°ì†Œí•©ë‹ˆë‹¤.\n", Name.c_str());
 	}
 }
 
 void Hawk::MakeSound()
 {
 	Animal::MakeSound();
-	printf("»©¾×!\n");
+	printf("ë¹¼ì•¡!\n");
 }
 
 void Hawk::Fly()
 {
-	printf("[%s]°¡ ³­´Ù¿ä.", Name.c_str());
+	printf("[%s]ê°€ ë‚œë‹¤ìš”.", Name.c_str());
 }

@@ -6,11 +6,11 @@ class Parent
 public:
 	Parent()
 	{
-		printf("ºÎ¸ğ »ı¼ºÀÚ\n");
+		printf("ë¶€ëª¨ ìƒì„±ì\n");
 	}
 	virtual ~Parent()
 	{
-		printf("ºÎ¸ğ ¼Ò¸êÀÚ\n");
+		printf("ë¶€ëª¨ ì†Œë©¸ì\n");
 	}
 };
 
@@ -20,13 +20,13 @@ public:
 	Child()
 	{
 		Data = new int[100];
-		printf("ÀÚ½Ä »ı¼ºÀÚ. ¸Ş¸ğ¸® ÇÒ´ç¹ŞÀ½.\n");
+		printf("ìì‹ ìƒì„±ì. ë©”ëª¨ë¦¬ í• ë‹¹ë°›ìŒ.\n");
 	}
 	virtual ~Child()
 	{
 		delete[] Data;
 		Data = nullptr;
-		printf("ÀÚ½Ä ¼Ò¸êÀÚ. ¸Ş¸ğ¸® ÇØÁ¦.\n");
+		printf("ìì‹ ì†Œë©¸ì. ë©”ëª¨ë¦¬ í•´ì œ.\n");
 	}
 private:
 	int* Data = nullptr;

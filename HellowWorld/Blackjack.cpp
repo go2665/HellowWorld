@@ -8,10 +8,10 @@ void PlayBlackjack()
 {
 	Card Deck[52];
 	int DeckTop = 0;
-	InitializeDeck(Deck);	// µ¦ »ı¼º
-	ShuffleDeck(Deck);		// µ¦ ¼¯±â
+	InitializeDeck(Deck);	// ë± ìƒì„±
+	ShuffleDeck(Deck);		// ë± ì„ê¸°
 
-	// ÇÃ·¹ÀÌ¾î¿Í µô·¯°¡ Ä«µå 2Àå¾¿ ¹ŞÀ½
+	// í”Œë ˆì´ì–´ì™€ ë”œëŸ¬ê°€ ì¹´ë“œ 2ì¥ì”© ë°›ìŒ
 	Card DealerHand[MaxHand];
 	int DealerCount = 0;
 	Card PlayerHand[MaxHand];
@@ -21,34 +21,34 @@ void PlayBlackjack()
 	AddCardToHand(PlayerHand, PlayerCount, DrawCard(Deck, DeckTop));
 	AddCardToHand(DealerHand, DealerCount, DrawCard(Deck, DeckTop));
 
-	// ÇÃ·¹ÀÌ¾î¿Í µô·¯°¡ ¹ŞÀº Ä«µå Ãâ·Â(µô·¯´Â ÇÑÀåÀº ¼û±ä´Ù)
+	// í”Œë ˆì´ì–´ì™€ ë”œëŸ¬ê°€ ë°›ì€ ì¹´ë“œ ì¶œë ¥(ë”œëŸ¬ëŠ” í•œì¥ì€ ìˆ¨ê¸´ë‹¤)
 	PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, false);
 
-	// ºí·¢ÀèÀÌ¸é ³¡ÀÌ´Ï±î ºí·¢ÀèÀÌ ÀÖ´ÂÁö ¸ÕÀú È®ÀÎ
+	// ë¸”ë™ì­ì´ë©´ ëì´ë‹ˆê¹Œ ë¸”ë™ì­ì´ ìˆëŠ”ì§€ ë¨¼ì € í™•ì¸
 	bool IsPlayerBlackjack = IsBlackjack(PlayerHand, PlayerCount);
 	bool IsDealerBlackjack = IsBlackjack(DealerHand, DealerCount);
 	if (IsPlayerBlackjack && IsDealerBlackjack)
 	{
-		printf("µÑ ´Ù ºí·¢Àè! ¹«½ÂºÎ!\n");
+		printf("ë‘˜ ë‹¤ ë¸”ë™ì­! ë¬´ìŠ¹ë¶€!\n");
 		PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
 	}
 	else if (IsPlayerBlackjack)
 	{
-		printf("ÇÃ·¹ÀÌ¾î°¡ ºí·¢ÀèÀÔ´Ï´Ù! ½Â¸®!\n");
+		printf("í”Œë ˆì´ì–´ê°€ ë¸”ë™ì­ì…ë‹ˆë‹¤! ìŠ¹ë¦¬!\n");
 		PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
 	}
 	else if (IsDealerBlackjack)
 	{
-		printf("µô·¯°¡ ºí·¢ÀèÀÔ´Ï´Ù. ÆĞ¹è...\n");
+		printf("ë”œëŸ¬ê°€ ë¸”ë™ì­ì…ë‹ˆë‹¤. íŒ¨ë°°...\n");
 		PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
 	}
 	else
 	{
-		// ½ÇÁ¦ °ÔÀÓ ½ÃÀÛ. ÇÃ·¹ÀÌ¾î ÅÏ ½ÃÀÛ.
+		// ì‹¤ì œ ê²Œì„ ì‹œì‘. í”Œë ˆì´ì–´ í„´ ì‹œì‘.
 		bool IsPlayerStand = false;
-		while (!IsPlayerStand && !IsBust(PlayerHand, PlayerCount)) // ½ºÅÄµå ¾ÈÇß°í ¹ö½ºÆ® ¾ÈÇÏ¸é °è¼Ó
+		while (!IsPlayerStand && !IsBust(PlayerHand, PlayerCount)) // ìŠ¤íƒ ë“œ ì•ˆí–ˆê³  ë²„ìŠ¤íŠ¸ ì•ˆí•˜ë©´ ê³„ì†
 		{
-			printf("ÇÃ·¹ÀÌ¾î Á¡¼ö : %d\n", GetBestScore(PlayerHand, PlayerCount));
+			printf("í”Œë ˆì´ì–´ ì ìˆ˜ : %d\n", GetBestScore(PlayerHand, PlayerCount));
 			printf("Hit(1) / Stand(2)? :");
 			int Input = 0;
 			std::cin >> Input;
@@ -58,9 +58,9 @@ void PlayBlackjack()
 				PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, false);
 				if (IsBust(PlayerHand, PlayerCount))
 				{
-					printf("ÇÃ·¹ÀÌ¾î ¹ö½ºÆ®! ÆĞ¹è!\n");
+					printf("í”Œë ˆì´ì–´ ë²„ìŠ¤íŠ¸! íŒ¨ë°°!\n");
 					PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
-					return;	// °ÔÀÓ Á¾·á
+					return;	// ê²Œì„ ì¢…ë£Œ
 				}
 			}
 			else
@@ -69,41 +69,41 @@ void PlayBlackjack()
 			}
 		}
 
-		// µô·¯ ÅÏ ½ÃÀÛ
-		printf("µô·¯ ÅÏ ½ÃÀÛ....\n");
+		// ë”œëŸ¬ í„´ ì‹œì‘
+		printf("ë”œëŸ¬ í„´ ì‹œì‘....\n");
 		PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
 		while (GetBestScore(DealerHand, DealerCount) < 17)
 		{
 			if (IsSoft17(DealerHand, DealerCount))
 				break;
 			AddCardToHand(DealerHand, DealerCount, DrawCard(Deck, DeckTop));
-			printf("µô·¯ Ä«µå : ");
+			printf("ë”œëŸ¬ ì¹´ë“œ : ");
 			PrintDealerHand(DealerHand, DealerCount, true);
 			printf("\n");
 
 			if (IsBust(DealerHand, DealerCount))
 			{
-				printf("µô·¯ ¹ö½ºÆ®! ÇÃ·¹ÀÌ¾î ½Â¸®!\n");
+				printf("ë”œëŸ¬ ë²„ìŠ¤íŠ¸! í”Œë ˆì´ì–´ ìŠ¹ë¦¬!\n");
 				return;
 			}
 		}
 
-		// Á¡¼ö È®ÀÎ
+		// ì ìˆ˜ í™•ì¸
 		int PlayerScore = GetBestScore(PlayerHand, PlayerCount);
 		int DealerScore = GetBestScore(DealerHand, DealerCount);
 		PrintHands(PlayerHand, PlayerCount, DealerHand, DealerCount, true);
-		printf("ÇÃ·¹ÀÌ¾î Á¡¼ö: %d, µô·¯ Á¡¼ö:%d\n", PlayerScore, DealerScore);
+		printf("í”Œë ˆì´ì–´ ì ìˆ˜: %d, ë”œëŸ¬ ì ìˆ˜:%d\n", PlayerScore, DealerScore);
 		if (PlayerScore > DealerScore)
 		{
-			printf("ÇÃ·¹ÀÌ¾î ½Â¸®!\n");
+			printf("í”Œë ˆì´ì–´ ìŠ¹ë¦¬!\n");
 		}
 		else if (PlayerScore < DealerScore)
 		{
-			printf("µô·¯ ½Â¸®!\n");
+			printf("ë”œëŸ¬ ìŠ¹ë¦¬!\n");
 		}
 		else
 		{
-			printf("¹«½ÂºÎ!\n");
+			printf("ë¬´ìŠ¹ë¶€!\n");
 		}
 	}
 }
@@ -156,9 +156,9 @@ void AddCardToHand(Card* InHand, int& InCount, const Card& InCard)
 
 void PrintHands(const Card* InPlayerHand, int InPlayerCount, const Card* InDealerHand, int InDealerCount, bool InRevealHole)
 {
-	printf("ÇÃ·¹ÀÌ¾î Ä«µå : ");
+	printf("í”Œë ˆì´ì–´ ì¹´ë“œ : ");
 	PrintPlayerHand(InPlayerHand, InPlayerCount);
-	printf("\nµô·¯ Ä«µå : ");
+	printf("\në”œëŸ¬ ì¹´ë“œ : ");
 	PrintDealerHand(InDealerHand, InDealerCount, InRevealHole);
 	printf("\n");
 }
@@ -196,19 +196,19 @@ void PrintDealerHand(const Card* InHand, int InCount, bool InRevealHole)
 
 bool IsBlackjack(const Card* InHand, int InCount)
 {
-	// A + 10(10, J, Q, K)ÀÌ Á¶ÇÕÀÏ ¶§¸¸ ºí·¢Àè
+	// A + 10(10, J, Q, K)ì´ ì¡°í•©ì¼ ë•Œë§Œ ë¸”ë™ì­
 	bool Result = false;
-	if (InCount == 2)	// ÀÏ´Ü µÎÀå
+	if (InCount == 2)	// ì¼ë‹¨ ë‘ì¥
 	{
-		//if (InHand[0].Value == 1 || InHand[1].Value == 1)	// Ace°¡ ÀÖ¾î¾ß ÇÔ
+		//if (InHand[0].Value == 1 || InHand[1].Value == 1)	// Aceê°€ ìˆì–´ì•¼ í•¨
 		//{
-		//	if (GetCardValue(InHand[0]) == 10 || GetCardValue(InHand[1]) == 10) // 10ÀÌ ÀÖ¾î¾ß ÇÔ
+		//	if (GetCardValue(InHand[0]) == 10 || GetCardValue(InHand[1]) == 10) // 10ì´ ìˆì–´ì•¼ í•¨
 		//	{
 		//		Result = true;
 		//	}
 		//}
 
-		if (InHand[0].Value == 1 && GetCardValue(InHand[1]) == 10		// ÇÏ³ª°¡ Ace°í ³ª¸ÓÁö°¡ 10ÀÌ´Ù.
+		if (InHand[0].Value == 1 && GetCardValue(InHand[1]) == 10		// í•˜ë‚˜ê°€ Aceê³  ë‚˜ë¨¸ì§€ê°€ 10ì´ë‹¤.
 			|| InHand[1].Value == 1 && GetCardValue(InHand[0]) == 10)
 		{
 			Result = true;
@@ -220,7 +220,7 @@ bool IsBlackjack(const Card* InHand, int InCount)
 
 int GetCardValue(const Card& InCard)
 {
-	int Value = InCard.Value;	// ÀÏ´Ü Ace´Â 1·Î Ã³¸®
+	int Value = InCard.Value;	// ì¼ë‹¨ AceëŠ” 1ë¡œ ì²˜ë¦¬
 	if (Value > 10)
 	{
 		Value = 10; // J,Q,K = 10
@@ -247,7 +247,7 @@ int GetBestScore(Card* InHand, int InCount)
 		}
 	}
 
-	// AceCount°¡ ³²¾ÆÀÖ°í 10À» Áõ°¡½ÃÄÑµµ ¹ö½ºÆ®°¡ ¾ÈµÇ¸é AceÇÏ³ª¸¦ 11·Î Ãë±ŞÇÏ±â
+	// AceCountê°€ ë‚¨ì•„ìˆê³  10ì„ ì¦ê°€ì‹œì¼œë„ ë²„ìŠ¤íŠ¸ê°€ ì•ˆë˜ë©´ Aceí•˜ë‚˜ë¥¼ 11ë¡œ ì·¨ê¸‰í•˜ê¸°
 	while ((AceCount > 0) && ((Sum + 10) <= 21))
 	//while ((AceCount > 0) && (Sum < 12))
 	{

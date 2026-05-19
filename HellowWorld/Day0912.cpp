@@ -3,15 +3,15 @@
 void Day0912_Struct()
 {
 	Enemy Goblin;
-	Goblin.Name = "°íºí¸°1È£";
-	printf("ÀÌ¸§ : %s\n", Goblin.Name.c_str());
-	printf("»ı¸í·Â : %.1f\n", Goblin.Health);
-	printf("°ø°İ·Â : %.1f\n", Goblin.AttackPower);
-	printf("º¸»ó : %d Gold\n", Goblin.DropGold);
+	Goblin.Name = "ê³ ë¸”ë¦°1í˜¸";
+	printf("ì´ë¦„ : %s\n", Goblin.Name.c_str());
+	printf("ìƒëª…ë ¥ : %.1f\n", Goblin.Health);
+	printf("ê³µê²©ë ¥ : %.1f\n", Goblin.AttackPower);
+	printf("ë³´ìƒ : %d Gold\n", Goblin.DropGold);
 
-	// 1. °íºí¸° µ¿ÀûÇÒ´ç ¹Ş¾Æº¸±â(¸É¹ö º¯¼ö 4°³µµ Á¶ÀıÇÏ±â)
+	// 1. ê³ ë¸”ë¦° ë™ì í• ë‹¹ ë°›ì•„ë³´ê¸°(ë§´ë²„ ë³€ìˆ˜ 4ê°œë„ ì¡°ì ˆí•˜ê¸°)
 	Enemy* pGoblin = new Enemy();
-	pGoblin->Name = "°íºí¸°2È£";
+	pGoblin->Name = "ê³ ë¸”ë¦°2í˜¸";
 	pGoblin->Health = static_cast<float>(rand() % 100 + 50);	// 50~150
 	pGoblin->AttackPower = static_cast<float>(rand() % 10 + 5);	// 5~15
 	pGoblin->DropGold = static_cast<int>(pGoblin->Health * pGoblin->AttackPower);
@@ -19,10 +19,10 @@ void Day0912_Struct()
 	delete pGoblin;
 	pGoblin = nullptr;
 	
-	// 2. ´Ù¸¥ ±¸Á¶Ã¼ ¸¸µé¾îº¸±â(ex:¾ÆÀÌÅÛ, ¹«±â, ¹æ¾î±¸)
+	// 2. ë‹¤ë¥¸ êµ¬ì¡°ì²´ ë§Œë“¤ì–´ë³´ê¸°(ex:ì•„ì´í…œ, ë¬´ê¸°, ë°©ì–´êµ¬)
 	Weapon Sword;
-	Sword.Name = "°­Ã¶°Ë";
-	Sword.Desc = "Æ°Æ°ÇÏ´Ù.";
+	Sword.Name = "ê°•ì² ê²€";
+	Sword.Desc = "íŠ¼íŠ¼í•˜ë‹¤.";
 	Sword.AttackPower = 15.0f;
 	Sword.Price = 200;
 
@@ -31,30 +31,30 @@ void Day0912_Struct()
 	Goblins = new Enemy[3];
 	for (int i = 0; i < 3; i++)
 	{
-		// std::to_string : ¹®ÀÚ¿­ÀÌ ¾Æ´Ñ°ÍÀ» stringÀ¸·Î º¯°æÇØÁÖ´Â ÇÔ¼ö
-		Goblins[i].Name = "°íºí¸°" + std::to_string(i + 1) + "È£";	
+		// std::to_string : ë¬¸ìì—´ì´ ì•„ë‹Œê²ƒì„ stringìœ¼ë¡œ ë³€ê²½í•´ì£¼ëŠ” í•¨ìˆ˜
+		Goblins[i].Name = "ê³ ë¸”ë¦°" + std::to_string(i + 1) + "í˜¸";	
 		PrintEnemy(&Goblins[i]);
 	}
 	delete[] Goblins;
 	Goblins = nullptr;
 
-	Enemy NamedGoblin("»Ç½º °íºí¸°");
+	Enemy NamedGoblin("ë½€ìŠ¤ ê³ ë¸”ë¦°");
 	PrintEnemy(&NamedGoblin);
 
-	Enemy* pModiGoblin = new Enemy("¸ğµğ °íºí¸°", 5.0f);
+	Enemy* pModiGoblin = new Enemy("ëª¨ë”” ê³ ë¸”ë¦°", 5.0f);
 	PrintEnemy(pModiGoblin);
 	delete pModiGoblin;
 	pModiGoblin = nullptr;
 
-	Enemy CopyGoblin(NamedGoblin);	// º¹»ç »ı¼ºÀÚ
+	Enemy CopyGoblin(NamedGoblin);	// ë³µì‚¬ ìƒì„±ì
 	PrintEnemy(&CopyGoblin);
 
 }
 
 void Day0912_OperatorOverloading()
 {
-	Enemy Goblin1("°íºí¸°1È£");
-	Enemy Goblin2("°íºí¸°2È£");
+	Enemy Goblin1("ê³ ë¸”ë¦°1í˜¸");
+	Enemy Goblin2("ê³ ë¸”ë¦°2í˜¸");
 
 	Enemy FusionGoblin = Goblin1 + Goblin2;
 	PrintEnemy(&FusionGoblin);
@@ -62,8 +62,8 @@ void Day0912_OperatorOverloading()
 
 void PrintEnemy(const Enemy* pEnemy)
 {
-	printf("ÀÌ¸§ : %s\n", pEnemy->Name.c_str());
-	printf("»ı¸í·Â : %.1f\n", pEnemy->Health);
-	printf("°ø°İ·Â : %.1f\n", pEnemy->AttackPower);
-	printf("º¸»ó : %d Gold\n", pEnemy->DropGold);
+	printf("ì´ë¦„ : %s\n", pEnemy->Name.c_str());
+	printf("ìƒëª…ë ¥ : %.1f\n", pEnemy->Health);
+	printf("ê³µê²©ë ¥ : %.1f\n", pEnemy->AttackPower);
+	printf("ë³´ìƒ : %d Gold\n", pEnemy->DropGold);
 }

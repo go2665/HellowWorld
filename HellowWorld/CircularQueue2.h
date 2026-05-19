@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 
-// ¼­Å§·¯ Å¥. Å©±â °íÁ¤. µ¥ÀÌÅÍ´Â int
+// ì„œí˜ëŸ¬ í. í¬ê¸° ê³ ì •. ë°ì´í„°ëŠ” int
 class CircularQueue2
 {
 public:
@@ -10,7 +10,7 @@ public:
 	{ 
 		if (InSize == 0)
 		{
-			printf("¿äÃ»ÇÑ Å©±â 0Àº À¯È¿ÇÏÁö ¾ÊÀ¸¹Ç·Î ÃÖ¼ÒÅ©±âÀÎ %u·Î ¼³Á¤Çß½À´Ï´Ù.", MinSize);
+			printf("ìš”ì²­í•œ í¬ê¸° 0ì€ ìœ íš¨í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ ìµœì†Œí¬ê¸°ì¸ %uë¡œ ì„¤ì •í–ˆìŠµë‹ˆë‹¤.", MinSize);
 		}
 		Data = new int[MaxSize];
 	}
@@ -23,40 +23,40 @@ public:
 		}
 	}
 
-	// º¹»ç ¹æÁö
-	CircularQueue2(const CircularQueue2&) = delete;	// º¹»ç »ı¼ºÀÚ´Â ¾øÀ½
-	CircularQueue2& operator=(const CircularQueue2&) = delete;	// ´ëÀÔ ¿¬»êÀÚ°¡ ¾øÀ½
+	// ë³µì‚¬ ë°©ì§€
+	CircularQueue2(const CircularQueue2&) = delete;	// ë³µì‚¬ ìƒì„±ìëŠ” ì—†ìŒ
+	CircularQueue2& operator=(const CircularQueue2&) = delete;	// ëŒ€ì… ì—°ì‚°ìê°€ ì—†ìŒ
 
-	// Å¥¿¡ µ¥ÀÌÅÍ ÇÏ³ª Ãß°¡
+	// íì— ë°ì´í„° í•˜ë‚˜ ì¶”ê°€
 	void Enqueue(int InValue);
-	// Å¥¿¡¼­ µ¥ÀÌÅÍ ÇÏ³ª Á¦°Å
+	// íì—ì„œ ë°ì´í„° í•˜ë‚˜ ì œê±°
 	int Dequeue();
 
-	// ¼ø¼öÇÏ°Ô Å×½ºÆ®¿ë. Å¥ ³»ºÎ¸¦ ¸ğµÎ Ãâ·Â
+	// ìˆœìˆ˜í•˜ê²Œ í…ŒìŠ¤íŠ¸ìš©. í ë‚´ë¶€ë¥¼ ëª¨ë‘ ì¶œë ¥
 	void TestPrintQueue();
 
-	// Å¥°¡ °¡µæ Ã¡´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	// íê°€ ê°€ë“ ì°¼ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	inline bool IsFull() const
 	{
-		// Rear°¡ ÇÏ³ª ´õ Áõ°¡ÇßÀ» ¶§ Front¸¦ Ä§¹üÇÏ³Ä ¸¶³Ä·Î °¡µæÂüÀ» Ã¼Å©
+		// Rearê°€ í•˜ë‚˜ ë” ì¦ê°€í–ˆì„ ë•Œ Frontë¥¼ ì¹¨ë²”í•˜ëƒ ë§ˆëƒë¡œ ê°€ë“ì°¸ì„ ì²´í¬
 		return (Rear + 1) % MaxSize == Front;	
 	}
-	// Å¥°¡ ºñ¾ú´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+	// íê°€ ë¹„ì—ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	inline bool IsEmpty() const
 	{
-		return Front == Empty;	// Front°¡ ¹è¿­³» ¾Æ¹«°÷µµ °¡¸®Å°Áö ¾ÊÀ¸¸é ºñ¾ú´Ù°í ÆÇ´Ü
+		return Front == Empty;	// Frontê°€ ë°°ì—´ë‚´ ì•„ë¬´ê³³ë„ ê°€ë¦¬í‚¤ì§€ ì•Šìœ¼ë©´ ë¹„ì—ˆë‹¤ê³  íŒë‹¨
 	}
-	// Å¥ÀÇ Front¿¡ ÀÖ´Â °ªÀ» È®ÀÎÇÏ´Â ÇÔ¼ö
+	// íì˜ Frontì— ìˆëŠ” ê°’ì„ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	inline int Peek() const
 	{
 		if (IsEmpty())
 		{
-			printf("¿À·ù: Å¥°¡ ºñ¾îÀÖ½À´Ï´Ù.\n");
+			printf("ì˜¤ë¥˜: íê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.\n");
 			return Empty;
 		}
 		return Data[Front];
 	}
-	// Å¥ÀÇ ±æÀÌ¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+	// íì˜ ê¸¸ì´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 	inline int GetSize() const
 	{
 		return ((Rear + MaxSize) - Front) % MaxSize + 1;

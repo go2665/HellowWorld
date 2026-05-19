@@ -11,12 +11,12 @@ public:
     void TestEnumClass();
 
 private:
-    // static : Á¤Àû ¸â¹ö
+    // static : ì •ì  ë©¤ë²„
     static constexpr int Size = 10;
     int Test[Day0917::Size];
 };
 
-// uint8_t¸¦ »ç¿ëÇÏ·Á¸é #include <stdint.h>°¡ ÇÊ¿ä
+// uint8_të¥¼ ì‚¬ìš©í•˜ë ¤ë©´ #include <stdint.h>ê°€ í•„ìš”
 enum class PlayerState : uint8_t
 {
 	None = 0,
@@ -30,9 +30,9 @@ enum class PlayerState : uint8_t
 };
 
 
-// PlayerStateÀÇ ¿ø·¡ Å¸ÀÔÀ» StateTypeÀÌ¶ó°í ÇÏÀÚ°í Á¤ÇÏ´Â °Í(º°¸í ºÙ¿©ÁÖ±â)
+// PlayerStateì˜ ì›ë˜ íƒ€ì…ì„ StateTypeì´ë¼ê³  í•˜ìê³  ì •í•˜ëŠ” ê²ƒ(ë³„ëª… ë¶™ì—¬ì£¼ê¸°)
 // using StateType = uint8_t;
-// std::underlying_type_t´Â #include <type_traits> ÇÊ¿ä
+// std::underlying_type_tëŠ” #include <type_traits> í•„ìš”
 using StateType = std::underlying_type_t<PlayerState>;
 
 inline PlayerState operator|(PlayerState Left, PlayerState Right)

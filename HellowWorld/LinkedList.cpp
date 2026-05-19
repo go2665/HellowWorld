@@ -15,20 +15,20 @@ LinkedList::~LinkedList()
 
 void LinkedList::Add(int32 InData)
 {
-    //µ¥ÀÌÅÍ¸¦ ¸®½ºÆ®¿¡ ÇÏ³ª Ãß°¡ÇÏ´Â ÇÔ¼ö(¸®½ºÆ®ÀÇ ¸¶Áö¸·¿¡ Ãß°¡)
-    ListNode* NewNode = new ListNode(InData);   // »õ ³ëµå ÇÏ³ª »ı¼º
+    //ë°ì´í„°ë¥¼ ë¦¬ìŠ¤íŠ¸ì— í•˜ë‚˜ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜(ë¦¬ìŠ¤íŠ¸ì˜ ë§ˆì§€ë§‰ì— ì¶”ê°€)
+    ListNode* NewNode = new ListNode(InData);   // ìƒˆ ë…¸ë“œ í•˜ë‚˜ ìƒì„±
     
     if (IsEmpty())  // if(Head == nullptr)
     {
-        // ¸®½ºÆ®°¡ ºñ¾ú´Ù.
-        Head = NewNode;         // ÇÏ³ª¹Û¿¡ ¾øÀ¸´Ï±î »õ ³ëµå°¡ HeadÀÌÀÚ TailÀÌ´Ù.
+        // ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì—ˆë‹¤.
+        Head = NewNode;         // í•˜ë‚˜ë°–ì— ì—†ìœ¼ë‹ˆê¹Œ ìƒˆ ë…¸ë“œê°€ Headì´ì Tailì´ë‹¤.
         Tail = NewNode;
     }
     else
     {
-        // ¸®½ºÆ®¿¡ µ¥ÀÌÅÍ°¡ ÀÖ´Ù.
-        Tail->Next = NewNode;   // ¸¶Áö¸· ³ëµå µÚ¿¡ »õ ³ëµå Ãß°¡.
-        Tail = NewNode;         // »õ ³ëµå¸¦ »õ·Î¿î ¸¶Áö¸· ³ëµå·Î ¼³Á¤
+        // ë¦¬ìŠ¤íŠ¸ì— ë°ì´í„°ê°€ ìˆë‹¤.
+        Tail->Next = NewNode;   // ë§ˆì§€ë§‰ ë…¸ë“œ ë’¤ì— ìƒˆ ë…¸ë“œ ì¶”ê°€.
+        Tail = NewNode;         // ìƒˆ ë…¸ë“œë¥¼ ìƒˆë¡œìš´ ë§ˆì§€ë§‰ ë…¸ë“œë¡œ ì„¤ì •
     }
     Size++;        
 }
@@ -37,85 +37,85 @@ void LinkedList::InsertAt(int32 InData, uint32 InPosition)
 {
     if (InPosition > Size)
     {
-        InPosition = Size;  // InPosionÀÌ ¹üÀ§¸¦ ¹ş¾î³ª¸é ÃÖ´ëÄ¡·Î ¼³Á¤
+        InPosition = Size;  // InPosionì´ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´ ìµœëŒ€ì¹˜ë¡œ ì„¤ì •
     }
 
     if (InPosition == Size)
     {
-        Add(InData);        // ¸¶Áö¸· À§Ä¡¿¡ Ãß°¡ÇÏ´Â °æ¿ì´Â ±×³É Add¸¦ ¾²ÀÚ.
+        Add(InData);        // ë§ˆì§€ë§‰ ìœ„ì¹˜ì— ì¶”ê°€í•˜ëŠ” ê²½ìš°ëŠ” ê·¸ëƒ¥ Addë¥¼ ì“°ì.
         return;
     }
 
-    ListNode* NewNode = new ListNode(InData);   // »õ ³ëµå »ı¼º
+    ListNode* NewNode = new ListNode(InData);   // ìƒˆ ë…¸ë“œ ìƒì„±
     if (InPosition == 0)
     {
-        // ¸Ç ¾Õ¿¡ Ãß°¡ÇÏ´Â °æ¿ì
-        NewNode->Next = Head;   // »õ ³ëµå µÚ¿¡ ±âÁ¸ Head¸¦ ºÙÀÌ°í
-        Head = NewNode;         // »õ ³ëµå¸¦ »õ Head·Î ¼³Á¤
+        // ë§¨ ì•ì— ì¶”ê°€í•˜ëŠ” ê²½ìš°
+        NewNode->Next = Head;   // ìƒˆ ë…¸ë“œ ë’¤ì— ê¸°ì¡´ Headë¥¼ ë¶™ì´ê³ 
+        Head = NewNode;         // ìƒˆ ë…¸ë“œë¥¼ ìƒˆ Headë¡œ ì„¤ì •
     }
     else
     {
-        // Áß°£¿¡ Ãß°¡ÇÏ´Â °æ¿ì
-        ListNode* Prev = Head;                      // Prev³ëµå¸¦ Ã£±â À§ÇØ HeadºÎÅÍ ÇÏ³ª¾¿ ÀüÁø
+        // ì¤‘ê°„ì— ì¶”ê°€í•˜ëŠ” ê²½ìš°
+        ListNode* Prev = Head;                      // Prevë…¸ë“œë¥¼ ì°¾ê¸° ìœ„í•´ Headë¶€í„° í•˜ë‚˜ì”© ì „ì§„
         const uint32 TargetIndex = InPosition - 1;
         for (uint32 i = 0; i < TargetIndex; i++)
         {
             Prev = Prev->Next;
         }
-        NewNode->Next = Prev->Next; // »õ ³ëµåÀÇ ´ÙÀ½ ³ëµå¸¦, ÀÌÀü ³ëµåÀÇ ´ÙÀ½ ³ëµå·Î ¼³Á¤
-        Prev->Next = NewNode;       // ÀÌÀü ³ëµåÀÇ ´ÙÀ½ ³ëµå¸¦, »õ ³ëµå·Î ¼³Á¤
+        NewNode->Next = Prev->Next; // ìƒˆ ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¥¼, ì´ì „ ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¡œ ì„¤ì •
+        Prev->Next = NewNode;       // ì´ì „ ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¥¼, ìƒˆ ë…¸ë“œë¡œ ì„¤ì •
     }
-    Size++; // ³ëµå°¡ Ãß°¡µÇ¾úÀ¸´Ï »çÀÌÁî Áõ°¡
+    Size++; // ë…¸ë“œê°€ ì¶”ê°€ë˜ì—ˆìœ¼ë‹ˆ ì‚¬ì´ì¦ˆ ì¦ê°€
 }
 
 void LinkedList::Remove(int32 InData)
 {
-    if (IsEmpty())  // ºñ¾îÀÖÀ¸¸é ¹«Á¶°Ç ¾øÀ¸´Ï ±×³É ³¡³½´Ù.
+    if (IsEmpty())  // ë¹„ì–´ìˆìœ¼ë©´ ë¬´ì¡°ê±´ ì—†ìœ¼ë‹ˆ ê·¸ëƒ¥ ëë‚¸ë‹¤.
         return;
 
-    ListNode* NodeToDelete = nullptr;   // »èÁ¦ÇÒ ³ëµå
-    ListNode* PrevNode = nullptr;       // »èÁ¦ÇÒ ³ëµåÀÇ ¾Õ ³ëµå
+    ListNode* NodeToDelete = nullptr;   // ì‚­ì œí•  ë…¸ë“œ
+    ListNode* PrevNode = nullptr;       // ì‚­ì œí•  ë…¸ë“œì˜ ì• ë…¸ë“œ
 
     if (Head->Data == InData)
     {
-        // »èÁ¦ÇÒ µ¥ÀÌÅÍ°¡ Head´Ù
-        NodeToDelete = Head;    // »èÁ¦ÇÒ µ¥ÀÌÅÍ·Î Head¸¦ ¼³Á¤
-        Head = Head->Next;      // Head¸¦ HeadÀÇ ´ÙÀ½ ³ëµå·Î ¼³Á¤
+        // ì‚­ì œí•  ë°ì´í„°ê°€ Headë‹¤
+        NodeToDelete = Head;    // ì‚­ì œí•  ë°ì´í„°ë¡œ Headë¥¼ ì„¤ì •
+        Head = Head->Next;      // Headë¥¼ Headì˜ ë‹¤ìŒ ë…¸ë“œë¡œ ì„¤ì •
         if (IsEmpty())
         {
-            Tail = nullptr;     // HeadÀÇ »èÁ¦ °á°ú ¸®½ºÆ®°¡ ºñ°Ô µÇ¸é Tail·Î nullptr·Î ¼³Á¤
+            Tail = nullptr;     // Headì˜ ì‚­ì œ ê²°ê³¼ ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ê²Œ ë˜ë©´ Tailë¡œ nullptrë¡œ ì„¤ì •
         }
     }
     else
     {
-        // »èÁ¦ÇÒ µ¥ÀÌÅÍ°¡ Head°¡ ¾Æ´Ï´Ù.
-        PrevNode = Head;        // PrevNode¸¦ Ã£±â. Head¿¡¼­ ½ÃÀÛÇØ¼­ °è¼Ó ´ÙÀ½À¸·Î ÀüÁøÇÏ¸ç Ã£´Â´Ù.
-        while (PrevNode->Next != nullptr            // PrevÀÇ ´ÙÀ½ ³ëµå°¡ ºñ¾îÀÖÁö ¾Ê´Ù.
-            && PrevNode->Next->Data != InData)      // ±×¸®°í PrevÀÇ ´ÙÀ½ ³ëµåÀÇ µ¥ÀÌÅÍ°¡ Ã£´Â µ¥ÀÌÅÍ°¡ ¾Æ´Ï´Ù.
+        // ì‚­ì œí•  ë°ì´í„°ê°€ Headê°€ ì•„ë‹ˆë‹¤.
+        PrevNode = Head;        // PrevNodeë¥¼ ì°¾ê¸°. Headì—ì„œ ì‹œì‘í•´ì„œ ê³„ì† ë‹¤ìŒìœ¼ë¡œ ì „ì§„í•˜ë©° ì°¾ëŠ”ë‹¤.
+        while (PrevNode->Next != nullptr            // Prevì˜ ë‹¤ìŒ ë…¸ë“œê°€ ë¹„ì–´ìˆì§€ ì•Šë‹¤.
+            && PrevNode->Next->Data != InData)      // ê·¸ë¦¬ê³  Prevì˜ ë‹¤ìŒ ë…¸ë“œì˜ ë°ì´í„°ê°€ ì°¾ëŠ” ë°ì´í„°ê°€ ì•„ë‹ˆë‹¤.
         {
             PrevNode = PrevNode->Next;
         }
 
         if (PrevNode->Next != nullptr)  
         {
-            // PrevNode¸¦ Ã£¾Ò´Ù¸é
-            NodeToDelete = PrevNode->Next;          // PrevÀÇ ´ÙÀ½ ³ëµå¸¦ »èÁ¦ÇÒ ³ëµå·Î ¼³Á¤
-            PrevNode->Next = NodeToDelete->Next;    // PrevÀÇ ´ÙÀ½ ³ëµå¸¦ »èÁ¦ÇÒ ³ëµåÀÇ ´ÙÀ½ ³ëµå·Î ¼³Á¤
+            // PrevNodeë¥¼ ì°¾ì•˜ë‹¤ë©´
+            NodeToDelete = PrevNode->Next;          // Prevì˜ ë‹¤ìŒ ë…¸ë“œë¥¼ ì‚­ì œí•  ë…¸ë“œë¡œ ì„¤ì •
+            PrevNode->Next = NodeToDelete->Next;    // Prevì˜ ë‹¤ìŒ ë…¸ë“œë¥¼ ì‚­ì œí•  ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¡œ ì„¤ì •
             if (NodeToDelete == Tail)
-                Tail = PrevNode;        // »èÁ¦ÇÒ ³ëµå°¡ ¸¶Áö¸· ³ëµå¸é Prev°¡ »õ·Î¿î ¸¶Áö¸· ³ëµå
+                Tail = PrevNode;        // ì‚­ì œí•  ë…¸ë“œê°€ ë§ˆì§€ë§‰ ë…¸ë“œë©´ Prevê°€ ìƒˆë¡œìš´ ë§ˆì§€ë§‰ ë…¸ë“œ
         }
     }
 
     if (NodeToDelete)   // if(NodeToDelete != nullptr)
     {
-        delete NodeToDelete;        // NodeToDelete¸¦ Ã£¾ÒÀ¸¸é delete
+        delete NodeToDelete;        // NodeToDeleteë¥¼ ì°¾ì•˜ìœ¼ë©´ delete
         NodeToDelete = nullptr;
-        Size--;                     // Size 1 ÁÙÀÌ±â
+        Size--;                     // Size 1 ì¤„ì´ê¸°
     }
     else
     {
-        // NodeToDelete¸¦ ¸ø Ã£¾ÒÀ¸¸é ¿¡·¯ Ãâ·Â
-        printf("¿À·ù : %d°ªÀ» °¡Áø ³ëµå°¡ ¾ø½À´Ï´Ù.\n", InData);
+        // NodeToDeleteë¥¼ ëª» ì°¾ì•˜ìœ¼ë©´ ì—ëŸ¬ ì¶œë ¥
+        printf("ì˜¤ë¥˜ : %dê°’ì„ ê°€ì§„ ë…¸ë“œê°€ ì—†ìŠµë‹ˆë‹¤.\n", InData);
     }
 }
 
@@ -123,52 +123,52 @@ void LinkedList::RemoveAt(uint32 InPosition)
 {
     if (InPosition >= Size)
     {
-        printf("¿À·ù: %uÀ§Ä¡´Â ¹üÀ§¸¦ ¹ş¾î³µ½À´Ï´Ù.(ÇöÀç Å©±â: %u)\n", InPosition, Size);
+        printf("ì˜¤ë¥˜: %uìœ„ì¹˜ëŠ” ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.(í˜„ì¬ í¬ê¸°: %u)\n", InPosition, Size);
         return;
     }
 
-    ListNode* NodeToDelete = nullptr;   // »èÁ¦ÇÒ ³ëµåÀÇ ÁÖ¼Ò°¡ ÀúÀåµÉ º¯¼ö
+    ListNode* NodeToDelete = nullptr;   // ì‚­ì œí•  ë…¸ë“œì˜ ì£¼ì†Œê°€ ì €ì¥ë  ë³€ìˆ˜
     if (InPosition == 0)
     {
-        // ÇØµå¸¦ »èÁ¦ÇÏ´Â °æ¿ì
+        // í•´ë“œë¥¼ ì‚­ì œí•˜ëŠ” ê²½ìš°
         NodeToDelete = Head;
         Head = Head->Next;
         if (IsEmpty())
         {
-            Tail = nullptr; // ¸®½ºÆ®°¡ ºñ°Ô µÇ¸é Tailµµ nullptr·Î ¼³Á¤
+            Tail = nullptr; // ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ê²Œ ë˜ë©´ Tailë„ nullptrë¡œ ì„¤ì •
         }
     }
     else
     {
-        // ÇØµå°¡ ¾Æ´Ñ °æ¿ì
+        // í•´ë“œê°€ ì•„ë‹Œ ê²½ìš°
         ListNode* Prev = Head;
         const uint32 TargetIndex = InPosition - 1;
         for (uint32 i = 0; i < TargetIndex; i++)
         {
-            Prev = Prev->Next;  // ÇØµåºÎÅÍ ½ÃÀÛÇØ¼­ »èÁ¦ÇÒ ³ëµåÀÇ ¾Õ ³ëµå Ã£±â
+            Prev = Prev->Next;  // í•´ë“œë¶€í„° ì‹œì‘í•´ì„œ ì‚­ì œí•  ë…¸ë“œì˜ ì• ë…¸ë“œ ì°¾ê¸°
         }
-        NodeToDelete = Prev->Next;          // »èÁ¦ÇÒ ³ëµå´Â, ¾Õ³ëµåÀÇ ´ÙÀ½ ³ëµå
-        Prev->Next = NodeToDelete->Next;    // ¾Õ³ëµåÀÇ ´ÙÀ½ ³ëµå´Â, »èÁ¦ÇÒ ³ëµåÀÇ ´ÙÀ½ ³ëµå
+        NodeToDelete = Prev->Next;          // ì‚­ì œí•  ë…¸ë“œëŠ”, ì•ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œ
+        Prev->Next = NodeToDelete->Next;    // ì•ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œëŠ”, ì‚­ì œí•  ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œ
         if (NodeToDelete == Tail)
         {
-            Tail = Prev;    // »èÁ¦ÇÒ ³ëµå°¡ TailÀÌ¸é, ÀÌÀü ³ëµå°¡ »õ Tail
+            Tail = Prev;    // ì‚­ì œí•  ë…¸ë“œê°€ Tailì´ë©´, ì´ì „ ë…¸ë“œê°€ ìƒˆ Tail
         }
     }
 
-    delete NodeToDelete;    // ½ÇÁ¦ »èÁ¦ÇÏ°í
-    NodeToDelete = nullptr; // ¹«Á¶°Ç ÇÏ´Â ½À°ü µéÀÌ±â(ÁÁÀº ½À°ü)
-    Size--;                 // »çÀÌÁî ÁÙÀÌ±â
+    delete NodeToDelete;    // ì‹¤ì œ ì‚­ì œí•˜ê³ 
+    NodeToDelete = nullptr; // ë¬´ì¡°ê±´ í•˜ëŠ” ìŠµê´€ ë“¤ì´ê¸°(ì¢‹ì€ ìŠµê´€)
+    Size--;                 // ì‚¬ì´ì¦ˆ ì¤„ì´ê¸°
 }
 
 ListNode* LinkedList::Search(int32 InData) const
 {
-    ListNode* Result = nullptr; // Ã£Àº °á°ú°¡ µé¾î°¥ Æ÷ÀÎÅÍ º¯¼ö
-    ListNode* Current = Head;   // ÇÏ³ª¾¿ ÁøÇàÇØ ³ª°¡±â À§ÇÑ ÀÓ½Ã º¯¼ö
+    ListNode* Result = nullptr; // ì°¾ì€ ê²°ê³¼ê°€ ë“¤ì–´ê°ˆ í¬ì¸í„° ë³€ìˆ˜
+    ListNode* Current = Head;   // í•˜ë‚˜ì”© ì§„í–‰í•´ ë‚˜ê°€ê¸° ìœ„í•œ ì„ì‹œ ë³€ìˆ˜
     while (Current != nullptr)  // while(Current)
     {
         if (Current->Data == InData)
         {
-            Result = Current;   // Ã£¾ÒÀ¸¸é Result¿¡ ±â·ÏÇÏ°í while Á¾·á
+            Result = Current;   // ì°¾ì•˜ìœ¼ë©´ Resultì— ê¸°ë¡í•˜ê³  while ì¢…ë£Œ
             break;
         }
         Current = Current->Next;
@@ -181,15 +181,15 @@ void LinkedList::PrintList() const
 {
     if (IsEmpty())
     {
-        printf("¸®½ºÆ®°¡ ºñ¾îÀÖ½À´Ï´Ù.\n");
+        printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.\n");
         return;
     }
 
-    printf("¸®½ºÆ®(Å©±â:%u) : ", Size);
+    printf("ë¦¬ìŠ¤íŠ¸(í¬ê¸°:%u) : ", Size);
     ListNode* Current = Head;
     while (Current) // Current != nullptr
     {
-        printf("%d -> ", Current->Data);    // HeadºÎÅÍ ÇÏ³ª¾¿ Ãâ·Â
+        printf("%d -> ", Current->Data);    // Headë¶€í„° í•˜ë‚˜ì”© ì¶œë ¥
         Current = Current->Next;
     }
     printf("nullptr\n");
